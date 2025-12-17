@@ -219,6 +219,18 @@ main {
     transform: translateY(0);
 }
 
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+    background: linear-gradient(135deg, #8b3a62 0%, #6a2c4a 100%);
+}
+
 /* Success Message */
 .success-message {
     text-align: center;

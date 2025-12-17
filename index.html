@@ -119,6 +119,27 @@
             const form = document.getElementById('waitlistForm');
             const successMessage = document.getElementById('successMessage');
             const formContainer = form;
+            const consentCheckbox = document.getElementById('consent');
+            const submitButton = document.querySelector('.submit-btn');
+
+            // Enable/disable submit button based on checkbox
+            function updateButtonState() {
+                if (consentCheckbox.checked) {
+                    submitButton.disabled = false;
+                    submitButton.style.opacity = '1';
+                    submitButton.style.cursor = 'pointer';
+                } else {
+                    submitButton.disabled = true;
+                    submitButton.style.opacity = '0.5';
+                    submitButton.style.cursor = 'not-allowed';
+                }
+            }
+
+            // Check initial state
+            updateButtonState();
+
+            // Listen for checkbox changes
+            consentCheckbox.addEventListener('change', updateButtonState);
 
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
