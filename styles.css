@@ -159,6 +159,39 @@ main {
     min-height: 100px;
 }
 
+/* Checkbox Group */
+.checkbox-group {
+    text-align: left;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    min-width: 20px;
+    height: 20px;
+    margin-top: 0.2rem;
+    cursor: pointer;
+    accent-color: #8b3a62;
+}
+
+.checkbox-text {
+    flex: 1;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+.checkbox-label:hover .checkbox-text {
+    color: #ffffff;
+}
+
 /* Submit Button */
 .submit-btn {
     width: 100%;
