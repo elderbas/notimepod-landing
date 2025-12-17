@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get regular summaries of your favorite podcasts delivered to your inbox. No Time Podcast - Stay informed without the time commitment.">
+    <title>No Time Podcast - Podcast Summaries Delivered</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🎙️</span>
+                <span class="logo-text">no time</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Coming Soon
+            </div>
+
+            <h1 class="hero-title">
+                PODCAST SUMMARIES<br>
+                DELIVERED TO YOUR INBOX
+            </h1>
+
+            <p class="hero-subtitle">
+                Love your favorite podcasts but don't have time to listen to everything?<br>
+                Get regular summaries delivered straight to your inbox.
+            </p>
+
+            <!-- Form -->
+            <div class="form-container" id="formContainer">
+                <form id="waitlistForm" class="waitlist-form">
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Your Email" 
+                            required
+                            autocomplete="email"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea 
+                            id="podcasts" 
+                            name="podcasts" 
+                            placeholder="List 1+ of your favorite podcasts (one per line)" 
+                            rows="4"
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Your Name (optional)" 
+                            autocomplete="name"
+                        >
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Join Waitlist
+                    </button>
+                </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message hidden">
+                    <div class="success-icon">✓</div>
+                    <h2>Thanks for joining!</h2>
+                    <p>We'll be in touch soon with updates.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 No Time Podcast. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
