@@ -200,6 +200,11 @@ main {
     display: none;
 }
 
+/* Hidden field for spam protection (Netlify honeypot) */
+.hidden {
+    display: none;
+}
+
 .success-icon {
     width: 80px;
     height: 80px;
