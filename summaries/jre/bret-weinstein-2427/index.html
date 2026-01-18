@@ -7,20 +7,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Google Analytics 4 -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9DVDFHLSG0"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-
-        // Only initialize GA if user has consented
+        
+        // Check for consent before initializing GA
         if (localStorage.getItem('cookieConsent') === 'accepted') {
             gtag('js', new Date());
             gtag('config', 'G-9DVDFHLSG0');
         }
     </script>
-
     <style>
         :root {
             --cream: #FAF8F5;
@@ -193,7 +191,6 @@
         section:nth-child(2) { animation-delay: 0.2s; }
         section:nth-child(3) { animation-delay: 0.3s; }
         section:nth-child(4) { animation-delay: 0.4s; }
-        section:nth-child(5) { animation-delay: 0.5s; }
 
         @keyframes fadeUp {
             to {
@@ -219,20 +216,20 @@
             color: var(--ink);
         }
 
-        /* What's New & Evolved Thinking content */
-        .section-content {
+        /* Origin Story / What's New */
+        .origin-content {
             font-size: 1.05rem;
             line-height: 1.85;
             max-width: 700px;
         }
 
-        .section-content p {
+        .origin-content p {
             margin-bottom: 24px;
             text-align: justify;
             hyphens: auto;
         }
 
-        .section-content strong {
+        .origin-content strong {
             font-weight: 600;
             color: var(--ink);
         }
@@ -843,7 +840,7 @@
         }
 
         .cta-value-prop::before {
-            content: '';
+            content: '•';
             color: var(--mauve);
         }
 
@@ -906,80 +903,82 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.25rem 1.5rem;
+            background: var(--dark-bg);
+            color: var(--dark-text);
+            padding: 16px 24px;
             z-index: 9999;
+            display: none;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
         }
 
-        .cookie-consent.visible {
-            transform: translateY(0);
+        .cookie-consent.show {
+            display: block;
         }
 
         .cookie-consent-content {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1.5rem;
+            gap: 24px;
             flex-wrap: wrap;
         }
 
         .cookie-consent-text {
             flex: 1;
-            min-width: 280px;
-            color: #b0b0b0;
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             line-height: 1.5;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cookie-consent-text a {
+            color: var(--mauve);
+            text-decoration: none;
+        }
+
+        .cookie-consent-text a:hover {
+            text-decoration: underline;
         }
 
         .cookie-consent-buttons {
             display: flex;
-            gap: 0.75rem;
+            gap: 12px;
             flex-shrink: 0;
         }
 
         .cookie-consent-btn {
-            padding: 0.625rem 1.25rem;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
+            font-family: 'Libre Franklin', sans-serif;
             border: none;
-            font-family: inherit;
         }
 
         .cookie-consent-btn.accept {
-            background: linear-gradient(135deg, var(--mauve) 0%, var(--mauve-dark) 100%);
-            color: #ffffff;
+            background: var(--mauve);
+            color: white;
         }
 
         .cookie-consent-btn.accept:hover {
-            background: linear-gradient(135deg, #9a4270 0%, var(--mauve) 100%);
-            transform: translateY(-1px);
+            background: var(--mauve-dark);
         }
 
-        .cookie-consent-btn.reject {
+        .cookie-consent-btn.decline {
             background: transparent;
-            color: #b0b0b0;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .cookie-consent-btn.reject:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
+        .cookie-consent-btn.decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
         }
 
         @media (max-width: 640px) {
-            .cookie-consent {
-                padding: 1rem;
-            }
-
             .cookie-consent-content {
                 flex-direction: column;
                 text-align: center;
@@ -1002,7 +1001,7 @@
     <nav>
         <ul>
             <li><a href="#whats-new">What's New</a></li>
-            <li><a href="#evolved-thinking">Evolved Thinking</a></li>
+            <li><a href="#evolved">Evolved Thinking</a></li>
             <li><a href="#stories">Stories</a></li>
             <li><a href="#resources">Resources</a></li>
             <li><a href="#quotes">Quotes</a></li>
@@ -1010,40 +1009,41 @@
     </nav>
 
     <main>
-        <p class="reading-time">1-2 minute read</p>
+        <p class="reading-time">One to two minute read</p>
         <section id="whats-new">
             <div class="section-header">
                 <h2>What's New</h2>
             </div>
-            <div class="section-content">
-                <p>Since his previous appearances, <strong>Bret Weinstein</strong> has significantly expanded his public intellectual role, engaging deeply with complex societal issues at the intersection of biology, technology, and culture. Together with his wife <strong>Heather Heying</strong>, he's been working on "A Hunter-Gatherer's Guide to the 21st Century," a book connecting evolutionary biology insights with contemporary challenges.</p>
+            <div class="origin-content">
+                <p>Since his previous appearances, Bret Weinstein has been actively developing new hypotheses in evolutionary biology, particularly around mechanisms beyond random mutations. Together with Heather, he's working on a book titled <strong>"A Hunter-Gatherer's Guide to the 21st Century"</strong> that connects human evolution with contemporary societal challenges.</p>
 
-                <p>Weinstein has introduced the concept of <strong>"hypernovelty"</strong>&mdash;the idea that the pace of technological change has begun to outstrip humanity's ability to adapt. He's become increasingly vocal about public health issues, particularly the COVID-19 pandemic response, institutional failures, and the need for transparency in scientific discourse. His public commentary now spans from evolutionary biology to cultural dynamics, relationships, and the implications of AI on human connection.</p>
+                <p>Weinstein has significantly increased his public presence, participating in various podcasts and discussions on complex societal issues. He's introduced the concept of <strong>"hypernovelty"</strong>&mdash;the idea that technological and societal change is outpacing human adaptability. This marks a transition into a more influential role as a public intellectual, particularly focused on how modern humans cope with unprecedented environmental and cultural changes.</p>
 
-                <p>Looking ahead, Weinstein continues his research into "explorer modes" in evolution&mdash;proposing a new layer to Darwinian evolution that explains how diverse biological forms emerge. He advocates for a more deliberate pace of technological advancement to allow society to adapt and understand its implications, particularly for younger generations.</p>
+                <p>He's been vocal about the implications of AI and robotics on human relationships, expressing concern that these technologies may diminish motivation for personal growth and meaningful human connection. His commentary extends to public health discourse, where he's engaged critically with narratives surrounding COVID-19, vaccination, and the suppression of alternative treatments.</p>
             </div>
         </section>
 
-        <section id="evolved-thinking">
+        <p class="reading-time">One to two minutes on evolved perspectives</p>
+        <section id="evolved">
             <div class="section-header">
                 <h2>Evolved Thinking</h2>
             </div>
-            <div class="section-content">
-                <p>Weinstein's understanding of evolution has shifted from a classic Darwinian view of random mutations to a more nuanced perspective incorporating developmental biology and "explorer modes"&mdash;stored variables in DNA that allow for rapid adaptation and exploration of new forms.</p>
+            <div class="origin-content">
+                <p>Weinstein's understanding of evolution has shifted significantly. He previously viewed it mainly as a process driven by random mutations and gradual changes. Now he sees evolution as a more intricate mechanism that includes stored variables in DNA, allowing for rapid adaptation and exploration of new forms&mdash;what he calls "explorer modes."</p>
 
                 <div class="key-point">
-                    On masks: "I initially thought masks were useful in preventing COVID transmission. I admitted my error&mdash;there simply wasn't evidentiary support for their usefulness."
+                    "I used to think adaptability and change were essential for survival. Now I recognize that some species, like crocodiles and sharks, have thrived by remaining largely unchanged for millions of years. Stability can also be a successful evolutionary strategy."
                 </div>
 
-                <p>He's also evolved on the question of <strong>stability versus change</strong>. Previously believing adaptability was essential for survival, he now recognizes that some species like crocodiles and sharks have thrived by remaining largely unchanged for millions of years&mdash;suggesting evolution can favor both change and stability.</p>
+                <p>His perspective on public health has undergone notable revision. He admitted error regarding the efficacy of masks, acknowledging a lack of evidentiary support for their usefulness. He now expresses skepticism about the necessity of vaccines for healthy individuals who have recovered from COVID, marking a significant shift from his earlier positions.</p>
 
                 <div class="key-point">
-                    On public health: "I had a conventional view of public health as protective. Now I see concerns about these measures becoming tools of tyranny&mdash;particularly regarding CBDCs and the erosion of free speech."
+                    "I used to think public health was purely protective. Now I see how public health measures can become tools of control, particularly regarding central bank digital currencies and the erosion of free speech."
                 </div>
 
-                <p>His perspective on <strong>technology and relationships</strong> has grown more critical. Where he once held traditional views on technology's role, he now expresses genuine concern that AI companions and sex robots may alter human relationships in ways that diminish motivation for personal growth and genuine connection.</p>
+                <p>Weinstein has also evolved in his understanding of education and consequences. While he previously acknowledged their importance, he now argues forcefully that modern educational systems "immunize children from consequences," which he believes is detrimental to their development into capable adults. He emphasizes that acknowledging one's errors publicly is crucial for intellectual integrity&mdash;a standard he holds himself to.</p>
 
-                <p>Perhaps most notably, Weinstein has embraced the importance of <strong>acknowledging errors publicly</strong>. Where he once held a rigid stance on being correct in public discourse, he now argues that admitting mistakes is crucial for intellectual integrity and progress.</p>
+                <p>His view on happiness and relationships has matured considerably. He now recognizes that many young people struggle to find happiness due to societal changes and technological influences, and he expresses a desire for a return to more traditional values and structures that support meaningful connections.</p>
             </div>
         </section>
 
@@ -1063,6 +1063,7 @@
             </div>
         </div>
 
+        <p class="reading-time">One to two minutes for stories told</p>
         <section id="stories">
             <div class="section-header">
                 <h2>Stories Told</h2>
@@ -1070,54 +1071,67 @@
             <div class="stories-grid">
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>The Ivermectin Natural Experiment</h3>
-                        <p class="story-summary">Weinstein discusses a striking anecdote about families suing hospitals for refusing to administer ivermectin to critically ill patients. In cases where ivermectin was administered after legal intervention, 38 out of 40 patients survived, compared to only 2 out of 40 who did not receive it&mdash;illustrating what he sees as an accidental natural experiment on the drug's effectiveness.</p>
+                        <h3>The Accidental Ivermectin Experiment</h3>
+                        <p class="story-summary">Weinstein discusses a striking anecdote about families suing hospitals for refusing to administer ivermectin to critically ill COVID patients. In cases where courts ordered the treatment, 38 out of 40 patients survived, compared to only 2 out of 40 who didn't receive it&mdash;an accidental natural experiment that raises questions about repurposed drugs.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Medicine</span>
-                            <span class="meta-tag">Ivermectin</span>
-                            <span class="meta-tag">Healthcare system</span>
+                            <span class="meta-tag">Public health</span>
+                            <span class="meta-tag">Medical freedom</span>
+                            <span class="meta-tag">COVID-19</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Confrontation with Sam Harris</h3>
-                        <p class="story-summary">Weinstein recounts a phone conversation with Sam Harris where they debated the rationale for vaccination after recovering from COVID-19. He expresses disbelief at Harris's insistence on vaccination despite Weinstein's healthy lifestyle and successful recovery, highlighting the ongoing debate about vaccine efficacy versus natural immunity.</p>
+                        <h3>The Sam Harris Phone Call</h3>
+                        <p class="story-summary">Weinstein recounts a recent phone conversation with Sam Harris, debating the rationale for vaccination after recovering from COVID-19. He expresses disbelief at Harris's insistence on vaccination despite a healthy lifestyle and successful recovery, highlighting the ongoing debate about vaccine efficacy versus natural immunity.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Debate</span>
-                            <span class="meta-tag">Intellectual disagreement</span>
+                            <span class="meta-tag">Intellectual debate</span>
                             <span class="meta-tag">Natural immunity</span>
+                            <span class="meta-tag">Public discourse</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>"We're Doing Holy Work Together"</h3>
-                        <p class="story-summary">Weinstein shares a personal anecdote about collaborating with Charlie Kirk on efforts to challenge the availability of COVID-19 vaccines for children and pregnant women. Kirk texted him saying, "We're doing holy work together"&mdash;a moment that resonated deeply with Weinstein and illustrated the unexpected personal connections formed during a contentious public health period.</p>
+                        <h3>Holy Work with Charlie Kirk</h3>
+                        <p class="story-summary">Weinstein shares a personal anecdote about collaborating with Charlie Kirk on efforts to challenge the availability of COVID-19 vaccines for children and pregnant women. Kirk texted him, "We're doing holy work together"&mdash;a moment that resonated deeply and illustrates the personal connections formed during a contentious public health period.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Collaboration</span>
-                            <span class="meta-tag">Public health</span>
-                            <span class="meta-tag">Advocacy</span>
+                            <span class="meta-tag">Public health advocacy</span>
+                            <span class="meta-tag">Personal connection</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Reflections on Institutional Failures</h3>
-                        <p class="story-summary">Weinstein reflects on the failures of institutions during the COVID-19 pandemic, noting that few organizations passed the "COVID test" effectively. He expresses disappointment in how various sectors, including religious communities, navigated the crisis&mdash;emphasizing the need for accountability and reform.</p>
+                        <h3>The COVID Test for Institutions</h3>
+                        <p class="story-summary">Weinstein reflects on how few organizations passed the "COVID test" effectively. He expresses disappointment in how various sectors, including religious communities, navigated the crisis, emphasizing the need for accountability and reform in institutional responses to emergencies.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Institutions</span>
-                            <span class="meta-tag">COVID-19</span>
+                            <span class="meta-tag">Institutional failure</span>
                             <span class="meta-tag">Accountability</span>
+                            <span class="meta-tag">Crisis response</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>The Decline of Human Connection</h3>
+                        <p class="story-summary">Weinstein expresses concern about lifelike robots and AI companions replacing human relationships. He argues that this technological evolution could diminish motivation for personal growth and meaningful relationships, potentially leading to a decline in societal cohesion.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Technology</span>
+                            <span class="meta-tag">Human relationships</span>
+                            <span class="meta-tag">Social commentary</span>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
+        <p class="reading-time">One to two minutes for resources mentioned</p>
         <section id="resources">
             <div class="section-header">
                 <h2>Resources Mentioned</h2>
@@ -1128,21 +1142,21 @@
                 <div class="resource-category">
                     <h3>Books</h3>
                     <div class="books-list">
-                        <a href="https://www.goodreads.com/search?q=A%20Hunter-Gatherer's%20Guide%20to%20the%2021st%20Century&search_type=books" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                        <a href="https://www.goodreads.com/search?q=A%20Hunter-Gatherer's%20Guide%20to%20the%2021st%20Century" target="_blank" rel="noopener" class="book-item animate-on-scroll">
                             <div class="book-info">
                                 <span class="book-title">A Hunter-Gatherer's Guide to the 21st Century</span>
-                                <span class="book-context">Discusses rites of passage and human development</span>
+                                <span class="book-context">Discussing rites of passage and human development</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.goodreads.com/search?q=The%20Great%20Taking&search_type=books" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                        <a href="https://www.goodreads.com/search?q=The%20Great%20Taking" target="_blank" rel="noopener" class="book-item animate-on-scroll">
                             <div class="book-info">
                                 <span class="book-title">The Great Taking</span>
-                                <span class="book-context">Describes potential financial vulnerabilities in society</span>
+                                <span class="book-context">Describing potential financial vulnerabilities in society</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.goodreads.com/search?q=The%20War%20on%20Ivermectin&search_type=books" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                        <a href="https://www.goodreads.com/search?q=The%20War%20on%20Ivermectin" target="_blank" rel="noopener" class="book-item animate-on-scroll">
                             <div class="book-info">
                                 <span class="book-title">The War on Ivermectin</span>
                                 <span class="book-context">Pierre Kory's account of the ivermectin controversy</span>
@@ -1159,35 +1173,14 @@
                         <a href="https://www.imdb.com/find/?q=The%20Big%20Short" target="_blank" rel="noopener" class="film-item animate-on-scroll">
                             <div class="film-info">
                                 <span class="film-title">The Big Short</span>
-                                <span class="film-context">Features Michael Burry's character and financial predictions</span>
+                                <span class="film-context">Referencing Michael Burry's warnings about market bubbles</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://www.imdb.com/find/?q=Hamnet" target="_blank" rel="noopener" class="film-item animate-on-scroll">
                             <div class="film-info">
                                 <span class="film-title">Hamnet</span>
-                                <span class="film-context">Film directed by Chlo&eacute; Zhao about Shakespeare's masterpiece</span>
-                            </div>
-                            <span class="link-arrow">&rarr;</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Documentaries -->
-                <div class="resource-category">
-                    <h3>Documentaries</h3>
-                    <div class="films-list">
-                        <a href="https://www.google.com/search?q=Event%20201%20documentary" target="_blank" rel="noopener" class="film-item animate-on-scroll">
-                            <div class="film-info">
-                                <span class="film-title">Event 201</span>
-                                <span class="film-context">Tabletop exercise simulating a pandemic</span>
-                            </div>
-                            <span class="link-arrow">&rarr;</span>
-                        </a>
-                        <a href="https://www.google.com/search?q=BBC%20Documentary%20Congo%20animals" target="_blank" rel="noopener" class="film-item animate-on-scroll">
-                            <div class="film-info">
-                                <span class="film-title">BBC Documentary on the Congo</span>
-                                <span class="film-context">Discusses rapid adaptations of animals in the Congo</span>
+                                <span class="film-context">Chloé Zhao's film about Shakespeare's masterpiece</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
@@ -1201,56 +1194,56 @@
                         <a href="https://en.wikipedia.org/wiki/Shanna_Swan" target="_blank" rel="noopener" class="person-item animate-on-scroll">
                             <div class="person-info">
                                 <span class="person-name">Dr. Shanna Swan <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Research on microplastics' impact on human health</span>
+                                <span class="person-context">Researcher on microplastics' impact on human health</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Sam_Harris" target="_blank" rel="noopener" class="person-item animate-on-scroll">
                             <div class="person-info">
                                 <span class="person-name">Sam Harris <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Discussion of views on COVID-19 and intellectual disagreement</span>
+                                <span class="person-context">Critiquing his views on COVID-19 and intellectual integrity</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Michael_Burry" target="_blank" rel="noopener" class="person-item animate-on-scroll">
                             <div class="person-info">
                                 <span class="person-name">Michael Burry <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Warnings about stock market bubbles</span>
+                                <span class="person-context">Mentioning his warnings about stock market bubbles</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Kary_Mullis" target="_blank" rel="noopener" class="person-item animate-on-scroll">
                             <div class="person-info">
                                 <span class="person-name">Kary Mullis <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Critiques regarding PCR testing and disease detection</span>
+                                <span class="person-context">Referencing his critiques of PCR testing</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Pierre_Kory" target="_blank" rel="noopener" class="person-item animate-on-scroll">
                             <div class="person-info">
                                 <span class="person-name">Pierre Kory <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Discussion about ivermectin and medical freedom</span>
+                                <span class="person-context">Discussing ivermectin and medical freedom</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Peter_Hotez" target="_blank" rel="noopener" class="person-item animate-on-scroll">
                             <div class="person-info">
                                 <span class="person-name">Peter Hotez <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Views on health and vaccines</span>
+                                <span class="person-context">Discussing his views on health and vaccines</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Marty_Makary" target="_blank" rel="noopener" class="person-item animate-on-scroll">
                             <div class="person-info">
                                 <span class="person-name">Marty Makary <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Recent podcast appearances discussing vaccine realities</span>
+                                <span class="person-context">Referencing his discussions on vaccine realities</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Anthony_Fauci" target="_blank" rel="noopener" class="person-item animate-on-scroll">
                             <div class="person-info">
                                 <span class="person-name">Anthony Fauci <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Discussion of pardoning and public health implications</span>
+                                <span class="person-context">Discussing implications of his pardoning and public health role</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
@@ -1259,6 +1252,7 @@
             </div>
         </section>
 
+        <p class="reading-time">One to two minutes for notable quotes</p>
         <section id="quotes">
             <div class="section-header">
                 <h2>Notable Quotes</h2>
@@ -1275,13 +1269,6 @@
                         </blockquote>
 
                         <blockquote class="quote-card featured-quote animate-on-scroll">
-                            <p class="quote-text">It's a little too coincidental that he just so happens to be both the guy who saved us and the guy who offshored the research to Wuhan.</p>
-                            <div class="quote-meta">
-                                <span class="quote-context">Fauci's role in the pandemic</span>
-                            </div>
-                        </blockquote>
-
-                        <blockquote class="quote-card animate-on-scroll">
                             <p class="quote-text">The differences in the quality of our constitution that has protected us so far, but it's not like it hasn't been targeted.</p>
                             <div class="quote-meta">
                                 <span class="quote-context">Constitutional protection</span>
@@ -1298,7 +1285,14 @@
                         <blockquote class="quote-card animate-on-scroll">
                             <p class="quote-text">The idea of a blanket pardon, where you do not specify what the person is being pardoned for, I believe that that is a violation of equal protection under the law.</p>
                             <div class="quote-meta">
-                                <span class="quote-context">Legal implications of pardons</span>
+                                <span class="quote-context">Legal implications</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">It's a little too coincidental that he just so happens to be both the guy who saved us and the guy who offshored the research to Wuhan.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Fauci's role</span>
                             </div>
                         </blockquote>
                     </div>
@@ -1308,16 +1302,16 @@
                     <h3>Joe Rogan</h3>
                     <div class="quotes-list">
                         <blockquote class="quote-card featured-quote animate-on-scroll">
-                            <p class="quote-text">I think the vaccines have caused serious injuries and death to people that didn't need them.</p>
+                            <p class="quote-text">I think you should parse out the correct things that a person said from the incorrect things the person said.</p>
                             <div class="quote-meta">
-                                <span class="quote-context">Vaccine criticism</span>
+                                <span class="quote-context">Evaluating arguments</span>
                             </div>
                         </blockquote>
 
                         <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">I think you should parse out the correct things that a person said from the incorrect things the person said.</p>
+                            <p class="quote-text">It was just complete illogical thinking.</p>
                             <div class="quote-meta">
-                                <span class="quote-context">Evaluating arguments</span>
+                                <span class="quote-context">Vaccine logic critique</span>
                             </div>
                         </blockquote>
 
@@ -1338,7 +1332,7 @@
                         <blockquote class="quote-card animate-on-scroll">
                             <p class="quote-text">I feel like we lost Sam, and I think, whether Sam realizes it or not, it had a massive impact on the number of people that take his position seriously.</p>
                             <div class="quote-meta">
-                                <span class="quote-context">Loss of intellectual integrity</span>
+                                <span class="quote-context">Intellectual integrity</span>
                             </div>
                         </blockquote>
 
@@ -1379,17 +1373,41 @@
     <div id="cookieConsent" class="cookie-consent">
         <div class="cookie-consent-content">
             <p class="cookie-consent-text">
-                We use cookies to analyze site traffic and improve your experience.
-                By clicking "Accept", you consent to our use of analytics cookies.
+                We use cookies to analyze site traffic and improve your experience. 
+                By clicking "Accept", you consent to our use of cookies.
             </p>
             <div class="cookie-consent-buttons">
-                <button id="rejectCookies" class="cookie-consent-btn reject">Decline</button>
-                <button id="acceptCookies" class="cookie-consent-btn accept">Accept</button>
+                <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
+                <button class="cookie-consent-btn accept" onclick="acceptCookies()">Accept</button>
             </div>
         </div>
     </div>
 
     <script>
+        // Cookie Consent Management
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookieConsent').classList.add('show');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieConsent').classList.remove('show');
+            // Initialize GA after consent
+            gtag('js', new Date());
+            gtag('config', 'G-9DVDFHLSG0');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieConsent').classList.remove('show');
+        }
+
+        // Check consent on page load
+        checkCookieConsent();
+
         // Scroll animations
         const observerOptions = {
             root: null,
@@ -1419,34 +1437,6 @@
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             });
-        });
-
-        // Cookie consent handling
-        const consentBanner = document.getElementById('cookieConsent');
-        const acceptBtn = document.getElementById('acceptCookies');
-        const rejectBtn = document.getElementById('rejectCookies');
-
-        // Show banner if no consent decision has been made
-        if (!localStorage.getItem('cookieConsent')) {
-            setTimeout(() => {
-                consentBanner.classList.add('visible');
-            }, 1000);
-        }
-
-        acceptBtn.addEventListener('click', function() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            consentBanner.classList.remove('visible');
-
-            // Initialize GA4 after consent
-            if (typeof gtag === 'function') {
-                gtag('js', new Date());
-                gtag('config', 'G-9DVDFHLSG0');
-            }
-        });
-
-        rejectBtn.addEventListener('click', function() {
-            localStorage.setItem('cookieConsent', 'rejected');
-            consentBanner.classList.remove('visible');
         });
     </script>
 </body>
