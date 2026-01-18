@@ -4,23 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joe Rogan Experience - Ethan Hawke | Summary</title>
-    <meta name="description" content="A curated summary of the Joe Rogan Experience episode with Ethan Hawke. Key insights on acting, fear, fame, and personal growth.">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://notimepod.com/summaries/jre/ethan-hawke-2425/">
-
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Joe Rogan Experience - Ethan Hawke | Summary">
-    <meta property="og:description" content="A curated summary of the Joe Rogan Experience episode with Ethan Hawke. Key insights on acting, fear, fame, and personal growth.">
-    <meta property="og:url" content="https://notimepod.com/summaries/jre/ethan-hawke-2425/">
-    <meta property="og:site_name" content="No Time Podcast">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Joe Rogan Experience - Ethan Hawke | Summary">
-    <meta name="twitter:description" content="A curated summary of the Joe Rogan Experience episode with Ethan Hawke. Key insights on acting, fear, fame, and personal growth.">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -259,9 +242,6 @@
         }
 
         .story-card {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 32px;
             background: white;
             border-radius: 4px;
             padding: 28px;
@@ -273,36 +253,6 @@
         .story-card:hover {
             box-shadow: 0 8px 40px var(--shadow-deep);
             transform: translateY(-2px);
-        }
-
-        .story-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 4px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #2C1810 0%, #4A2C20 50%, #1A0F0A 100%);
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .story-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .story-image-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            text-align: center;
-            font-size: 11px;
-            color: rgba(255,255,255,0.6);
-            letter-spacing: 0.5px;
-            line-height: 1.4;
         }
 
         .story-content {
@@ -658,16 +608,6 @@
                 padding: 56px 0;
             }
 
-            .story-card {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .story-image {
-                width: 100%;
-                height: 200px;
-            }
-
             .quote-card {
                 padding: 24px 24px 24px 40px;
             }
@@ -705,6 +645,107 @@
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Inline CTA - Compact signup between sections */
+        .cta-inline {
+            background: var(--cream-dark);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .cta-inline-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-inline-text {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--ink);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .cta-inline-privacy {
+            font-size: 0.85rem;
+            color: var(--ink-light);
+            margin-bottom: 16px;
+            margin-top: -12px;
+        }
+
+        .cta-inline-powered {
+            font-size: 0.75rem;
+            color: var(--ink-light);
+            margin-top: 12px;
+        }
+
+        .cta-inline-powered a {
+            color: var(--sienna);
+            text-decoration: none;
+        }
+
+        .cta-inline-powered a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-inline-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-inline-form input[type="text"],
+        .cta-inline-form input[type="email"] {
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: 'Libre Franklin', sans-serif;
+            background: white;
+            min-width: 180px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-inline-form input:focus {
+            outline: none;
+            border-color: var(--mauve);
+            box-shadow: 0 0 0 3px rgba(139, 58, 98, 0.1);
+        }
+
+        .cta-inline-form button {
+            padding: 12px 28px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Libre Franklin', sans-serif;
+        }
+
+        .cta-inline-form button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 640px) {
+            .cta-inline-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-inline-form input[type="text"],
+            .cta-inline-form input[type="email"] {
+                min-width: 100%;
+            }
         }
 
         /* CTA Section - Bridge between editorial and landing page */
@@ -888,16 +929,26 @@
             </div>
         </section>
 
+        <div class="cta-inline animate-on-scroll">
+            <div class="cta-inline-content">
+                <p class="cta-inline-text">Get the next summary that comes out</p>
+                <p class="cta-inline-privacy">Your email is safe with me and my cat (I'll hide it from him just in case).</p>
+                <form class="cta-inline-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="hidden" name="podcast" value="Joe Rogan">
+                    <input type="text" name="name" placeholder="Nickname" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit">Hell yeah</button>
+                </form>
+                <p class="cta-inline-powered">Powered by <a href="https://notimepod.com" target="_blank" rel="noopener">No Time Podcast</a></p>
+            </div>
+        </div>
+
         <section id="stories">
             <div class="section-header">
                 <h2>Stories Told</h2>
             </div>
             <div class="stories-grid">
-                <article class="story-card animate-on-scroll"
-                    data-image-prompt="Invincible cartoon style illustration: A middle-aged woman with warm, determined expression in Peace Corps attire, standing in a Romanian village with Roma children around her, golden hour lighting, bold comic book lines and colors">
-                    <div class="story-image">
-                        <div class="story-image-placeholder">Invincible-style: Mother in Peace Corps, Romania</div>
-                    </div>
+                <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>The Story of His Mother</h3>
                         <p class="story-summary">Hawke recounts the journey of his mother, who became a single mother at a young age and later joined the Peace Corps in her mid-40s after raising her child. She found fulfillment in helping others, particularly impacting the Roma culture in Romania.</p>
@@ -909,11 +960,7 @@
                     </div>
                 </article>
 
-                <article class="story-card animate-on-scroll"
-                    data-image-prompt="Invincible cartoon style illustration: Kris Kristofferson as an older rugged man with silver beard on a film set, gesturing thoughtfully while talking to a younger director, vintage camera equipment in background, dramatic shadows, bold comic book art">
-                    <div class="story-image">
-                        <div class="story-image-placeholder">Invincible-style: Kris Kristofferson on set</div>
-                    </div>
+                <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>Working with Kris Kristofferson</h3>
                         <p class="story-summary">While filming "Chelsea Walls," Hawke proposed a complicated shot. Kristofferson suggested a simpler approach that was more fitting for the character&mdash;a lesson in collaboration and the value of simplicity in authentic performances.</p>
@@ -925,11 +972,7 @@
                     </div>
                 </article>
 
-                <article class="story-card animate-on-scroll"
-                    data-image-prompt="Invincible cartoon style illustration: Denzel Washington intense close-up, wearing black leather jacket, commanding presence, LA street scene behind him, dramatic noir lighting, bold thick outlines, vibrant comic book coloring">
-                    <div class="story-image">
-                        <div class="story-image-placeholder">Invincible-style: Denzel Washington, Training Day</div>
-                    </div>
+                <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>Training Day with Denzel Washington</h3>
                         <p class="story-summary">Hawke shares insights from working with Denzel, highlighting his improvisational skills and ability to listen and respond in character. A memorable improvised monologue became one of the film's most iconic moments.</p>
@@ -941,11 +984,7 @@
                     </div>
                 </article>
 
-                <article class="story-card animate-on-scroll"
-                    data-image-prompt="Invincible cartoon style illustration: Young Ethan Hawke face to face with a white wolf in snowy Alaska wilderness, moment of connection and trust, pine trees and mountains, magical realism, bold comic book lines, cinematic composition">
-                    <div class="story-image">
-                        <div class="story-image-placeholder">Invincible-style: Young Ethan Hawke with wolf</div>
-                    </div>
+                <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>The Wolf on White Fang</h3>
                         <p class="story-summary">A memorable experience while filming "White Fang" where Hawke had to build trust with a wolf. He spent hours connecting with the animal, learning that acting is about being real and present&mdash;genuine interactions lead to powerful performances.</p>
@@ -957,11 +996,7 @@
                     </div>
                 </article>
 
-                <article class="story-card animate-on-scroll"
-                    data-image-prompt="Invincible cartoon style illustration: Contemplative man looking at smartphone with floating negative comment bubbles around him, but standing strong and unbothered, modern city backdrop, bold comic style with dramatic lighting">
-                    <div class="story-image">
-                        <div class="story-image-placeholder">Invincible-style: Resilience vs social media</div>
-                    </div>
+                <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>Fame and Social Media</h3>
                         <p class="story-summary">Hawke discusses the challenges of dealing with fame and the negativity encountered on social media. He shares personal experiences of reading negative comments and their impact on confidence&mdash;developing resilience is essential.</p>
@@ -1256,14 +1291,14 @@
         <section class="cta-section animate-on-scroll" id="subscribe">
             <div class="cta-content">
                 <p class="cta-eyebrow">Enjoyed this summary?</p>
-                <h2 class="cta-heading">Get summaries like this delivered to your inbox every week.</h2>
-                <p class="cta-subheading">Skip the 3-hour episodes. Get the insights that matter.</p>
-                <div class="cta-value-props">
-                    <span class="cta-value-prop">5-minute reads</span>
-                    <span class="cta-value-prop">Curated insights</span>
-                    <span class="cta-value-prop">Free to join</span>
-                </div>
-                <a href="https://notimepod.com" target="_blank" rel="noopener" class="cta-button">Join the Waitlist</a>
+                <h2 class="cta-heading">Get the next summary that comes out</h2>
+                <p class="cta-subheading">Your email is safe with me and my cat (I'll hide it from him just in case).</p>
+                <form class="cta-inline-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="hidden" name="podcast" value="Joe Rogan">
+                    <input type="text" name="name" placeholder="Nickname" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit">Hell yeah</button>
+                </form>
                 <p class="cta-footnote">Powered by <a href="https://notimepod.com" target="_blank" rel="noopener">No Time Podcast</a></p>
             </div>
         </section>
