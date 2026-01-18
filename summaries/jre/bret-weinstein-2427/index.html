@@ -193,6 +193,7 @@
         section:nth-child(2) { animation-delay: 0.2s; }
         section:nth-child(3) { animation-delay: 0.3s; }
         section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
 
         @keyframes fadeUp {
             to {
@@ -218,20 +219,20 @@
             color: var(--ink);
         }
 
-        /* Origin Story */
-        .origin-content {
+        /* What's New & Evolved Thinking content */
+        .section-content {
             font-size: 1.05rem;
             line-height: 1.85;
             max-width: 700px;
         }
 
-        .origin-content p {
+        .section-content p {
             margin-bottom: 24px;
             text-align: justify;
             hyphens: auto;
         }
 
-        .origin-content strong {
+        .section-content strong {
             font-weight: 600;
             color: var(--ink);
         }
@@ -842,7 +843,7 @@
         }
 
         .cta-value-prop::before {
-            content: '•';
+            content: '';
             color: var(--mauve);
         }
 
@@ -907,7 +908,7 @@
             right: 0;
             background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(10px);
-            padding: 1rem 1.5rem;
+            padding: 1.25rem 1.5rem;
             z-index: 9999;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             transform: translateY(100%);
@@ -1000,7 +1001,8 @@
 
     <nav>
         <ul>
-            <li><a href="#origin">Origin Story</a></li>
+            <li><a href="#whats-new">What's New</a></li>
+            <li><a href="#evolved-thinking">Evolved Thinking</a></li>
             <li><a href="#stories">Stories</a></li>
             <li><a href="#resources">Resources</a></li>
             <li><a href="#quotes">Quotes</a></li>
@@ -1009,26 +1011,39 @@
 
     <main>
         <p class="reading-time">1-2 minute read</p>
-        <section id="origin">
+        <section id="whats-new">
             <div class="section-header">
-                <h2>Origin Story</h2>
+                <h2>What's New</h2>
             </div>
-            <div class="origin-content">
-                <p>Bret Weinstein, the evolutionary biologist and public intellectual, has undergone a significant transformation since his previous appearances on the show. Once primarily focused on academic evolutionary biology, he has become increasingly engaged in public discourse around societal challenges, particularly those arising from rapid technological and cultural change.</p>
+            <div class="section-content">
+                <p>Since his previous appearances, <strong>Bret Weinstein</strong> has significantly expanded his public intellectual role, engaging deeply with complex societal issues at the intersection of biology, technology, and culture. Together with his wife <strong>Heather Heying</strong>, he's been working on "A Hunter-Gatherer's Guide to the 21st Century," a book connecting evolutionary biology insights with contemporary challenges.</p>
+
+                <p>Weinstein has introduced the concept of <strong>"hypernovelty"</strong>&mdash;the idea that the pace of technological change has begun to outstrip humanity's ability to adapt. He's become increasingly vocal about public health issues, particularly the COVID-19 pandemic response, institutional failures, and the need for transparency in scientific discourse. His public commentary now spans from evolutionary biology to cultural dynamics, relationships, and the implications of AI on human connection.</p>
+
+                <p>Looking ahead, Weinstein continues his research into "explorer modes" in evolution&mdash;proposing a new layer to Darwinian evolution that explains how diverse biological forms emerge. He advocates for a more deliberate pace of technological advancement to allow society to adapt and understand its implications, particularly for younger generations.</p>
+            </div>
+        </section>
+
+        <section id="evolved-thinking">
+            <div class="section-header">
+                <h2>Evolved Thinking</h2>
+            </div>
+            <div class="section-content">
+                <p>Weinstein's understanding of evolution has shifted from a classic Darwinian view of random mutations to a more nuanced perspective incorporating developmental biology and "explorer modes"&mdash;stored variables in DNA that allow for rapid adaptation and exploration of new forms.</p>
 
                 <div class="key-point">
-                    At the heart of his current thinking is the concept of "hypernovelty"&mdash;the idea that the pace of technological change has begun to outstrip humanity's ability to adapt, creating unprecedented challenges for individuals and society alike.
+                    On masks: "I initially thought masks were useful in preventing COVID transmission. I admitted my error&mdash;there simply wasn't evidentiary support for their usefulness."
                 </div>
 
-                <p>Together with his wife <strong>Heather Heying</strong>, Weinstein has been working on a book titled "A Hunter-Gatherer's Guide to the 21st Century," which aims to bridge the gap between evolutionary biology and contemporary societal challenges. The project reflects his commitment to applying scientific insights to real-world problems.</p>
-
-                <p>His public presence has expanded considerably, with regular appearances on podcasts and in discussions about complex societal issues&mdash;from public health to technology to the erosion of free speech. This shift represents a conscious move toward becoming a public intellectual, advocating for thoughtful discourse on critical topics.</p>
+                <p>He's also evolved on the question of <strong>stability versus change</strong>. Previously believing adaptability was essential for survival, he now recognizes that some species like crocodiles and sharks have thrived by remaining largely unchanged for millions of years&mdash;suggesting evolution can favor both change and stability.</p>
 
                 <div class="key-point">
-                    Weinstein expresses deep concern about the impact of modern technology on human development and relationships, warning that AI companions and technological substitutes for human connection may lead to societal fragmentation and a loss of meaningful bonds.
+                    On public health: "I had a conventional view of public health as protective. Now I see concerns about these measures becoming tools of tyranny&mdash;particularly regarding CBDCs and the erosion of free speech."
                 </div>
 
-                <p>His recent work has also touched on controversial topics including the COVID-19 pandemic response, vaccine policy, and institutional failures. He emphasizes the importance of intellectual integrity, acknowledging one's errors, and maintaining the ability to have open, honest conversations even about uncomfortable subjects.</p>
+                <p>His perspective on <strong>technology and relationships</strong> has grown more critical. Where he once held traditional views on technology's role, he now expresses genuine concern that AI companions and sex robots may alter human relationships in ways that diminish motivation for personal growth and genuine connection.</p>
+
+                <p>Perhaps most notably, Weinstein has embraced the importance of <strong>acknowledging errors publicly</strong>. Where he once held a rigid stance on being correct in public discourse, he now argues that admitting mistakes is crucial for intellectual integrity and progress.</p>
             </div>
         </section>
 
@@ -1048,7 +1063,6 @@
             </div>
         </div>
 
-        <p class="reading-time">1-2 minute read</p>
         <section id="stories">
             <div class="section-header">
                 <h2>Stories Told</h2>
@@ -1056,20 +1070,8 @@
             <div class="stories-grid">
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Personal Health Journey During COVID-19</h3>
-                        <p class="story-summary">Weinstein shares his experience navigating COVID-19, detailing his proactive approach to health management. He attempted to get vaccinated early when the UFC offered vaccines but faced timing issues. His uncomplicated recovery, which he attributes to a healthy lifestyle including regular exercise and vitamin intake, shaped his perspective on personal health management versus reliance on vaccines.</p>
-                        <div class="story-tags">
-                            <span class="meta-tag">Health</span>
-                            <span class="meta-tag">COVID-19</span>
-                            <span class="meta-tag">Personal choice</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="story-card animate-on-scroll">
-                    <div class="story-content">
-                        <h3>Accidental Natural Experiment on Ivermectin</h3>
-                        <p class="story-summary">Weinstein discusses a striking anecdote about families suing hospitals for refusing to administer ivermectin to critically ill patients. In cases where ivermectin was administered after legal intervention, 38 out of 40 patients survived, compared to only 2 out of 40 who did not receive it&mdash;illustrating what he sees as a natural experiment on the drug's effectiveness.</p>
+                        <h3>The Ivermectin Natural Experiment</h3>
+                        <p class="story-summary">Weinstein discusses a striking anecdote about families suing hospitals for refusing to administer ivermectin to critically ill patients. In cases where ivermectin was administered after legal intervention, 38 out of 40 patients survived, compared to only 2 out of 40 who did not receive it&mdash;illustrating what he sees as an accidental natural experiment on the drug's effectiveness.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Medicine</span>
                             <span class="meta-tag">Ivermectin</span>
@@ -1092,20 +1094,8 @@
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Cultural Reflections on Technological Change</h3>
-                        <p class="story-summary">Weinstein reflects on the implications of technological advancements, particularly AI and robotics, on human relationships. He expresses concern that lifelike robots and AI companions could replace human connections, potentially diminishing motivation for personal growth and meaningful relationships.</p>
-                        <div class="story-tags">
-                            <span class="meta-tag">Technology</span>
-                            <span class="meta-tag">AI</span>
-                            <span class="meta-tag">Human connection</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="story-card animate-on-scroll">
-                    <div class="story-content">
-                        <h3>Personal Connection with Charlie Kirk</h3>
-                        <p class="story-summary">Weinstein shares a personal anecdote about collaborating with Charlie Kirk on efforts to challenge the availability of COVID-19 vaccines for children and pregnant women. Kirk texted him saying, "We're doing holy work together"&mdash;a moment that resonated deeply with Weinstein and illustrated the personal connections formed during a contentious public health period.</p>
+                        <h3>"We're Doing Holy Work Together"</h3>
+                        <p class="story-summary">Weinstein shares a personal anecdote about collaborating with Charlie Kirk on efforts to challenge the availability of COVID-19 vaccines for children and pregnant women. Kirk texted him saying, "We're doing holy work together"&mdash;a moment that resonated deeply with Weinstein and illustrated the unexpected personal connections formed during a contentious public health period.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Collaboration</span>
                             <span class="meta-tag">Public health</span>
@@ -1113,10 +1103,21 @@
                         </div>
                     </div>
                 </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Reflections on Institutional Failures</h3>
+                        <p class="story-summary">Weinstein reflects on the failures of institutions during the COVID-19 pandemic, noting that few organizations passed the "COVID test" effectively. He expresses disappointment in how various sectors, including religious communities, navigated the crisis&mdash;emphasizing the need for accountability and reform.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Institutions</span>
+                            <span class="meta-tag">COVID-19</span>
+                            <span class="meta-tag">Accountability</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <p class="reading-time">1-2 minute read</p>
         <section id="resources">
             <div class="section-header">
                 <h2>Resources Mentioned</h2>
@@ -1258,7 +1259,6 @@
             </div>
         </section>
 
-        <p class="reading-time">1-2 minute read</p>
         <section id="quotes">
             <div class="section-header">
                 <h2>Notable Quotes</h2>
@@ -1275,9 +1275,9 @@
                         </blockquote>
 
                         <blockquote class="quote-card featured-quote animate-on-scroll">
-                            <p class="quote-text">There are children's corpses. They're not in anyone's basement. They're in Ukraine, which has some relationship to Biden family corruption.</p>
+                            <p class="quote-text">It's a little too coincidental that he just so happens to be both the guy who saved us and the guy who offshored the research to Wuhan.</p>
                             <div class="quote-meta">
-                                <span class="quote-context">Corruption allegations</span>
+                                <span class="quote-context">Fauci's role in the pandemic</span>
                             </div>
                         </blockquote>
 
@@ -1301,13 +1301,6 @@
                                 <span class="quote-context">Legal implications of pardons</span>
                             </div>
                         </blockquote>
-
-                        <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">It's a little too coincidental that he just so happens to be both the guy who saved us and the guy who offshored the research to Wuhan.</p>
-                            <div class="quote-meta">
-                                <span class="quote-context">Fauci's role in the pandemic</span>
-                            </div>
-                        </blockquote>
                     </div>
                 </div>
 
@@ -1325,13 +1318,6 @@
                             <p class="quote-text">I think you should parse out the correct things that a person said from the incorrect things the person said.</p>
                             <div class="quote-meta">
                                 <span class="quote-context">Evaluating arguments</span>
-                            </div>
-                        </blockquote>
-
-                        <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">It was just complete illogical thinking.</p>
-                            <div class="quote-meta">
-                                <span class="quote-context">Critique of vaccine logic</span>
                             </div>
                         </blockquote>
 
