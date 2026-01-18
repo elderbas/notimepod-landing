@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Rogan Experience - Bret Weinstein | Summary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF8F5;
+            --cream-dark: #F0EDE8;
+            --ink: #1A1A1A;
+            --ink-light: #4A4A4A;
+            --ink-muted: #7A7A7A;
+            --accent: #8B4513;
+            --accent-light: #C4926A;
+            --highlight: #E8DFD5;
+            --border: #E5E0D8;
+            --shadow: rgba(26, 26, 26, 0.08);
+            --shadow-deep: rgba(26, 26, 26, 0.15);
+            --mauve: #8b3a62;
+            --mauve-dark: #6a2c4a;
+            --dark-bg: #2d2d2d;
+            --dark-text: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Libre Franklin', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.7;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* Noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            padding: 80px 24px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .episode-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--ink);
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--ink-light);
+            font-weight: 400;
+        }
+
+        .reading-time {
+            padding-top: 32px;
+            padding-bottom: 24px;
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .reading-time + section {
+            padding-top: 0;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--cream);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0 24px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--ink-muted);
+            padding: 8px 16px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--ink);
+            background: var(--highlight);
+        }
+
+        /* Main content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        /* Origin Story */
+        .origin-content {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            max-width: 700px;
+        }
+
+        .origin-content p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .origin-content strong {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .key-point {
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--cream-dark) 100%);
+            border-left: 3px solid var(--accent);
+            padding: 24px 28px;
+            margin: 36px 0;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--ink-light);
+        }
+
+        /* Stories with images */
+        .stories-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 4px;
+            padding: 28px;
+            box-shadow: 0 2px 20px var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .story-card:hover {
+            box-shadow: 0 8px 40px var(--shadow-deep);
+            transform: translateY(-2px);
+        }
+
+        .story-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-card h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--ink);
+        }
+
+        .story-summary {
+            color: var(--ink-light);
+            line-height: 1.75;
+            flex-grow: 1;
+        }
+
+        .story-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .meta-tag {
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            background: var(--cream);
+            border-radius: 3px;
+            color: var(--ink-muted);
+        }
+
+        /* Resources - List format */
+        .resources-container {
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+        }
+
+        .resource-category h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--ink);
+        }
+
+        /* Books - Simple list */
+        .books-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .book-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+
+        .book-item:last-child {
+            border-bottom: none;
+        }
+
+        .book-item:hover {
+            background: var(--cream-dark);
+            margin: 0 -16px;
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .book-info {
+            flex-grow: 1;
+        }
+
+        .book-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .book-context {
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+        }
+
+        .link-arrow {
+            font-size: 1.2rem;
+            color: var(--accent);
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.2s ease;
+        }
+
+        .book-item:hover .link-arrow,
+        .film-item:hover .link-arrow,
+        .person-item:hover .link-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Films - List with posters */
+        .films-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .film-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+
+        .film-item:last-child {
+            border-bottom: none;
+        }
+
+        .film-item:hover {
+            background: var(--cream-dark);
+            margin: 0 -16px;
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .film-info {
+            flex-grow: 1;
+        }
+
+        .film-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+
+        .film-title::after {
+            content: 'IMDB';
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 2px 6px;
+            background: #F5C518;
+            color: #000;
+            border-radius: 2px;
+        }
+
+        .film-context {
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+        }
+
+        /* People - List with portraits */
+        .people-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .person-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+
+        .person-item:last-child {
+            border-bottom: none;
+        }
+
+        .person-item:hover {
+            background: var(--cream-dark);
+            margin: 0 -16px;
+            padding: 14px 16px;
+            border-radius: 4px;
+        }
+
+        .person-info {
+            flex-grow: 1;
+        }
+
+        .person-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+
+        .wiki-badge {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 8px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 2px 5px;
+            background: var(--ink-light);
+            color: white;
+            border-radius: 2px;
+        }
+
+        .person-context {
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+        }
+
+        /* Quotes */
+        .quotes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .speaker-section h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .speaker-section h3::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .quotes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .quote-card {
+            position: relative;
+            padding: 28px 32px 28px 48px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .quote-card:hover {
+            box-shadow: 0 4px 24px var(--shadow);
+        }
+
+        .quote-card::before {
+            content: '"';
+            position: absolute;
+            left: 16px;
+            top: 12px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 3.5rem;
+            color: var(--accent-light);
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: var(--ink);
+            margin-bottom: 12px;
+        }
+
+        .quote-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .quote-context {
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            background: var(--cream);
+            border-radius: 3px;
+            color: var(--ink-muted);
+        }
+
+        .quote-source {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .featured-quote {
+            background: linear-gradient(135deg, var(--highlight) 0%, white 100%);
+            border-left: 4px solid var(--accent);
+        }
+
+        .featured-quote .quote-text {
+            font-size: 1.4rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 24px;
+            background: var(--cream-dark);
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-mark {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--ink-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            header {
+                padding: 60px 20px 48px;
+            }
+
+            section {
+                padding: 56px 0;
+            }
+
+            .quote-card {
+                padding: 24px 24px 24px 40px;
+            }
+
+            .quote-card::before {
+                font-size: 2.5rem;
+                left: 12px;
+            }
+
+            nav ul {
+                gap: 4px;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .film-item:hover,
+            .book-item:hover,
+            .person-item:hover {
+                margin: 0 -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Inline CTA - Compact signup between sections */
+        .cta-inline {
+            background: var(--cream-dark);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .cta-inline-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-inline-text {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--ink);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .cta-inline-privacy {
+            font-size: 0.85rem;
+            color: var(--ink-light);
+            margin-bottom: 16px;
+            margin-top: -12px;
+        }
+
+        .cta-inline-powered {
+            font-size: 0.75rem;
+            color: var(--ink-light);
+            margin-top: 12px;
+        }
+
+        .cta-inline-powered a {
+            color: var(--sienna);
+            text-decoration: none;
+        }
+
+        .cta-inline-powered a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-inline-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-inline-form input[type="text"],
+        .cta-inline-form input[type="email"] {
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: 'Libre Franklin', sans-serif;
+            background: white;
+            min-width: 180px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-inline-form input:focus {
+            outline: none;
+            border-color: var(--mauve);
+            box-shadow: 0 0 0 3px rgba(139, 58, 98, 0.1);
+        }
+
+        .cta-inline-form button {
+            padding: 12px 28px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Libre Franklin', sans-serif;
+        }
+
+        .cta-inline-form button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 640px) {
+            .cta-inline-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-inline-form input[type="text"],
+            .cta-inline-form input[type="email"] {
+                min-width: 100%;
+            }
+        }
+
+        /* CTA Section - Bridge between editorial and landing page */
+        .cta-section {
+            position: relative;
+            padding: 80px 0 100px;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 15%, var(--dark-bg) 60%);
+            text-align: center;
+            border-bottom: none;
+            margin-top: 40px;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--mauve) 100%);
+            border-radius: 2px;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .cta-eyebrow {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .cta-heading {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--ink);
+            margin-bottom: 16px;
+            transition: color 0.6s ease;
+        }
+
+        .cta-section .cta-heading {
+            color: var(--dark-text);
+        }
+
+        .cta-subheading {
+            font-size: 1.1rem;
+            color: var(--ink-light);
+            margin-bottom: 32px;
+            line-height: 1.6;
+            transition: color 0.6s ease;
+        }
+
+        .cta-section .cta-subheading {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .cta-value-props {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+
+        .cta-value-prop {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-value-prop::before {
+            content: '•';
+            color: var(--mauve);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--mauve) 0%, var(--mauve-dark) 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(139, 58, 98, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139, 58, 98, 0.4);
+            background: linear-gradient(135deg, #9a4570 0%, var(--mauve) 100%);
+        }
+
+        .cta-footnote {
+            margin-top: 28px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-style: italic;
+        }
+
+        .cta-footnote a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .cta-footnote a:hover {
+            color: var(--mauve);
+        }
+
+        @media (max-width: 640px) {
+            .cta-section {
+                padding: 60px 0 80px;
+            }
+
+            .cta-value-props {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .cta-button {
+                padding: 14px 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p class="episode-label">Podcast Summary</p>
+        <h1>Joe Rogan Experience</h1>
+        <p class="subtitle">with Bret Weinstein</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#origin">Origin Story</a></li>
+            <li><a href="#stories">Stories</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#quotes">Quotes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="reading-time">1-2 minute read</p>
+        <section id="origin">
+            <div class="section-header">
+                <h2>Origin Story</h2>
+            </div>
+            <div class="origin-content">
+                <p>Bret Weinstein, the evolutionary biologist and public intellectual, has undergone a significant transformation since his previous appearances on the show. Once primarily focused on academic evolutionary biology, he has become increasingly engaged in public discourse around societal challenges, particularly those arising from rapid technological and cultural change.</p>
+
+                <div class="key-point">
+                    At the heart of his current thinking is the concept of "hypernovelty"&mdash;the idea that the pace of technological change has begun to outstrip humanity's ability to adapt, creating unprecedented challenges for individuals and society alike.
+                </div>
+
+                <p>Together with his wife <strong>Heather Heying</strong>, Weinstein has been working on a book titled "A Hunter-Gatherer's Guide to the 21st Century," which aims to bridge the gap between evolutionary biology and contemporary societal challenges. The project reflects his commitment to applying scientific insights to real-world problems.</p>
+
+                <p>His public presence has expanded considerably, with regular appearances on podcasts and in discussions about complex societal issues&mdash;from public health to technology to the erosion of free speech. This shift represents a conscious move toward becoming a public intellectual, advocating for thoughtful discourse on critical topics.</p>
+
+                <div class="key-point">
+                    Weinstein expresses deep concern about the impact of modern technology on human development and relationships, warning that AI companions and technological substitutes for human connection may lead to societal fragmentation and a loss of meaningful bonds.
+                </div>
+
+                <p>His recent work has also touched on controversial topics including the COVID-19 pandemic response, vaccine policy, and institutional failures. He emphasizes the importance of intellectual integrity, acknowledging one's errors, and maintaining the ability to have open, honest conversations even about uncomfortable subjects.</p>
+            </div>
+        </section>
+
+        <div class="cta-inline animate-on-scroll">
+            <div class="cta-inline-content">
+                <p class="cta-inline-text">Get the next summary that comes out</p>
+                <p class="cta-inline-privacy">Your email is safe with me and my cat (I'll hide it from him just in case).</p>
+                <form class="cta-inline-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="5796b28a-9e5b-4c75-879a-e972bb4498bb">
+                    <input type="hidden" name="subject" value="New Summary Signup - No Time Podcast">
+                    <input type="hidden" name="podcast" value="Joe Rogan">
+                    <input type="text" name="name" placeholder="Nickname" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit">Hell yeah</button>
+                </form>
+                <p class="cta-inline-powered">Powered by <a href="https://notimepod.com" target="_blank" rel="noopener">No Time Podcast</a></p>
+            </div>
+        </div>
+
+        <p class="reading-time">1-2 minute read</p>
+        <section id="stories">
+            <div class="section-header">
+                <h2>Stories Told</h2>
+            </div>
+            <div class="stories-grid">
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Personal Health Journey During COVID-19</h3>
+                        <p class="story-summary">Weinstein shares his experience navigating COVID-19, detailing his proactive approach to health management. He attempted to get vaccinated early when the UFC offered vaccines but faced timing issues. His uncomplicated recovery, which he attributes to a healthy lifestyle including regular exercise and vitamin intake, shaped his perspective on personal health management versus reliance on vaccines.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Health</span>
+                            <span class="meta-tag">COVID-19</span>
+                            <span class="meta-tag">Personal choice</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Accidental Natural Experiment on Ivermectin</h3>
+                        <p class="story-summary">Weinstein discusses a striking anecdote about families suing hospitals for refusing to administer ivermectin to critically ill patients. In cases where ivermectin was administered after legal intervention, 38 out of 40 patients survived, compared to only 2 out of 40 who did not receive it&mdash;illustrating what he sees as a natural experiment on the drug's effectiveness.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Medicine</span>
+                            <span class="meta-tag">Ivermectin</span>
+                            <span class="meta-tag">Healthcare system</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Confrontation with Sam Harris</h3>
+                        <p class="story-summary">Weinstein recounts a phone conversation with Sam Harris where they debated the rationale for vaccination after recovering from COVID-19. He expresses disbelief at Harris's insistence on vaccination despite Weinstein's healthy lifestyle and successful recovery, highlighting the ongoing debate about vaccine efficacy versus natural immunity.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Debate</span>
+                            <span class="meta-tag">Intellectual disagreement</span>
+                            <span class="meta-tag">Natural immunity</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Cultural Reflections on Technological Change</h3>
+                        <p class="story-summary">Weinstein reflects on the implications of technological advancements, particularly AI and robotics, on human relationships. He expresses concern that lifelike robots and AI companions could replace human connections, potentially diminishing motivation for personal growth and meaningful relationships.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Technology</span>
+                            <span class="meta-tag">AI</span>
+                            <span class="meta-tag">Human connection</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Personal Connection with Charlie Kirk</h3>
+                        <p class="story-summary">Weinstein shares a personal anecdote about collaborating with Charlie Kirk on efforts to challenge the availability of COVID-19 vaccines for children and pregnant women. Kirk texted him saying, "We're doing holy work together"&mdash;a moment that resonated deeply with Weinstein and illustrated the personal connections formed during a contentious public health period.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Collaboration</span>
+                            <span class="meta-tag">Public health</span>
+                            <span class="meta-tag">Advocacy</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <p class="reading-time">1-2 minute read</p>
+        <section id="resources">
+            <div class="section-header">
+                <h2>Resources Mentioned</h2>
+            </div>
+            <div class="resources-container">
+
+                <!-- Books -->
+                <div class="resource-category">
+                    <h3>Books</h3>
+                    <div class="books-list">
+                        <a href="https://www.goodreads.com/search?q=A%20Hunter-Gatherer's%20Guide%20to%20the%2021st%20Century&search_type=books" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                            <div class="book-info">
+                                <span class="book-title">A Hunter-Gatherer's Guide to the 21st Century</span>
+                                <span class="book-context">Discusses rites of passage and human development</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.goodreads.com/search?q=The%20Great%20Taking&search_type=books" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                            <div class="book-info">
+                                <span class="book-title">The Great Taking</span>
+                                <span class="book-context">Describes potential financial vulnerabilities in society</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.goodreads.com/search?q=The%20War%20on%20Ivermectin&search_type=books" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                            <div class="book-info">
+                                <span class="book-title">The War on Ivermectin</span>
+                                <span class="book-context">Pierre Kory's account of the ivermectin controversy</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Films -->
+                <div class="resource-category">
+                    <h3>Films</h3>
+                    <div class="films-list">
+                        <a href="https://www.imdb.com/find/?q=The%20Big%20Short" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">The Big Short</span>
+                                <span class="film-context">Features Michael Burry's character and financial predictions</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.imdb.com/find/?q=Hamnet" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">Hamnet</span>
+                                <span class="film-context">Film directed by Chlo&eacute; Zhao about Shakespeare's masterpiece</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Documentaries -->
+                <div class="resource-category">
+                    <h3>Documentaries</h3>
+                    <div class="films-list">
+                        <a href="https://www.google.com/search?q=Event%20201%20documentary" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">Event 201</span>
+                                <span class="film-context">Tabletop exercise simulating a pandemic</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.google.com/search?q=BBC%20Documentary%20Congo%20animals" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">BBC Documentary on the Congo</span>
+                                <span class="film-context">Discusses rapid adaptations of animals in the Congo</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- People -->
+                <div class="resource-category">
+                    <h3>People</h3>
+                    <div class="people-list">
+                        <a href="https://en.wikipedia.org/wiki/Shanna_Swan" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Dr. Shanna Swan <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Research on microplastics' impact on human health</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Sam_Harris" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Sam Harris <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Discussion of views on COVID-19 and intellectual disagreement</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Michael_Burry" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Michael Burry <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Warnings about stock market bubbles</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Kary_Mullis" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Kary Mullis <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Critiques regarding PCR testing and disease detection</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Pierre_Kory" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Pierre Kory <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Discussion about ivermectin and medical freedom</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Peter_Hotez" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Peter Hotez <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Views on health and vaccines</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Marty_Makary" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Marty Makary <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Recent podcast appearances discussing vaccine realities</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Anthony_Fauci" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Anthony Fauci <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Discussion of pardoning and public health implications</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <p class="reading-time">1-2 minute read</p>
+        <section id="quotes">
+            <div class="section-header">
+                <h2>Notable Quotes</h2>
+            </div>
+            <div class="quotes-container">
+                <div class="speaker-section">
+                    <h3>Bret Weinstein</h3>
+                    <div class="quotes-list">
+                        <blockquote class="quote-card featured-quote animate-on-scroll">
+                            <p class="quote-text">A society needs to be able to talk about this, and this is happening at exactly the moment when the society in question is losing the ability to talk freely.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Freedom of speech</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card featured-quote animate-on-scroll">
+                            <p class="quote-text">There are children's corpses. They're not in anyone's basement. They're in Ukraine, which has some relationship to Biden family corruption.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Corruption allegations</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">The differences in the quality of our constitution that has protected us so far, but it's not like it hasn't been targeted.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Constitutional protection</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">We out here in public are forced to guess at the meaning of all of these events.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Public understanding</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">The idea of a blanket pardon, where you do not specify what the person is being pardoned for, I believe that that is a violation of equal protection under the law.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Legal implications of pardons</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">It's a little too coincidental that he just so happens to be both the guy who saved us and the guy who offshored the research to Wuhan.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Fauci's role in the pandemic</span>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="speaker-section">
+                    <h3>Joe Rogan</h3>
+                    <div class="quotes-list">
+                        <blockquote class="quote-card featured-quote animate-on-scroll">
+                            <p class="quote-text">I think the vaccines have caused serious injuries and death to people that didn't need them.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Vaccine criticism</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I think you should parse out the correct things that a person said from the incorrect things the person said.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Evaluating arguments</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">It was just complete illogical thinking.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Critique of vaccine logic</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">The psychology aspect of it was very strange because people just thought that this one solution was the only way out.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Public response to COVID</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">The sheer propaganda was preposterous.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Media manipulation</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I feel like we lost Sam, and I think, whether Sam realizes it or not, it had a massive impact on the number of people that take his position seriously.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Loss of intellectual integrity</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">Almost everyone that I've ever talked to claims they know someone who was irrevocably harmed by the vaccine.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Vaccine injuries</span>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section animate-on-scroll" id="subscribe">
+            <div class="cta-content">
+                <p class="cta-eyebrow">Enjoyed this summary?</p>
+                <h2 class="cta-heading">Get the next summary that comes out</h2>
+                <p class="cta-subheading">Your email is safe with me and my cat (I'll hide it from him just in case).</p>
+                <form class="cta-inline-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="5796b28a-9e5b-4c75-879a-e972bb4498bb">
+                    <input type="hidden" name="subject" value="New Summary Signup - No Time Podcast">
+                    <input type="hidden" name="podcast" value="Joe Rogan">
+                    <input type="text" name="name" placeholder="Nickname" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit">Hell yeah</button>
+                </form>
+                <p class="cta-footnote">Powered by <a href="https://notimepod.com" target="_blank" rel="noopener">No Time Podcast</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-mark">fin</p>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
