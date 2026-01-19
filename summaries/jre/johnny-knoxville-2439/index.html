@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Rogan Experience - Johnny Knoxville | Summary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9DVDFHLSG0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Check for consent before initializing GA
+        if (localStorage.getItem('cookieConsent') === 'accepted') {
+            gtag('js', new Date());
+            gtag('config', 'G-9DVDFHLSG0');
+        }
+    </script>
+    <style>
+        :root {
+            --cream: #FAF8F5;
+            --cream-dark: #F0EDE8;
+            --ink: #1A1A1A;
+            --ink-light: #4A4A4A;
+            --ink-muted: #7A7A7A;
+            --accent: #8B4513;
+            --accent-light: #C4926A;
+            --highlight: #E8DFD5;
+            --border: #E5E0D8;
+            --shadow: rgba(26, 26, 26, 0.08);
+            --shadow-deep: rgba(26, 26, 26, 0.15);
+            --mauve: #8b3a62;
+            --mauve-dark: #6a2c4a;
+            --dark-bg: #2d2d2d;
+            --dark-text: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Libre Franklin', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.7;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* Noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            padding: 80px 24px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .episode-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--ink);
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--ink-light);
+            font-weight: 400;
+        }
+
+        .reading-time {
+            padding-top: 32px;
+            padding-bottom: 24px;
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .reading-time + section {
+            padding-top: 0;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--cream);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0 24px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--ink-muted);
+            padding: 8px 16px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--ink);
+            background: var(--highlight);
+        }
+
+        /* Main content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        /* Origin Story */
+        .origin-content {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            max-width: 700px;
+        }
+
+        .origin-content p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .origin-content strong {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .key-point {
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--cream-dark) 100%);
+            border-left: 3px solid var(--accent);
+            padding: 24px 28px;
+            margin: 36px 0;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--ink-light);
+        }
+
+        /* Stories with images */
+        .stories-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 4px;
+            padding: 28px;
+            box-shadow: 0 2px 20px var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .story-card:hover {
+            box-shadow: 0 8px 40px var(--shadow-deep);
+            transform: translateY(-2px);
+        }
+
+        .story-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-card h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--ink);
+        }
+
+        .story-summary {
+            color: var(--ink-light);
+            line-height: 1.75;
+            flex-grow: 1;
+        }
+
+        .story-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .meta-tag {
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            background: var(--cream);
+            border-radius: 3px;
+            color: var(--ink-muted);
+        }
+
+        /* Resources - List format */
+        .resources-container {
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+        }
+
+        .resource-category h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--ink);
+        }
+
+        /* Books - Simple list */
+        .books-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .book-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+
+        .book-item:last-child {
+            border-bottom: none;
+        }
+
+        .book-item:hover {
+            background: var(--cream-dark);
+            margin: 0 -16px;
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .book-info {
+            flex-grow: 1;
+        }
+
+        .book-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .book-context {
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+        }
+
+        .link-arrow {
+            font-size: 1.2rem;
+            color: var(--accent);
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.2s ease;
+        }
+
+        .book-item:hover .link-arrow,
+        .film-item:hover .link-arrow,
+        .person-item:hover .link-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Films - List with posters */
+        .films-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .film-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+
+        .film-item:last-child {
+            border-bottom: none;
+        }
+
+        .film-item:hover {
+            background: var(--cream-dark);
+            margin: 0 -16px;
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .film-info {
+            flex-grow: 1;
+        }
+
+        .film-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+
+        .film-title::after {
+            content: 'IMDB';
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 2px 6px;
+            background: #F5C518;
+            color: #000;
+            border-radius: 2px;
+        }
+
+        .film-context {
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+        }
+
+        /* People - List with portraits */
+        .people-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .person-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+
+        .person-item:last-child {
+            border-bottom: none;
+        }
+
+        .person-item:hover {
+            background: var(--cream-dark);
+            margin: 0 -16px;
+            padding: 14px 16px;
+            border-radius: 4px;
+        }
+
+        .person-info {
+            flex-grow: 1;
+        }
+
+        .person-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+
+        .wiki-badge {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 8px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 2px 5px;
+            background: var(--ink-light);
+            color: white;
+            border-radius: 2px;
+        }
+
+        .person-context {
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+        }
+
+        /* Quotes */
+        .quotes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .speaker-section h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .speaker-section h3::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .quotes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .quote-card {
+            position: relative;
+            padding: 28px 32px 28px 48px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .quote-card:hover {
+            box-shadow: 0 4px 24px var(--shadow);
+        }
+
+        .quote-card::before {
+            content: '"';
+            position: absolute;
+            left: 16px;
+            top: 12px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 3.5rem;
+            color: var(--accent-light);
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: var(--ink);
+            margin-bottom: 12px;
+        }
+
+        .quote-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .quote-context {
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            background: var(--cream);
+            border-radius: 3px;
+            color: var(--ink-muted);
+        }
+
+        .quote-source {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .featured-quote {
+            background: linear-gradient(135deg, var(--highlight) 0%, white 100%);
+            border-left: 4px solid var(--accent);
+        }
+
+        .featured-quote .quote-text {
+            font-size: 1.4rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 24px;
+            background: var(--cream-dark);
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-mark {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--ink-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            header {
+                padding: 60px 20px 48px;
+            }
+
+            section {
+                padding: 56px 0;
+            }
+
+            .quote-card {
+                padding: 24px 24px 24px 40px;
+            }
+
+            .quote-card::before {
+                font-size: 2.5rem;
+                left: 12px;
+            }
+
+            nav ul {
+                gap: 4px;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .film-item:hover,
+            .book-item:hover,
+            .person-item:hover {
+                margin: 0 -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Inline CTA - Compact signup between sections */
+        .cta-inline {
+            background: var(--cream-dark);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .cta-inline-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-inline-text {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--ink);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .cta-inline-privacy {
+            font-size: 0.85rem;
+            color: var(--ink-light);
+            margin-bottom: 16px;
+            margin-top: -12px;
+        }
+
+        .cta-inline-powered {
+            font-size: 0.75rem;
+            color: var(--ink-light);
+            margin-top: 12px;
+        }
+
+        .cta-inline-powered a {
+            color: var(--sienna);
+            text-decoration: none;
+        }
+
+        .cta-inline-powered a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-inline-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-inline-form input[type="text"],
+        .cta-inline-form input[type="email"] {
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: 'Libre Franklin', sans-serif;
+            background: white;
+            min-width: 180px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-inline-form input:focus {
+            outline: none;
+            border-color: var(--mauve);
+            box-shadow: 0 0 0 3px rgba(139, 58, 98, 0.1);
+        }
+
+        .cta-inline-form button {
+            padding: 12px 28px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Libre Franklin', sans-serif;
+        }
+
+        .cta-inline-form button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 640px) {
+            .cta-inline-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-inline-form input[type="text"],
+            .cta-inline-form input[type="email"] {
+                min-width: 100%;
+            }
+        }
+
+        /* CTA Section - Bridge between editorial and landing page */
+        .cta-section {
+            position: relative;
+            padding: 80px 0 100px;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 15%, var(--dark-bg) 60%);
+            text-align: center;
+            border-bottom: none;
+            margin-top: 40px;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--mauve) 100%);
+            border-radius: 2px;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .cta-eyebrow {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .cta-heading {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--ink);
+            margin-bottom: 16px;
+            transition: color 0.6s ease;
+        }
+
+        .cta-section .cta-heading {
+            color: var(--dark-text);
+        }
+
+        .cta-subheading {
+            font-size: 1.1rem;
+            color: var(--ink-light);
+            margin-bottom: 32px;
+            line-height: 1.6;
+            transition: color 0.6s ease;
+        }
+
+        .cta-section .cta-subheading {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .cta-value-props {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+
+        .cta-value-prop {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-value-prop::before {
+            content: '•';
+            color: var(--mauve);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--mauve) 0%, var(--mauve-dark) 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(139, 58, 98, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139, 58, 98, 0.4);
+            background: linear-gradient(135deg, #9a4570 0%, var(--mauve) 100%);
+        }
+
+        .cta-footnote {
+            margin-top: 28px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-style: italic;
+        }
+
+        .cta-footnote a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .cta-footnote a:hover {
+            color: var(--mauve);
+        }
+
+        @media (max-width: 640px) {
+            .cta-section {
+                padding: 60px 0 80px;
+            }
+
+            .cta-value-props {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .cta-button {
+                padding: 14px 32px;
+            }
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark-bg);
+            color: var(--dark-text);
+            padding: 16px 24px;
+            z-index: 9999;
+            display: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cookie-consent.show {
+            display: block;
+        }
+
+        .cookie-consent-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-consent-text {
+            flex: 1;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cookie-consent-text a {
+            color: var(--mauve);
+            text-decoration: none;
+        }
+
+        .cookie-consent-text a:hover {
+            text-decoration: underline;
+        }
+
+        .cookie-consent-buttons {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .cookie-consent-btn {
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Libre Franklin', sans-serif;
+            border: none;
+        }
+
+        .cookie-consent-btn.accept {
+            background: var(--mauve);
+            color: white;
+        }
+
+        .cookie-consent-btn.accept:hover {
+            background: var(--mauve-dark);
+        }
+
+        .cookie-consent-btn.decline {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cookie-consent-btn.decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        @media (max-width: 640px) {
+            .cookie-consent-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-consent-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p class="episode-label">Podcast Summary</p>
+        <h1>Joe Rogan Experience</h1>
+        <p class="subtitle">with Johnny Knoxville</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#origin">Origin Story</a></li>
+            <li><a href="#stories">Stories</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#quotes">Quotes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="reading-time">One to two minutes for his origin story</p>
+        <section id="origin">
+            <div class="section-header">
+                <h2>Origin Story</h2>
+            </div>
+            <div class="origin-content">
+                <p>Johnny Knoxville's path to becoming a stunt legend began with failure and desperation. He moved to Los Angeles with dreams of acting but found himself unable to land work. Then came the news that changed everything: he was going to be a father. That sense of urgency&mdash;the need to provide for his growing family&mdash;lit a fire under him that would never go out.</p>
+
+                <div class="key-point">
+                    Living next door to director Antoine Fuqua proved to be the serendipitous connection that opened doors. A casting director introduction led to a commercial agent, while a friend named John Lenson encouraged him to write articles for a magazine&mdash;setting in motion the chain of events that would create Jackass.
+                </div>
+
+                <p>One of his articles involved testing self-defense equipment on himself, catching the attention of <strong>Jeff Tremaine</strong>, editor of <em>Big Brother</em> magazine. Tremaine proposed filming the article for a skateboard video&mdash;a simple suggestion that would ultimately birth one of the most influential entertainment franchises of its generation.</p>
+
+                <p>The first stunt was born from limited resources and unlimited nerve. Knoxville used money his mother gave him for Christmas to purchase a bulletproof vest, then proceeded to test it in the most direct way possible. This willingness to take risks and push boundaries became the defining characteristic of his entire career.</p>
+
+                <div class="key-point">
+                    His upbringing had prepared him for this life of controlled chaos. His father, a tire company owner known for wild pranks and outrageous behavior&mdash;including staging gunfights at Christmas parties&mdash;instilled in him a sense of fearlessness and creativity.
+                </div>
+
+                <p>Over time, Knoxville developed a complex relationship with danger and injury. Initially concerned about risks, he gradually shifted to a mindset that prioritized capturing footage and entertaining audiences over personal safety. He acknowledges this may stem from deeper self-worth issues, suggesting his motivations are intertwined with his personal history.</p>
+
+                <p>The physical toll has been significant: a blown-out lower back, concerns about concussions, and various treatments including transcranial magnetic stimulation for mental health challenges. His candid discussions about periods of depression and anxiety reflect the often-overlooked emotional challenges faced by those in high-risk entertainment careers&mdash;revealing both resilience and vulnerability in equal measure.</p>
+            </div>
+        </section>
+
+        <div class="cta-inline animate-on-scroll">
+            <div class="cta-inline-content">
+                <p class="cta-inline-text">Get the next summary that comes out</p>
+                <p class="cta-inline-privacy">Your email is safe with me and my cat (I'll hide it from him just in case).</p>
+                <form class="cta-inline-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="5796b28a-9e5b-4c75-879a-e972bb4498bb">
+                    <input type="hidden" name="subject" value="New Summary Signup - No Time Podcast">
+                    <input type="hidden" name="podcast" value="Joe Rogan">
+                    <input type="text" name="name" placeholder="Nickname" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit">Hell yeah</button>
+                </form>
+                <p class="cta-inline-powered">Powered by <a href="https://notimepod.com" target="_blank" rel="noopener">No Time Podcast</a></p>
+            </div>
+        </div>
+
+        <p class="reading-time">One to two minutes for some of the stories told</p>
+        <section id="stories">
+            <div class="section-header">
+                <h2>Stories Told</h2>
+            </div>
+            <div class="stories-grid">
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>The Wild and Wonderful Whites of West Virginia</h3>
+                        <p class="story-summary">A documentary chronicling the chaotic lives of the White family, known for their outlaw lifestyle. The film explores themes of generational neglect, addiction, and socio-economic decline exacerbated by the coal industry's collapse and the opioid crisis&mdash;a stark portrait of despair and limited opportunities.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Addiction</span>
+                            <span class="meta-tag">Poverty</span>
+                            <span class="meta-tag">Documentary</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Knoxville's Father and His Wild Pranks</h3>
+                        <p class="story-summary">Knoxville shares anecdotes from his upbringing, focusing on his father's eccentric personality and love for pranks at his tire company. From outrageous behavior to staging gunfights at Christmas parties, these experiences shaped Knoxville's humor and fearless approach to entertainment.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Family</span>
+                            <span class="meta-tag">Humor</span>
+                            <span class="meta-tag">Origins</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Fear Factor and the Psychology of Fear</h3>
+                        <p class="story-summary">Knoxville discusses his role encouraging contestants to confront their deepest fears through various challenges. The show revealed the primal nature of fear and demonstrated how facing it head-on can lead to empowerment and personal growth.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Psychology</span>
+                            <span class="meta-tag">Motivation</span>
+                            <span class="meta-tag">Television</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>The Genesis of Jackass</h3>
+                        <p class="story-summary">The story of how desperation to support his family led to the creation of an iconic franchise. A bulletproof vest purchased with Christmas money, a magazine article filmed for a skateboard video, and connections with Jeff Tremaine and Antoine Fuqua all converged into something no one could have predicted.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Innovation</span>
+                            <span class="meta-tag">Desperation</span>
+                            <span class="meta-tag">Collaboration</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Dangerous Stunts and Close Calls</h3>
+                        <p class="story-summary">Knoxville recounts various dangerous stunts including bull riding and interactions with wild animals. His candid reflections on injuries serve as cautionary tales about the fine line between entertainment and genuine harm&mdash;highlighting the need for mental preparedness in extreme activities.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Risk</span>
+                            <span class="meta-tag">Stunts</span>
+                            <span class="meta-tag">Safety</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Fighters and Mental Health</h3>
+                        <p class="story-summary">A discussion about mental health challenges faced by fighters with repeated head injuries. The conversation emphasizes the importance of recognizing when to retire and the need for better support systems in combat sports&mdash;from coaches, loved ones, and the fighters themselves.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Mental health</span>
+                            <span class="meta-tag">Combat sports</span>
+                            <span class="meta-tag">Retirement</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <p class="reading-time">One to two minutes for any resources or people mentioned</p>
+        <section id="resources">
+            <div class="section-header">
+                <h2>Resources Mentioned</h2>
+            </div>
+            <div class="resources-container">
+
+                <!-- Documentaries -->
+                <div class="resource-category">
+                    <h3>Documentaries</h3>
+                    <div class="films-list">
+                        <a href="https://www.imdb.com/find/?q=The%20Wild%20and%20Wonderful%20Whites%20of%20West%20Virginia" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">The Wild and Wonderful Whites of West Virginia</span>
+                                <span class="film-context">Documentary about a family living in extreme conditions</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.imdb.com/find/?q=Dancing%20Outlaw" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">Dancing Outlaw</span>
+                                <span class="film-context">Previous documentary featuring Jesco White</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.imdb.com/find/?q=Icarus" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">Icarus</span>
+                                <span class="film-context">Documentary about the Russian doping scandal</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Films -->
+                <div class="resource-category">
+                    <h3>Films</h3>
+                    <div class="films-list">
+                        <a href="https://www.imdb.com/find/?q=Jackass%20Number%20Two" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">Jackass Number Two</span>
+                                <span class="film-context">Featured an infamous stunt discussed in conversation</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.imdb.com/find/?q=Jackass%20Forever" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">Jackass Forever</span>
+                                <span class="film-context">Latest installment with potential for new cast members</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.imdb.com/find/?q=Men%20in%20Black%20II" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">Men in Black II</span>
+                                <span class="film-context">Where Knoxville met judo legend Gene LeBell</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- People -->
+                <div class="resource-category">
+                    <h3>People</h3>
+                    <div class="people-list">
+                        <a href="https://en.wikipedia.org/wiki/Jesco_White" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Jesco White <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Charismatic central figure of the White family documentary</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/David_Allan_Coe" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">David Allan Coe <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Country singer-songwriter with a complicated life story</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Shel_Silverstein" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Shel Silverstein <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Children's book author who also wrote songs</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Mike_Judge" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Mike Judge <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Friend interested in meeting Jesco and Mamie</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Johnny_Weir" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Johnny Weir <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Olympic skater known for entertaining personality</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Andre_Ward" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Andre Ward <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Boxer who retired undefeated, now doing commentary</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Wanderlei_Silva" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Wanderlei Silva <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Fighter known for aggressive style</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Mirko_Cro_Cop" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Mirko Cro Cop <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Fighter known for striking ability and intimidating presence</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Fedor_Emelianenko" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Fedor Emelianenko <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">One of the all-time great MMA fighters</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Cain_Velasquez" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Cain Velasquez <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Great heavyweight fighter known for cardio</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Brock_Lesnar" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Brock Lesnar <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Former WWE star and MMA fighter</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Chris_Weidman" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Chris Weidman <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Fighter who suffered severe leg injury during a match</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <p class="reading-time">One to two minutes for interesting quotes</p>
+        <section id="quotes">
+            <div class="section-header">
+                <h2>Notable Quotes</h2>
+            </div>
+            <div class="quotes-container">
+                <div class="speaker-section">
+                    <h3>Johnny Knoxville</h3>
+                    <div class="quotes-list">
+                        <blockquote class="quote-card featured-quote animate-on-scroll">
+                            <p class="quote-text">Sometimes it feels like you're living someone else's life, you know?</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Imposter syndrome</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card featured-quote animate-on-scroll">
+                            <p class="quote-text">I had to do something quick, and that was my best guess.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Desperation leading to success</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I don't want anyone to get hurt. I, you know, me, I'm another story.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Responsibility for influence</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I hope to just entertain them and not inspire them.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Influence on fans</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I wouldn't let my kids see that, you know?</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Parenting and Jackass</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I didn't know how to top the first one, which now looks very tame compared to the others.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Pressure to perform</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">If you're gonna go this hard for basic cable, why don't we do another movie?</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Career motivation</span>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="speaker-section">
+                    <h3>Joe Rogan</h3>
+                    <div class="quotes-list">
+                        <blockquote class="quote-card featured-quote animate-on-scroll">
+                            <p class="quote-text">There's no clear path out of there, and everywhere around you is fucked.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Despair and poverty</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I like a fighter that retires, and they can talk, and they're fine, and they're good.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Retirement in boxing</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">You have to plant that seed in a fighter's head when they're young.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Fighter's future</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">It's a testament to our society today that it is, like, not just accepted but celebrated that people are gay.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Societal acceptance</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I think you have to tell them, 'There's gonna be a time when we realize we have to stop this.'</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Fighter's career longevity</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">He was a maniacal genius.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Otto and George</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">When you have bulls on the set, I don't want anyone, any kind of negativity going around the set.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Safety in stunts</span>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section animate-on-scroll" id="subscribe">
+            <div class="cta-content">
+                <p class="cta-eyebrow">Enjoyed this summary?</p>
+                <h2 class="cta-heading">Get the next summary that comes out</h2>
+                <p class="cta-subheading">Your email is safe with me and my cat (I'll hide it from him just in case).</p>
+                <form class="cta-inline-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="5796b28a-9e5b-4c75-879a-e972bb4498bb">
+                    <input type="hidden" name="subject" value="New Summary Signup - No Time Podcast">
+                    <input type="hidden" name="podcast" value="Joe Rogan">
+                    <input type="text" name="name" placeholder="Nickname" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit">Hell yeah</button>
+                </form>
+                <p class="cta-footnote">Powered by <a href="https://notimepod.com" target="_blank" rel="noopener">No Time Podcast</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-mark">fin</p>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <p class="cookie-consent-text">
+                We use cookies to analyze site traffic and improve your experience. 
+                By clicking "Accept", you consent to our use of cookies.
+            </p>
+            <div class="cookie-consent-buttons">
+                <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
+                <button class="cookie-consent-btn accept" onclick="acceptCookies()">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent Management
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookieConsent').classList.add('show');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieConsent').classList.remove('show');
+            // Initialize GA after consent
+            gtag('js', new Date());
+            gtag('config', 'G-9DVDFHLSG0');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieConsent').classList.remove('show');
+        }
+
+        // Check consent on page load
+        checkCookieConsent();
+
+        // Scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
