@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Rogan Experience - Michael P. Masters | Summary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9DVDFHLSG0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Check for consent before initializing GA
+        if (localStorage.getItem('cookieConsent') === 'accepted') {
+            gtag('js', new Date());
+            gtag('config', 'G-9DVDFHLSG0');
+        }
+    </script>
+    <style>
+        :root {
+            --cream: #FAF8F5;
+            --cream-dark: #F0EDE8;
+            --ink: #1A1A1A;
+            --ink-light: #4A4A4A;
+            --ink-muted: #7A7A7A;
+            --accent: #8B4513;
+            --accent-light: #C4926A;
+            --highlight: #E8DFD5;
+            --border: #E5E0D8;
+            --shadow: rgba(26, 26, 26, 0.08);
+            --shadow-deep: rgba(26, 26, 26, 0.15);
+            --mauve: #8b3a62;
+            --mauve-dark: #6a2c4a;
+            --dark-bg: #2d2d2d;
+            --dark-text: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Libre Franklin', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.7;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* Noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            padding: 80px 24px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .episode-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--ink);
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--ink-light);
+            font-weight: 400;
+        }
+
+        .reading-time {
+            padding-top: 32px;
+            padding-bottom: 24px;
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .reading-time + section {
+            padding-top: 0;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--cream);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0 24px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--ink-muted);
+            padding: 8px 16px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--ink);
+            background: var(--highlight);
+        }
+
+        /* Main content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        /* Origin Story */
+        .origin-content {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            max-width: 700px;
+        }
+
+        .origin-content p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .origin-content strong {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .key-point {
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--cream-dark) 100%);
+            border-left: 3px solid var(--accent);
+            padding: 24px 28px;
+            margin: 36px 0;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--ink-light);
+        }
+
+        /* Stories with images */
+        .stories-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 4px;
+            padding: 28px;
+            box-shadow: 0 2px 20px var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .story-card:hover {
+            box-shadow: 0 8px 40px var(--shadow-deep);
+            transform: translateY(-2px);
+        }
+
+        .story-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-card h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--ink);
+        }
+
+        .story-summary {
+            color: var(--ink-light);
+            line-height: 1.75;
+            flex-grow: 1;
+        }
+
+        .story-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .meta-tag {
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            background: var(--cream);
+            border-radius: 3px;
+            color: var(--ink-muted);
+        }
+
+        /* Resources - List format */
+        .resources-container {
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+        }
+
+        .resource-category h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--ink);
+        }
+
+        /* Books - Simple list */
+        .books-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .book-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+
+        .book-item:last-child {
+            border-bottom: none;
+        }
+
+        .book-item:hover {
+            background: var(--cream-dark);
+            margin: 0 -16px;
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .book-info {
+            flex-grow: 1;
+        }
+
+        .book-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .book-context {
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+        }
+
+        .link-arrow {
+            font-size: 1.2rem;
+            color: var(--accent);
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.2s ease;
+        }
+
+        .book-item:hover .link-arrow,
+        .film-item:hover .link-arrow,
+        .person-item:hover .link-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Films - List with posters */
+        .films-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .film-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+
+        .film-item:last-child {
+            border-bottom: none;
+        }
+
+        .film-item:hover {
+            background: var(--cream-dark);
+            margin: 0 -16px;
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .film-info {
+            flex-grow: 1;
+        }
+
+        .film-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+
+        .film-title::after {
+            content: 'IMDB';
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 2px 6px;
+            background: #F5C518;
+            color: #000;
+            border-radius: 2px;
+        }
+
+        .film-context {
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+        }
+
+        /* People - List with portraits */
+        .people-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .person-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+
+        .person-item:last-child {
+            border-bottom: none;
+        }
+
+        .person-item:hover {
+            background: var(--cream-dark);
+            margin: 0 -16px;
+            padding: 14px 16px;
+            border-radius: 4px;
+        }
+
+        .person-info {
+            flex-grow: 1;
+        }
+
+        .person-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+
+        .wiki-badge {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 8px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 2px 5px;
+            background: var(--ink-light);
+            color: white;
+            border-radius: 2px;
+        }
+
+        .person-context {
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+        }
+
+        /* Quotes */
+        .quotes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .speaker-section h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .speaker-section h3::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .quotes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .quote-card {
+            position: relative;
+            padding: 28px 32px 28px 48px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .quote-card:hover {
+            box-shadow: 0 4px 24px var(--shadow);
+        }
+
+        .quote-card::before {
+            content: '"';
+            position: absolute;
+            left: 16px;
+            top: 12px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 3.5rem;
+            color: var(--accent-light);
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: var(--ink);
+            margin-bottom: 12px;
+        }
+
+        .quote-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .quote-context {
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            background: var(--cream);
+            border-radius: 3px;
+            color: var(--ink-muted);
+        }
+
+        .quote-source {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .featured-quote {
+            background: linear-gradient(135deg, var(--highlight) 0%, white 100%);
+            border-left: 4px solid var(--accent);
+        }
+
+        .featured-quote .quote-text {
+            font-size: 1.4rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 24px;
+            background: var(--cream-dark);
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-mark {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--ink-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            header {
+                padding: 60px 20px 48px;
+            }
+
+            section {
+                padding: 56px 0;
+            }
+
+            .quote-card {
+                padding: 24px 24px 24px 40px;
+            }
+
+            .quote-card::before {
+                font-size: 2.5rem;
+                left: 12px;
+            }
+
+            nav ul {
+                gap: 4px;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .film-item:hover,
+            .book-item:hover,
+            .person-item:hover {
+                margin: 0 -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Inline CTA - Compact signup between sections */
+        .cta-inline {
+            background: var(--cream-dark);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .cta-inline-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-inline-text {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--ink);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .cta-inline-privacy {
+            font-size: 0.85rem;
+            color: var(--ink-light);
+            margin-bottom: 16px;
+            margin-top: -12px;
+        }
+
+        .cta-inline-powered {
+            font-size: 0.75rem;
+            color: var(--ink-light);
+            margin-top: 12px;
+        }
+
+        .cta-inline-powered a {
+            color: var(--sienna);
+            text-decoration: none;
+        }
+
+        .cta-inline-powered a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-inline-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-inline-form input[type="text"],
+        .cta-inline-form input[type="email"] {
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: 'Libre Franklin', sans-serif;
+            background: white;
+            min-width: 180px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-inline-form input:focus {
+            outline: none;
+            border-color: var(--mauve);
+            box-shadow: 0 0 0 3px rgba(139, 58, 98, 0.1);
+        }
+
+        .cta-inline-form button {
+            padding: 12px 28px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Libre Franklin', sans-serif;
+        }
+
+        .cta-inline-form button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 640px) {
+            .cta-inline-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-inline-form input[type="text"],
+            .cta-inline-form input[type="email"] {
+                min-width: 100%;
+            }
+        }
+
+        /* CTA Section - Bridge between editorial and landing page */
+        .cta-section {
+            position: relative;
+            padding: 80px 0 100px;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 15%, var(--dark-bg) 60%);
+            text-align: center;
+            border-bottom: none;
+            margin-top: 40px;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--mauve) 100%);
+            border-radius: 2px;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .cta-eyebrow {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .cta-heading {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--ink);
+            margin-bottom: 16px;
+            transition: color 0.6s ease;
+        }
+
+        .cta-section .cta-heading {
+            color: var(--dark-text);
+        }
+
+        .cta-subheading {
+            font-size: 1.1rem;
+            color: var(--ink-light);
+            margin-bottom: 32px;
+            line-height: 1.6;
+            transition: color 0.6s ease;
+        }
+
+        .cta-section .cta-subheading {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .cta-value-props {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+
+        .cta-value-prop {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-value-prop::before {
+            content: '•';
+            color: var(--mauve);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--mauve) 0%, var(--mauve-dark) 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(139, 58, 98, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139, 58, 98, 0.4);
+            background: linear-gradient(135deg, #9a4570 0%, var(--mauve) 100%);
+        }
+
+        .cta-footnote {
+            margin-top: 28px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-style: italic;
+        }
+
+        .cta-footnote a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .cta-footnote a:hover {
+            color: var(--mauve);
+        }
+
+        @media (max-width: 640px) {
+            .cta-section {
+                padding: 60px 0 80px;
+            }
+
+            .cta-value-props {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .cta-button {
+                padding: 14px 32px;
+            }
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark-bg);
+            color: var(--dark-text);
+            padding: 16px 24px;
+            z-index: 9999;
+            display: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cookie-consent.show {
+            display: block;
+        }
+
+        .cookie-consent-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-consent-text {
+            flex: 1;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cookie-consent-text a {
+            color: var(--mauve);
+            text-decoration: none;
+        }
+
+        .cookie-consent-text a:hover {
+            text-decoration: underline;
+        }
+
+        .cookie-consent-buttons {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .cookie-consent-btn {
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Libre Franklin', sans-serif;
+            border: none;
+        }
+
+        .cookie-consent-btn.accept {
+            background: var(--mauve);
+            color: white;
+        }
+
+        .cookie-consent-btn.accept:hover {
+            background: var(--mauve-dark);
+        }
+
+        .cookie-consent-btn.decline {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cookie-consent-btn.decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        @media (max-width: 640px) {
+            .cookie-consent-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-consent-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p class="episode-label">Podcast Summary</p>
+        <h1>Joe Rogan Experience</h1>
+        <p class="subtitle">with Michael P. Masters</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#origin">Origin Story</a></li>
+            <li><a href="#stories">Stories</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#quotes">Quotes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="reading-time">One to two minutes for his origin story</p>
+        <section id="origin">
+            <div class="section-header">
+                <h2>Origin Story</h2>
+            </div>
+            <div class="origin-content">
+                <p>Michael P. Masters' journey into the intersection of anthropology and UFO research began with a childhood fascination. At around eight or nine years old, he experienced a vivid moment of imagination connecting early hominins, modern humans, and the archetypal gray aliens&mdash;a spark that would eventually ignite a lifelong pursuit of unconventional questions about humanity's place in the universe.</p>
+
+                <div class="key-point">
+                    A defining moment came through his father, a veterinarian in Ohio, who witnessed a bright light in the sky that moved in extraordinary ways. This encounter profoundly shaped Masters' interest in UFOs and the concept of time travel.
+                </div>
+
+                <p>Masters pursued a degree in anthropology, specializing in evolutionary anatomy and biomedicine. For years, his academic work remained distinct from his UFO curiosity. But eventually, he integrated these fields in a bold proposition: that UFOs and their occupants could represent future human descendants traveling back through time.</p>
+
+                <p>A significant crossroads occurred when he decided to publicly share his theories, risking his academic credibility. Encouragement from peers and mentors&mdash;including a supportive department chair&mdash;helped him navigate this decision. The importance of asking challenging questions, even controversial ones, was reinforced at every turn.</p>
+
+                <div class="key-point">
+                    His motivation stems from a desire to understand consciousness and humanity's role in the universe. He believes investigating UFO phenomena can illuminate fundamental existential questions that traditional science often avoids.
+                </div>
+
+                <p>Throughout his career, Masters has collaborated with researchers from prestigious institutions, including Harvard. His work has gained recognition in public forums, from podcasts to conferences. Personal experiences&mdash;including what he describes as a "mini-abduction" during a UFO conference in 2022, where a stranger seemed to connect with him telepathically&mdash;have only deepened his commitment.</p>
+
+                <p>Masters now teaches a course on UFOs at Montana Tech, reflecting the growing academic acceptance of these topics. He emphasizes the need for safe spaces where individuals can share their experiences without fear of ridicule&mdash;a cultural shift he sees as essential to understanding phenomena that have been reported throughout human history.</p>
+            </div>
+        </section>
+
+        <div class="cta-inline animate-on-scroll">
+            <div class="cta-inline-content">
+                <p class="cta-inline-text">Get the next summary that comes out</p>
+                <p class="cta-inline-privacy">Your email is safe with me and my cat (I'll hide it from him just in case).</p>
+                <form class="cta-inline-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="5796b28a-9e5b-4c75-879a-e972bb4498bb">
+                    <input type="hidden" name="subject" value="New Summary Signup - No Time Podcast">
+                    <input type="hidden" name="podcast" value="Joe Rogan">
+                    <input type="text" name="name" placeholder="Nickname" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit">Hell yeah</button>
+                </form>
+                <p class="cta-inline-powered">Powered by <a href="https://notimepod.com" target="_blank" rel="noopener">No Time Podcast</a></p>
+            </div>
+        </div>
+
+        <p class="reading-time">One to two minutes for some of the stories told</p>
+        <section id="stories">
+            <div class="section-header">
+                <h2>Stories Told</h2>
+            </div>
+            <div class="stories-grid">
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Betty and Barney Hill Abduction</h3>
+                        <p class="story-summary">The first widely publicized alien abduction case in the United States, occurring in 1961. Betty and Barney Hill, an interracial couple, reported being abducted by extraterrestrial beings while driving home. They experienced lost time and vivid dreams of their encounter&mdash;elements that Masters draws parallels to across various religious narratives and texts.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Abduction</span>
+                            <span class="meta-tag">Historical case</span>
+                            <span class="meta-tag">Stigma</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Personal UFO Sighting in Montana</h3>
+                        <p class="story-summary">While living in Montana, Masters witnessed five bright lights in the sky exhibiting movements that suggested intelligent control&mdash;defying conventional explanations. The experience reinforced his belief that acknowledging and exploring personal encounters, even those that challenge understanding, is crucial to expanding knowledge.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Personal experience</span>
+                            <span class="meta-tag">Intelligent control</span>
+                            <span class="meta-tag">Open-mindedness</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Time Travel and Future Humans Theory</h3>
+                        <p class="story-summary">Masters presents his theory that UFOs and their occupants may be time-traveling future humans. As humanity evolves, it may develop advanced technologies enabling time travel&mdash;and the need to revisit the past for genetic material. This framework encourages a re-evaluation of what it means to be human and the consequences of technological advancement.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Time travel</span>
+                            <span class="meta-tag">Evolution</span>
+                            <span class="meta-tag">Genetics</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>The Baltic Sea Anomaly</h3>
+                        <p class="story-summary">Discovered in 2011 by a treasure-hunting team, this sonar-detected seafloor formation has sparked speculation about its origins. Some suggest it could be an ancient structure rather than natural formation&mdash;raising questions about undiscovered ancient civilizations and how much remains unknown about our planet's history.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Ancient structures</span>
+                            <span class="meta-tag">Mystery</span>
+                            <span class="meta-tag">Exploration</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Zulu Lore and the Sky Goddess</h3>
+                        <p class="story-summary">A Zulu legend about a sky goddess who chooses a man to mate with, communicating telepathically and taking him away on a rainbow of light. Masters notes how this ancient narrative parallels modern accounts of alien abduction&mdash;suggesting that cultural stories across time and geography may reflect deeper truths about human experiences with the unknown.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Cultural narrative</span>
+                            <span class="meta-tag">Telepathy</span>
+                            <span class="meta-tag">Parallels</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <p class="reading-time">One to two minutes for any resources or people mentioned</p>
+        <section id="resources">
+            <div class="section-header">
+                <h2>Resources Mentioned</h2>
+            </div>
+            <div class="resources-container">
+
+                <!-- Books -->
+                <div class="resource-category">
+                    <h3>Books</h3>
+                    <div class="books-list">
+                        <a href="https://www.goodreads.com/search?q=Identified%20Flying%20Objects" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                            <div class="book-info">
+                                <span class="book-title">Identified Flying Objects</span>
+                                <span class="book-context">Masters' first book discussing UFOs and related theories</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.goodreads.com/search?q=The%20Extratempestrial%20Model" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                            <div class="book-info">
+                                <span class="book-title">The Extratempestrial Model</span>
+                                <span class="book-context">Masters' second book exploring case studies related to UFOs</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.goodreads.com/search?q=Revelation%3A%20The%20Future%20Human%20Past" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                            <div class="book-info">
+                                <span class="book-title">Revelation: The Future Human Past</span>
+                                <span class="book-context">Masters' third book on time travel and human evolution</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.goodreads.com/search?q=Marshmallow%20in%20the%20UFO" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                            <div class="book-info">
+                                <span class="book-title">Marshmallow in the UFO: A Time Travel Adventure</span>
+                                <span class="book-context">Masters' recently published children's book</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.goodreads.com/search?q=Communion%20Whitley%20Strieber" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                            <div class="book-info">
+                                <span class="book-title">Communion</span>
+                                <span class="book-context">Whitley Strieber's influential book on alien abduction experiences</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.goodreads.com/search?q=Passport%20to%20the%20Cosmos%20John%20Mack" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                            <div class="book-info">
+                                <span class="book-title">Passport to the Cosmos</span>
+                                <span class="book-context">John Mack's research on alien abduction experiences</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.goodreads.com/search?q=Best%20Evidence%20David%20Lifton" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                            <div class="book-info">
+                                <span class="book-title">Best Evidence</span>
+                                <span class="book-context">Book critiquing the Warren Commission's findings on JFK</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Films/Documentaries -->
+                <div class="resource-category">
+                    <h3>Films &amp; Documentaries</h3>
+                    <div class="films-list">
+                        <a href="https://www.imdb.com/find/?q=Song%20Sung%20Blue" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">Song Sung Blue</span>
+                                <span class="film-context">A movie about never giving up on your dreams</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.imdb.com/find/?q=Chimp%20Nation" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">Chimp Nation</span>
+                                <span class="film-context">Docuseries exploring chimpanzee behavior and social structures</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.imdb.com/find/?q=Ancient%20Aliens" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">Ancient Aliens</span>
+                                <span class="film-context">Show that helped normalize discussions around UFOs</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.imdb.com/find/?q=The%20Age%20of%20Disclosure" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">The Age of Disclosure</span>
+                                <span class="film-context">Documentary on UFOs and government secrecy</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.imdb.com/find/?q=Moment%20of%20Contact" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                            <div class="film-info">
+                                <span class="film-title">Moment of Contact</span>
+                                <span class="film-context">Documentary about a specific UFO encounter in Brazil</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- People -->
+                <div class="resource-category">
+                    <h3>People</h3>
+                    <div class="people-list">
+                        <a href="https://en.wikipedia.org/wiki/Tim_Burchett" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Tim Burchett <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Politician known for discussing UFOs and government knowledge</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Jacques_Vall%C3%A9e" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Jacques Vallée <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Researcher known for work on UFOs and related phenomena</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Harold_E._Puthoff" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Hal Puthoff <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Physicist involved in UFO research and technology</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/David_Fravor" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">David Fravor <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Former Navy pilot who reported UFO encounters</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Whitley_Strieber" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Whitley Strieber <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Author known for accounts of alien encounters</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Jackie_Gleason" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Jackie Gleason <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Celebrity who allegedly saw alien bodies while visiting Nixon</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Barry_Goldwater" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Barry Goldwater <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Politician who inquired about UFOs and faced backlash</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Gary_Webb" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                            <div class="person-info">
+                                <span class="person-name">Gary Webb <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Journalist known for controversial investigations</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <p class="reading-time">One to two minutes for interesting quotes</p>
+        <section id="quotes">
+            <div class="section-header">
+                <h2>Notable Quotes</h2>
+            </div>
+            <div class="quotes-container">
+                <div class="speaker-section">
+                    <h3>Michael P. Masters</h3>
+                    <div class="quotes-list">
+                        <blockquote class="quote-card featured-quote animate-on-scroll">
+                            <p class="quote-text">I think Jesus was a time traveler, personally.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Religious texts and UFOs</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card featured-quote animate-on-scroll">
+                            <p class="quote-text">We are the electronic caterpillar.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Human evolution and technology</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card featured-quote animate-on-scroll">
+                            <p class="quote-text">The impossible become possible, or at least you have to open your mind to the fact that these things you used to think were impossible need a second look.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Changing perceptions of reality</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">Everything. Every living organism dreams.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Consciousness and reality</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">If we could tap into that, it would provide infinite energy.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Zero-point energy</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">Once you know who we are, you'll know how we know that.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Telepathy and future humans</span>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="speaker-section">
+                    <h3>Joe Rogan</h3>
+                    <div class="quotes-list">
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">The point is, as time goes on, humans today are probably the most feeble version of humans that have ever existed.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Human evolution and decline</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">What do you do with this? And who the fuck is gonna believe you?</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Skepticism and belief</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">It feels different.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Public perception of UFOs</span>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section animate-on-scroll" id="subscribe">
+            <div class="cta-content">
+                <p class="cta-eyebrow">Enjoyed this summary?</p>
+                <h2 class="cta-heading">Get the next summary that comes out</h2>
+                <p class="cta-subheading">Your email is safe with me and my cat (I'll hide it from him just in case).</p>
+                <form class="cta-inline-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="5796b28a-9e5b-4c75-879a-e972bb4498bb">
+                    <input type="hidden" name="subject" value="New Summary Signup - No Time Podcast">
+                    <input type="hidden" name="podcast" value="Joe Rogan">
+                    <input type="text" name="name" placeholder="Nickname" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit">Hell yeah</button>
+                </form>
+                <p class="cta-footnote">Powered by <a href="https://notimepod.com" target="_blank" rel="noopener">No Time Podcast</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-mark">fin</p>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <p class="cookie-consent-text">
+                We use cookies to analyze site traffic and improve your experience. 
+                By clicking "Accept", you consent to our use of cookies.
+            </p>
+            <div class="cookie-consent-buttons">
+                <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
+                <button class="cookie-consent-btn accept" onclick="acceptCookies()">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent Management
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookieConsent').classList.add('show');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieConsent').classList.remove('show');
+            // Initialize GA after consent
+            gtag('js', new Date());
+            gtag('config', 'G-9DVDFHLSG0');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieConsent').classList.remove('show');
+        }
+
+        // Check consent on page load
+        checkCookieConsent();
+
+        // Scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
