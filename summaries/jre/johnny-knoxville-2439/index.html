@@ -13,7 +13,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         
-        // Check for consent
+        // Check for consent before initializing GA
         if (localStorage.getItem('cookieConsent') === 'accepted') {
             gtag('js', new Date());
             gtag('config', 'G-9DVDFHLSG0');
@@ -58,6 +58,7 @@
             font-weight: 400;
         }
 
+        /* Noise texture overlay */
         body::before {
             content: '';
             position: fixed;
@@ -75,6 +76,241 @@
             font-family: 'Cormorant Garamond', Georgia, serif;
         }
 
+        /* Site Header */
+        .site-header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .site-logo svg {
+            width: 24px;
+            height: 24px;
+            color: var(--accent);
+        }
+
+        .site-logo-text {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .breadcrumbs a {
+            color: var(--ink-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumbs-sep {
+            color: var(--border);
+        }
+
+        .breadcrumbs-current {
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        /* Episode Selector Dropdown */
+        .episode-selector {
+            position: relative;
+        }
+
+        .episode-selector-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-family: 'Libre Franklin', sans-serif;
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+
+        .episode-selector-btn:hover {
+            background: var(--cream-dark);
+            border-color: var(--ink-muted);
+        }
+
+        .episode-selector-btn svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .episode-selector.active .episode-selector-btn svg {
+            transform: rotate(180deg);
+        }
+
+        .episode-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 8px 30px var(--shadow-deep);
+            min-width: 280px;
+            max-height: 400px;
+            overflow-y: auto;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 200;
+        }
+
+        .episode-selector.active .episode-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .episode-dropdown-header {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            font-weight: 500;
+        }
+
+        .episode-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: var(--ink);
+            transition: background 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .episode-dropdown-item:hover {
+            background: var(--cream);
+        }
+
+        .episode-dropdown-item.current {
+            background: var(--highlight);
+            border-left-color: var(--accent);
+        }
+
+        .episode-dropdown-number {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            min-width: 45px;
+        }
+
+        .episode-dropdown-guest {
+            font-weight: 500;
+        }
+
+        /* Episode Meta Bar */
+        .episode-meta-bar {
+            background: var(--cream-dark);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--ink-light);
+        }
+
+        .meta-item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--ink-muted);
+        }
+
+        .meta-label {
+            color: var(--ink-muted);
+        }
+
+        .meta-value {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        .meta-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border);
+        }
+
+        /* Episode Nav Links */
+        .episode-nav-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .ep-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--ink-light);
+            font-size: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .ep-nav-link:hover {
+            background: var(--ink);
+            color: white;
+            border-color: var(--ink);
+        }
+
+        .ep-nav-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Header */
         header {
             position: relative;
             padding: 80px 24px 60px;
@@ -133,6 +369,7 @@
             padding-top: 0;
         }
 
+        /* Navigation */
         nav {
             position: sticky;
             top: 0;
@@ -170,6 +407,7 @@
             background: var(--highlight);
         }
 
+        /* Main content */
         main {
             max-width: 900px;
             margin: 0 auto;
@@ -213,6 +451,7 @@
             color: var(--ink);
         }
 
+        /* Origin Story */
         .origin-content {
             font-size: 1.05rem;
             line-height: 1.85;
@@ -242,6 +481,20 @@
             color: var(--ink-light);
         }
 
+        /* Cross-reference links */
+        .cross-ref {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent-light);
+            transition: all 0.2s ease;
+        }
+
+        .cross-ref:hover {
+            color: var(--ink);
+            border-bottom-color: var(--ink);
+        }
+
+        /* Stories with images */
         .stories-grid {
             display: flex;
             flex-direction: column;
@@ -298,6 +551,7 @@
             color: var(--ink-muted);
         }
 
+        /* Resources - List format */
         .resources-container {
             display: flex;
             flex-direction: column;
@@ -314,6 +568,7 @@
             color: var(--ink);
         }
 
+        /* Books - Simple list */
         .books-list {
             display: flex;
             flex-direction: column;
@@ -374,6 +629,7 @@
             transform: translateX(0);
         }
 
+        /* Films - List with posters */
         .films-list {
             display: flex;
             flex-direction: column;
@@ -433,6 +689,7 @@
             color: var(--ink-muted);
         }
 
+        /* People - List with portraits */
         .people-list {
             display: flex;
             flex-direction: column;
@@ -491,6 +748,7 @@
             color: var(--ink-muted);
         }
 
+        /* Quotes */
         .quotes-container {
             display: flex;
             flex-direction: column;
@@ -585,6 +843,7 @@
             font-size: 1.4rem;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             padding: 60px 24px;
@@ -599,53 +858,7 @@
             color: var(--ink-muted);
         }
 
-        @media (max-width: 640px) {
-            header {
-                padding: 60px 20px 48px;
-            }
-
-            section {
-                padding: 56px 0;
-            }
-
-            .quote-card {
-                padding: 24px 24px 24px 40px;
-            }
-
-            .quote-card::before {
-                font-size: 2.5rem;
-                left: 12px;
-            }
-
-            nav ul {
-                gap: 4px;
-            }
-
-            nav a {
-                padding: 6px 12px;
-                font-size: 11px;
-            }
-
-            .film-item:hover,
-            .book-item:hover,
-            .person-item:hover {
-                margin: 0 -12px;
-                padding-left: 12px;
-                padding-right: 12px;
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        /* Inline CTA - Compact signup between sections */
         .cta-inline {
             background: var(--cream-dark);
             border-top: 1px solid var(--border);
@@ -730,22 +943,11 @@
         }
 
         .cta-inline-form button:hover {
-            background: var(--mauve-dark);
+            background: #6B3410;
             transform: translateY(-1px);
         }
 
-        @media (max-width: 640px) {
-            .cta-inline-form {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .cta-inline-form input[type="text"],
-            .cta-inline-form input[type="email"] {
-                min-width: 100%;
-            }
-        }
-
+        /* CTA Section - Bridge between editorial and landing page */
         .cta-section {
             position: relative;
             padding: 80px 0 100px;
@@ -808,48 +1010,6 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        .cta-value-props {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-bottom: 36px;
-            flex-wrap: wrap;
-        }
-
-        .cta-value-prop {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .cta-value-prop::before {
-            content: '•';
-            color: var(--mauve);
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 16px 40px;
-            background: linear-gradient(135deg, var(--mauve) 0%, var(--mauve-dark) 100%);
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(139, 58, 98, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(139, 58, 98, 0.4);
-            background: linear-gradient(135deg, #9a4570 0%, var(--mauve) 100%);
-        }
-
         .cta-footnote {
             margin-top: 28px;
             font-size: 0.85rem;
@@ -867,74 +1027,37 @@
             color: var(--mauve);
         }
 
-        @media (max-width: 640px) {
-            .cta-section {
-                padding: 60px 0 80px;
-            }
-
-            .cta-value-props {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .cta-button {
-                padding: 14px 32px;
-            }
-        }
-
-        .cross-ref {
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--accent-light);
-            transition: all 0.2s ease;
-        }
-
-        .cross-ref:hover {
-            color: var(--ink);
-            border-bottom-color: var(--ink);
-        }
-
         /* Cookie Consent Banner */
         .cookie-consent {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: var(--dark-bg);
-            color: var(--dark-text);
+            background: var(--ink);
+            color: white;
             padding: 16px 24px;
-            z-index: 9999;
-            display: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .cookie-consent.show {
-            display: block;
-        }
-
-        .cookie-consent-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             gap: 24px;
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
             flex-wrap: wrap;
         }
 
+        .cookie-consent.visible {
+            transform: translateY(0);
+        }
+
         .cookie-consent-text {
-            flex: 1;
-            font-size: 0.9rem;
+            font-size: 14px;
             line-height: 1.5;
-            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
         }
 
         .cookie-consent-text a {
             color: var(--accent-light);
-            text-decoration: none;
-        }
-
-        .cookie-consent-text a:hover {
             text-decoration: underline;
         }
 
@@ -961,24 +1084,24 @@
         }
 
         .cookie-consent-btn.accept:hover {
-            background: #6B3410;
+            background: var(--accent-light);
         }
 
         .cookie-consent-btn.decline {
             background: transparent;
-            color: rgba(255, 255, 255, 0.7);
+            color: white;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .cookie-consent-btn.decline:hover {
             background: rgba(255, 255, 255, 0.1);
-            color: white;
         }
 
         @media (max-width: 640px) {
-            .cookie-consent-content {
+            .cookie-consent {
                 flex-direction: column;
                 text-align: center;
+                padding: 20px;
             }
 
             .cookie-consent-buttons {
@@ -986,9 +1109,183 @@
                 justify-content: center;
             }
         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .breadcrumbs {
+                order: 3;
+                width: 100%;
+                justify-content: flex-start;
+                font-size: 12px;
+            }
+
+            .episode-meta-bar {
+                gap: 16px;
+            }
+
+            .meta-divider {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 60px 20px 48px;
+            }
+
+            section {
+                padding: 56px 0;
+            }
+
+            .quote-card {
+                padding: 24px 24px 24px 40px;
+            }
+
+            .quote-card::before {
+                font-size: 2.5rem;
+                left: 12px;
+            }
+
+            nav ul {
+                gap: 4px;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .film-item:hover,
+            .book-item:hover,
+            .person-item:hover {
+                margin: 0 -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .cta-inline-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-inline-form input[type="text"],
+            .cta-inline-form input[type="email"] {
+                min-width: 100%;
+            }
+
+            .breadcrumbs {
+                display: none;
+            }
+
+            .episode-meta-bar {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .cta-section {
+                padding: 60px 0 80px;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
+    <div class="site-header">
+        <a href="https://notimepod.com" class="site-logo">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+            </svg>
+            <span class="site-logo-text">no time</span>
+        </a>
+
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="https://notimepod.com">Home</a>
+            <span class="breadcrumbs-sep">/</span>
+            <a href="../">JRE Summaries</a>
+            <span class="breadcrumbs-sep">/</span>
+            <span class="breadcrumbs-current">Johnny Knoxville</span>
+        </nav>
+
+        <div class="episode-selector" id="episodeSelector">
+            <button class="episode-selector-btn" id="selectorBtn">
+                Jump to Episode
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+            <div class="episode-dropdown">
+                <div class="episode-dropdown-header">JRE Episodes</div>
+                <a href="../johnny-knoxville-2439/" class="episode-dropdown-item current">
+                    <span class="episode-dropdown-number">#2439</span>
+                    <span class="episode-dropdown-guest">Johnny Knoxville</span>
+                </a>
+                <a href="../john-mellencamp-2438/" class="episode-dropdown-item">
+                    <span class="episode-dropdown-number">#2438</span>
+                    <span class="episode-dropdown-guest">John Mellencamp</span>
+                </a>
+                <a href="../michael-p-masters-2428/" class="episode-dropdown-item">
+                    <span class="episode-dropdown-number">#2428</span>
+                    <span class="episode-dropdown-guest">Michael P. Masters</span>
+                </a>
+                <a href="../bret-weinstein-2427/" class="episode-dropdown-item">
+                    <span class="episode-dropdown-number">#2427</span>
+                    <span class="episode-dropdown-guest">Bret Weinstein</span>
+                </a>
+                <a href="../ethan-hawke-2425/" class="episode-dropdown-item">
+                    <span class="episode-dropdown-number">#2425</span>
+                    <span class="episode-dropdown-guest">Ethan Hawke</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="episode-meta-bar">
+        <div class="meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span class="meta-label">Released</span>
+            <span class="meta-value">January 2025</span>
+        </div>
+        <span class="meta-divider"></span>
+        <div class="meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span class="meta-label">Episode</span>
+            <span class="meta-value">#2439</span>
+        </div>
+        <span class="meta-divider"></span>
+        <div class="episode-nav-links">
+            <a href="../john-mellencamp-2438/" class="ep-nav-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+                Previous
+            </a>
+        </div>
+    </div>
+
     <header>
         <p class="episode-label">Podcast Summary</p>
         <h1>Joe Rogan Experience</h1>
@@ -1011,23 +1308,25 @@
                 <h2>Origin Story</h2>
             </div>
             <div class="origin-content">
-                <p>Johnny Knoxville's journey into entertainment began with frustration and desperation in Los Angeles. He moved to the city with aspirations of becoming an actor but struggled to find work. The defining moment came when he learned he was going to be a father—a revelation that ignited an urgent need to change his circumstances and provide for his growing family.</p>
+                <p>Johnny Knoxville's path into entertainment began with a move to Los Angeles and dreams of becoming an actor, but success proved elusive. The turning point came when he learned he was going to be a father&mdash;a defining moment that ignited an urgent fire within him to change his circumstances and provide for his growing family.</p>
 
                 <div class="key-point">
-                    Living next door to director <a href="#person-antoine-fuqua" class="cross-ref">Antoine Fuqua</a> proved serendipitous—he introduced Knoxville to a casting director who helped him secure a commercial agent, opening the first door in his career.
+                    Living next door to director <a href="#person-antoine-fuqua" class="cross-ref">Antoine Fuqua</a> proved serendipitous&mdash;the connection led to a casting director who helped him secure a commercial agent, setting the stage for what would come next.
                 </div>
 
-                <p>A friend named John Lenson encouraged him to write articles for a magazine, leading to an unexpected opportunity. One of his articles involved testing self-defense equipment on himself—shooting himself while wearing a bulletproof vest purchased with Christmas money from his mother. This willingness to inflict pain upon himself for entertainment caught the attention of <a href="#person-jeff-tremaine" class="cross-ref">Jeff Tremaine</a>, the editor of <em>Big Brother</em> magazine.</p>
+                <p>A friend named John Lenson encouraged him to write articles for a magazine, which led to a unique opportunity. One article involved testing self-defense equipment on himself, catching the attention of <a href="#person-jeff-tremaine" class="cross-ref">Jeff Tremaine</a>, then editor of <em>Big Brother</em> magazine. Tremaine proposed filming the article for a skateboard video&mdash;the spark that would eventually ignite the <a href="#film-jackass-forever" class="cross-ref">Jackass</a> phenomenon.</p>
 
-                <p>Tremaine proposed filming the article for inclusion in a skateboard video, which ultimately laid the groundwork for the <a href="#film-jackass-number-two" class="cross-ref">Jackass</a> series. What started as desperation transformed into a career built on pushing boundaries and confronting fears—both his own and those of others.</p>
+                <p>His involvement in Jackass emerged from a combination of desperation and creativity. Using money his mother had given him for Christmas, he purchased a bulletproof vest for a stunt&mdash;a willingness to take risks that became the defining characteristic of his career. The initial filming evolved into the creation of Jackass, where he and friends engaged in increasingly outrageous and dangerous antics.</p>
 
                 <div class="key-point">
-                    His father, who owned a tire company and was known for wild pranks—including staging gunfights at Christmas parties—instilled in him a sense of fearlessness and creative chaos that would define his career.
+                    The realization of his responsibilities as a father propelled him into a realm where he confronted fears&mdash;not only his own but also those of contestants on shows like Fear Factor, where he often acted as a motivational coach.
                 </div>
 
-                <p>Throughout his journey, Knoxville developed a mindset that prioritized capturing footage and entertaining audiences over personal safety. He acknowledges this shift may stem from deeper self-worth issues, suggesting his motivations are complex and intertwined with his personal history.</p>
+                <p>Throughout his journey, Knoxville's relationship with danger and injury evolved. Initially concerned about risks, he gradually developed a mindset that prioritized capturing footage and entertaining audiences over personal safety. He acknowledges this shift might stem from deeper self-worth issues, suggesting his motivations are complex and intertwined with personal history.</p>
 
-                <p>The physical toll has been significant—a blown-out lower back, concerns about concussions, and numerous injuries requiring extensive treatment including transcranial magnetic stimulation for mental health issues. His candid discussions about depression and anxiety reveal the often-overlooked emotional challenges faced by those in high-risk entertainment careers, adding depth to his story of resilience and vulnerability.</p>
+                <p>His father, who owned a tire company and was known for wild pranks and antics, undoubtedly shaped his approach to entertainment. Growing up watching his father stage gunfights at Christmas parties instilled a sense of fearlessness and creativity that would define his career. This environment of humor and risk-taking laid the foundation for everything that followed.</p>
+
+                <p>The physical toll has been significant&mdash;a blown-out lower back, concerns about concussions, and various treatments including transcranial magnetic stimulation for mental health issues. His candid discussions about depression and anxiety reveal the often-overlooked emotional challenges faced by those in high-risk entertainment careers, adding a layer of resilience and vulnerability to his story.</p>
             </div>
         </section>
 
@@ -1056,7 +1355,7 @@
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>The Wild and Wonderful Whites of West Virginia</h3>
-                        <p class="story-summary">Knoxville discusses the documentary chronicling the chaotic lives of the White family, known for their outlaw lifestyle in West Virginia. The film delves into generational neglect, addiction, and socio-economic decline exacerbated by the coal industry's collapse and the opioid crisis—a stark portrayal of how systemic issues leave communities without viable paths to recovery.</p>
+                        <p class="story-summary">Discussion of this documentary chronicling the chaotic lives of the White family, including <a href="#person-jesco-white" class="cross-ref">Jesco White</a>, known for their outlaw lifestyle. The film delves into themes of generational neglect, addiction, and the socio-economic decline of their community, exacerbated by the coal industry's collapse and the opioid crisis.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Documentary</span>
                             <span class="meta-tag">Poverty</span>
@@ -1068,11 +1367,35 @@
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>The Genesis of Jackass</h3>
-                        <p class="story-summary">Knoxville narrates how desperation to support his growing family led to the creation of the iconic series. Using Christmas money from his mother to buy a bulletproof vest for a self-inflicted shooting stunt, he caught the attention of <a href="#person-jeff-tremaine" class="cross-ref">Jeff Tremaine</a>. What began as a magazine article became a cultural phenomenon—proving that personal circumstances can drive extraordinary creativity.</p>
+                        <p class="story-summary">Knoxville narrates how desperation to support his family led to the iconic series. Struggling in Hollywood and facing imminent fatherhood, he used his mother's Christmas money to buy a bulletproof vest for a stunt article. <a href="#person-jeff-tremaine" class="cross-ref">Jeff Tremaine</a> saw potential, and the rest became television history.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Origin</span>
+                            <span class="meta-tag">Desperation</span>
                             <span class="meta-tag">Creativity</span>
-                            <span class="meta-tag">Risk-taking</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>His Father's Wild Pranks</h3>
+                        <p class="story-summary">Knoxville shares anecdotes from his upbringing, focusing on his father's eccentric personality and love for outrageous pranks, including staging gunfights at Christmas parties. This chaotic, humorous environment significantly influenced his own approach to comedy and stunts.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Family</span>
+                            <span class="meta-tag">Influence</span>
+                            <span class="meta-tag">Humor</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Experiences on Fear Factor</h3>
+                        <p class="story-summary">Discussion of hosting Fear Factor and encouraging contestants to confront their fears through various challenges. Knoxville reflects on the psychological aspects of fear and how encouragement plays a crucial role in helping people overcome challenges and achieve personal growth.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Fear</span>
+                            <span class="meta-tag">Psychology</span>
+                            <span class="meta-tag">Empowerment</span>
                         </div>
                     </div>
                 </article>
@@ -1080,23 +1403,11 @@
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>Dangerous Stunts and Close Calls</h3>
-                        <p class="story-summary">Knoxville recounts various dangerous stunts including bull riding and interactions with wild animals. He reflects on the unpredictability of these performances and the fine line between entertainment and genuine harm. His candid observations about injuries serve as cautionary tales about the psychological toll of constant physical risk.</p>
+                        <p class="story-summary">Recounting various dangerous stunts including bull riding and interactions with wild animals, Knoxville shares the risks and close calls he faced. His candid reflections on injuries serve as cautionary tales about the fine line between entertainment and harm.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Risk</span>
-                            <span class="meta-tag">Injury</span>
-                            <span class="meta-tag">Entertainment</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="story-card animate-on-scroll">
-                    <div class="story-content">
-                        <h3>Fear Factor and Confronting Phobias</h3>
-                        <p class="story-summary">Knoxville discusses his hosting role where he encouraged contestants to confront their deepest fears—snakes, heights, and more. The show emphasized the primal nature of fear and the importance of facing it for personal growth. He reflects on the psychological complexities revealed through people's responses to terror.</p>
-                        <div class="story-tags">
-                            <span class="meta-tag">Fear</span>
-                            <span class="meta-tag">Psychology</span>
-                            <span class="meta-tag">Growth</span>
+                            <span class="meta-tag">Stunts</span>
+                            <span class="meta-tag">Safety</span>
                         </div>
                     </div>
                 </article>
@@ -1104,23 +1415,11 @@
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>Reflections on Fighters and Mental Health</h3>
-                        <p class="story-summary">Knoxville discusses the mental health challenges faced by fighters, particularly those with repeated head injuries. He emphasizes recognizing when to retire and the importance of planting that seed early in a fighter's career. The conversation touches on <a href="#person-wanderlei-silva" class="cross-ref">Wanderlei Silva</a>, <a href="#person-mirko-cro-cop" class="cross-ref">Mirko Cro Cop</a>, and the need for better support systems in combat sports.</p>
+                        <p class="story-summary">Discussion of mental health challenges faced by fighters with repeated head injuries, drawing parallels to his own experiences. The conversation emphasizes recognizing when to retire and the importance of support systems for those in high-contact professions.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Mental health</span>
                             <span class="meta-tag">Fighting</span>
                             <span class="meta-tag">Retirement</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="story-card animate-on-scroll">
-                    <div class="story-content">
-                        <h3>His Father's Wild Influence</h3>
-                        <p class="story-summary">Knoxville shares anecdotes about his father, a tire company owner known for outrageous pranks including staging gunfights at Christmas parties. This environment of humor and calculated chaos undoubtedly shaped Knoxville's own approach to entertainment—finding joy in the unexpected and turning risk into spectacle.</p>
-                        <div class="story-tags">
-                            <span class="meta-tag">Family</span>
-                            <span class="meta-tag">Influence</span>
-                            <span class="meta-tag">Humor</span>
                         </div>
                     </div>
                 </article>
@@ -1134,13 +1433,14 @@
             </div>
             <div class="resources-container">
 
+                <!-- Documentaries -->
                 <div class="resource-category">
                     <h3>Documentaries</h3>
                     <div class="films-list">
                         <a href="https://www.imdb.com/find/?q=The%20Wild%20and%20Wonderful%20Whites%20of%20West%20Virginia" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-the-wild-and-wonderful-whites-of-west-virginia">
                             <div class="film-info">
                                 <span class="film-title">The Wild and Wonderful Whites of West Virginia</span>
-                                <span class="film-context">A family living in extreme conditions and their struggles</span>
+                                <span class="film-context">Documentary about a family living in extreme conditions and their struggles</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
@@ -1154,47 +1454,49 @@
                         <a href="https://www.imdb.com/find/?q=Icarus" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-icarus">
                             <div class="film-info">
                                 <span class="film-title">Icarus</span>
-                                <span class="film-context">The Russian doping scandal during the Olympics</span>
+                                <span class="film-context">Documentary about the Russian doping scandal during the Olympics</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                     </div>
                 </div>
 
+                <!-- Films -->
                 <div class="resource-category">
                     <h3>Films</h3>
                     <div class="films-list">
                         <a href="https://www.imdb.com/find/?q=Jackass%20Number%20Two" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-jackass-number-two">
                             <div class="film-info">
                                 <span class="film-title">Jackass Number Two</span>
-                                <span class="film-context">Featured the infamous horse stunt</span>
+                                <span class="film-context">Referenced for a stunt involving drinking horse cum</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://www.imdb.com/find/?q=Jackass%20Forever" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-jackass-forever">
                             <div class="film-info">
                                 <span class="film-title">Jackass Forever</span>
-                                <span class="film-context">Latest installment with potential for new cast members</span>
+                                <span class="film-context">Discussing the latest installment and potential for new cast members</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://www.imdb.com/find/?q=Men%20in%20Black%20II" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-men-in-black-ii">
                             <div class="film-info">
                                 <span class="film-title">Men in Black II</span>
-                                <span class="film-context">Where he met judo legend Gene LeBell</span>
+                                <span class="film-context">Mentioned in connection with meeting judo legend Gene LeBell</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                     </div>
                 </div>
 
+                <!-- People -->
                 <div class="resource-category">
                     <h3>People</h3>
                     <div class="people-list">
                         <a href="https://en.wikipedia.org/wiki/Jesco_White" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-jesco-white">
                             <div class="person-info">
                                 <span class="person-name">Jesco White <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Central character from the documentary</span>
+                                <span class="person-context">Character from the documentary and his chaotic life</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
@@ -1215,35 +1517,42 @@
                         <a href="https://en.wikipedia.org/wiki/Mike_Judge" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-mike-judge">
                             <div class="person-info">
                                 <span class="person-name">Mike Judge <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Friend interested in meeting Jesco and Mamie</span>
+                                <span class="person-context">Friend who was interested in meeting Jesco and Mamie</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Johnny_Weir" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-johnny-weir">
                             <div class="person-info">
                                 <span class="person-name">Johnny Weir <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Olympic skater known for entertaining personality</span>
+                                <span class="person-context">Olympic skater known for his entertaining personality</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Andre_Ward" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-andre-ward">
                             <div class="person-info">
                                 <span class="person-name">Andre Ward <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Boxer who retired undefeated, now doing commentary</span>
+                                <span class="person-context">Boxer who retired undefeated and now does commentary</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Wanderlei_Silva" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-wanderlei-silva">
                             <div class="person-info">
                                 <span class="person-name">Wanderlei Silva <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Fighter known for aggressive style</span>
+                                <span class="person-context">Fighter known for his aggressive style</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Mirko_Cro_Cop" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-mirko-cro-cop">
                             <div class="person-info">
                                 <span class="person-name">Mirko Cro Cop <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Fighter known for striking ability and intimidating presence</span>
+                                <span class="person-context">Fighter known for his striking ability and intimidating presence</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Chris_Weidman" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-chris-weidman">
+                            <div class="person-info">
+                                <span class="person-name">Chris Weidman <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Fighter who suffered a severe leg injury during a match</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
@@ -1257,59 +1566,25 @@
                         <a href="https://en.wikipedia.org/wiki/Cain_Velasquez" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-cain-velasquez">
                             <div class="person-info">
                                 <span class="person-name">Cain Velasquez <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Great heavyweight known for cardio and fighting style</span>
+                                <span class="person-context">Great heavyweight fighter known for his cardio and fighting style</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                         <a href="https://en.wikipedia.org/wiki/Brock_Lesnar" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-brock-lesnar">
                             <div class="person-info">
                                 <span class="person-name">Brock Lesnar <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Former WWE star and MMA fighter</span>
-                            </div>
-                            <span class="link-arrow">&rarr;</span>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Chris_Weidman" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-chris-weidman">
-                            <div class="person-info">
-                                <span class="person-name">Chris Weidman <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Fighter who suffered a severe leg injury during a match</span>
-                            </div>
-                            <span class="link-arrow">&rarr;</span>
-                        </a>
-                        <a href="https://www.google.com/search?q=person:Jeff%20Tremaine" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-jeff-tremaine">
-                            <div class="person-info">
-                                <span class="person-name">Jeff Tremaine <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Editor of Big Brother magazine, instrumental in Jackass creation</span>
-                            </div>
-                            <span class="link-arrow">&rarr;</span>
-                        </a>
-                        <a href="https://www.google.com/search?q=person:Antoine%20Fuqua" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-antoine-fuqua">
-                            <div class="person-info">
-                                <span class="person-name">Antoine Fuqua <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Director who connected Knoxville with casting opportunities</span>
-                            </div>
-                            <span class="link-arrow">&rarr;</span>
-                        </a>
-                        <a href="https://www.google.com/search?q=person:Colonel%20John%20Paul%20Stapp" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-colonel-john-paul-stapp">
-                            <div class="person-info">
-                                <span class="person-name">Colonel John Paul Stapp <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Biophysicist known for deceleration experiments and survivor's euphoria</span>
-                            </div>
-                            <span class="link-arrow">&rarr;</span>
-                        </a>
-                        <a href="https://www.google.com/search?q=person:Louie%20Simmons" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-louie-simmons">
-                            <div class="person-info">
-                                <span class="person-name">Louie Simmons <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Creator of spinal decompression and strengthening machine</span>
+                                <span class="person-context">Former WWE star and MMA fighter known for his physicality</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                     </div>
                 </div>
 
+                <!-- Podcasts -->
                 <div class="resource-category">
                     <h3>Podcasts</h3>
                     <div class="books-list">
-                        <a href="https://www.google.com/search?q=Cocaine%20and%20Rhinestones%20podcast" target="_blank" rel="noopener" class="book-item animate-on-scroll" id="podcast-cocaine-and-rhinestones">
+                        <a href="https://www.google.com/search?q=Cocaine+and+Rhinestones+podcast" target="_blank" rel="noopener" class="book-item animate-on-scroll" id="podcast-cocaine-and-rhinestones">
                             <div class="book-info">
                                 <span class="book-title">Cocaine and Rhinestones</span>
                                 <span class="book-context">Podcast hosted by Tyler Coe about country music history</span>
@@ -1318,7 +1593,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -1345,24 +1619,10 @@
                             </div>
                         </blockquote>
 
-                        <blockquote class="quote-card animate-on-scroll">
+                        <blockquote class="quote-card featured-quote animate-on-scroll">
                             <p class="quote-text">I don't want anyone to get hurt. I, you know, me, I'm another story.</p>
                             <div class="quote-meta">
                                 <span class="quote-context">Responsibility for influence</span>
-                            </div>
-                        </blockquote>
-
-                        <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">I hope to just entertain them and not inspire them.</p>
-                            <div class="quote-meta">
-                                <span class="quote-context">Influence on fans</span>
-                            </div>
-                        </blockquote>
-
-                        <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">I didn't know how to top the first one, which now looks very tame compared to the others.</p>
-                            <div class="quote-meta">
-                                <span class="quote-context">Pressure to perform</span>
                             </div>
                         </blockquote>
 
@@ -1374,9 +1634,37 @@
                         </blockquote>
 
                         <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I made her sit right next to me, and I said, 'Madison, there are some times you'll have to close your eyes.'</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Censorship for children</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I didn't wanna unwind that.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Therapy and stunts</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
                             <p class="quote-text">If you're gonna go this hard for basic cable, why don't we do another movie?</p>
                             <div class="quote-meta">
                                 <span class="quote-context">Career motivation</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I didn't know how to top the first one, which now looks very tame compared to the others.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Pressure to perform</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">I hope to just entertain them and not inspire them.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Influence on fans</span>
                             </div>
                         </blockquote>
                     </div>
@@ -1385,7 +1673,7 @@
                 <div class="speaker-section">
                     <h3>Joe Rogan</h3>
                     <div class="quotes-list">
-                        <blockquote class="quote-card featured-quote animate-on-scroll">
+                        <blockquote class="quote-card animate-on-scroll">
                             <p class="quote-text">There's no clear path out of there, and everywhere around you is fucked.</p>
                             <div class="quote-meta">
                                 <span class="quote-context">Despair and poverty</span>
@@ -1407,9 +1695,9 @@
                         </blockquote>
 
                         <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">It's dangerous. It's very dangerous.</p>
+                            <p class="quote-text">It's a testament to our society today that it is, like, not just accepted but celebrated that people are gay.</p>
                             <div class="quote-meta">
-                                <span class="quote-context">Weight cutting in sports</span>
+                                <span class="quote-context">Societal acceptance</span>
                             </div>
                         </blockquote>
 
@@ -1417,13 +1705,6 @@
                             <p class="quote-text">Just be how you're gonna be, man.</p>
                             <div class="quote-meta">
                                 <span class="quote-context">Acceptance of identity</span>
-                            </div>
-                        </blockquote>
-
-                        <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">It's a testament to our society today that it is, like, not just accepted but celebrated that people are gay.</p>
-                            <div class="quote-meta">
-                                <span class="quote-context">Societal acceptance</span>
                             </div>
                         </blockquote>
 
@@ -1461,39 +1742,39 @@
     </footer>
 
     <!-- Cookie Consent Banner -->
-    <div id="cookieConsent" class="cookie-consent">
-        <div class="cookie-consent-content">
-            <p class="cookie-consent-text">
-                We use cookies to analyze site traffic and improve your experience. By clicking "Accept", you consent to our use of analytics cookies.
-            </p>
-            <div class="cookie-consent-buttons">
-                <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
-                <button class="cookie-consent-btn accept" onclick="acceptCookies()">Accept</button>
-            </div>
+    <div class="cookie-consent" id="cookieConsent">
+        <p class="cookie-consent-text">We use cookies to analyze site traffic and improve your experience. By clicking "Accept", you consent to our use of cookies.</p>
+        <div class="cookie-consent-buttons">
+            <button class="cookie-consent-btn decline" id="cookieDecline">Decline</button>
+            <button class="cookie-consent-btn accept" id="cookieAccept">Accept</button>
         </div>
     </div>
 
     <script>
         // Cookie consent handling
-        function acceptCookies() {
+        const cookieConsent = document.getElementById('cookieConsent');
+        const cookieAccept = document.getElementById('cookieAccept');
+        const cookieDecline = document.getElementById('cookieDecline');
+
+        // Check if user has already made a choice
+        if (!localStorage.getItem('cookieConsent')) {
+            // Show banner after a short delay
+            setTimeout(() => {
+                cookieConsent.classList.add('visible');
+            }, 1000);
+        }
+
+        cookieAccept.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'accepted');
-            document.getElementById('cookieConsent').classList.remove('show');
+            cookieConsent.classList.remove('visible');
             // Initialize GA after consent
             gtag('js', new Date());
             gtag('config', 'G-9DVDFHLSG0');
-        }
+        });
 
-        function declineCookies() {
+        cookieDecline.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'declined');
-            document.getElementById('cookieConsent').classList.remove('show');
-        }
-
-        // Check if user has already made a choice
-        document.addEventListener('DOMContentLoaded', function() {
-            const consent = localStorage.getItem('cookieConsent');
-            if (!consent) {
-                document.getElementById('cookieConsent').classList.add('show');
-            }
+            cookieConsent.classList.remove('visible');
         });
 
         // Scroll animations
@@ -1515,7 +1796,7 @@
             observer.observe(el);
         });
 
-        // Smooth scroll for all internal links (nav and cross-references)
+        // Smooth scroll for all internal links (nav links and cross-refs)
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1525,6 +1806,28 @@
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             });
+        });
+
+        // Episode dropdown toggle
+        const selector = document.getElementById('episodeSelector');
+        const selectorBtn = document.getElementById('selectorBtn');
+
+        selectorBtn.addEventListener('click', () => {
+            selector.classList.toggle('active');
+        });
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+            if (!selector.contains(e.target)) {
+                selector.classList.remove('active');
+            }
+        });
+
+        // Close on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                selector.classList.remove('active');
+            }
         });
     </script>
 </body>
