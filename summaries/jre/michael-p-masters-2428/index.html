@@ -13,7 +13,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         
-        // Check for consent before initializing GA
+        // Check for consent
         if (localStorage.getItem('cookieConsent') === 'accepted') {
             gtag('js', new Date());
             gtag('config', 'G-9DVDFHLSG0');
@@ -46,6 +46,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
@@ -244,6 +245,18 @@
             font-style: italic;
             line-height: 1.6;
             color: var(--ink-light);
+        }
+
+        /* Cross-reference links */
+        .cross-ref {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent-light);
+            transition: all 0.2s ease;
+        }
+        .cross-ref:hover {
+            color: var(--ink);
+            border-bottom-color: var(--ink);
         }
 
         /* Stories with images */
@@ -933,7 +946,7 @@
         }
 
         .cookie-consent-text a {
-            color: var(--mauve);
+            color: var(--accent-light);
             text-decoration: none;
         }
 
@@ -949,22 +962,22 @@
 
         .cookie-consent-btn {
             padding: 10px 20px;
+            border: none;
             border-radius: 4px;
-            font-size: 0.85rem;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
             font-family: 'Libre Franklin', sans-serif;
-            border: none;
         }
 
         .cookie-consent-btn.accept {
-            background: var(--mauve);
+            background: var(--accent);
             color: white;
         }
 
         .cookie-consent-btn.accept:hover {
-            background: var(--mauve-dark);
+            background: #6B3410;
         }
 
         .cookie-consent-btn.decline {
@@ -1014,23 +1027,23 @@
                 <h2>Origin Story</h2>
             </div>
             <div class="origin-content">
-                <p>Michael P. Masters' journey into the intersection of anthropology and UFO research began with a childhood fascination. At around eight or nine years old, he experienced a vivid moment of imagination connecting early hominins, modern humans, and the archetypal gray aliens&mdash;a spark that would eventually ignite a lifelong pursuit of unconventional questions about humanity's place in the universe.</p>
+                <p>Michael P. Masters' journey into the intersection of anthropology and UFO research began with a childhood fascination that most would dismiss as mere imagination. Around the age of eight or nine, he experienced a vivid moment connecting early hominins, modern humans, and the archetypal gray aliens&mdash;an image that would plant the seeds for his life's work.</p>
 
                 <div class="key-point">
-                    A defining moment came through his father, a veterinarian in Ohio, who witnessed a bright light in the sky that moved in extraordinary ways. This encounter profoundly shaped Masters' interest in UFOs and the concept of time travel.
+                    A defining moment came from his father, a veterinarian in Ohio, who witnessed a bright light in the sky that moved in extraordinary ways. This story profoundly influenced Masters' interest in UFOs and the concept of time travel.
                 </div>
 
-                <p>Masters pursued a degree in anthropology, specializing in evolutionary anatomy and biomedicine. For years, his academic work remained distinct from his UFO curiosity. But eventually, he integrated these fields in a bold proposition: that UFOs and their occupants could represent future human descendants traveling back through time.</p>
+                <p>Masters pursued a traditional academic path, earning degrees in anthropology with specializations in evolutionary anatomy and biomedicine. Initially, his scholarly work remained distinct from his interest in UFOs, but he eventually found a way to integrate these seemingly disparate fields. His breakthrough theory proposes that UFOs and aliens could represent future human descendants traveling back in time&mdash;a hypothesis he calls the "extratempestrial" model.</p>
 
-                <p>A significant crossroads occurred when he decided to publicly share his theories, risking his academic credibility. Encouragement from peers and mentors&mdash;including a supportive department chair&mdash;helped him navigate this decision. The importance of asking challenging questions, even controversial ones, was reinforced at every turn.</p>
+                <p>A significant crossroads occurred when he decided to publicly share his theories, risking his academic credibility. Encouragement from peers and mentors, including a supportive department chair, helped him navigate this decision. The diminishing stigma surrounding UFO discussions in recent years has allowed him to engage more openly with these controversial subjects.</p>
 
                 <div class="key-point">
-                    His motivation stems from a desire to understand consciousness and humanity's role in the universe. He believes investigating UFO phenomena can illuminate fundamental existential questions that traditional science often avoids.
+                    "Once you know who we are, you'll know how we know that"&mdash;a statement that encapsulates his belief that understanding human evolution may unlock the mysteries of UFO phenomena.
                 </div>
 
-                <p>Throughout his career, Masters has collaborated with researchers from prestigious institutions, including Harvard. His work has gained recognition in public forums, from podcasts to conferences. Personal experiences&mdash;including what he describes as a "mini-abduction" during a UFO conference in 2022, where a stranger seemed to connect with him telepathically&mdash;have only deepened his commitment.</p>
+                <p>His academic work has evolved to include a course on UFOs at Montana Tech, reflecting a growing acceptance within academia. Personal experiences have reinforced his commitment, including what he describes as a "mini-abduction" during a 2022 UFO conference, where he encountered a stranger who seemed to connect with him telepathically.</p>
 
-                <p>Masters now teaches a course on UFOs at Montana Tech, reflecting the growing academic acceptance of these topics. He emphasizes the need for safe spaces where individuals can share their experiences without fear of ridicule&mdash;a cultural shift he sees as essential to understanding phenomena that have been reported throughout human history.</p>
+                <p>Throughout his career, Masters has collaborated with researchers from prestigious institutions, including Harvard. His books&mdash;<a href="#book-identified-flying-objects" class="cross-ref">Identified Flying Objects</a>, <a href="#book-the-extratempestrial-model" class="cross-ref">The Extratempestrial Model</a>, and <a href="#book-revelation-the-future-human-past" class="cross-ref">Revelation: The Future Human Past</a>&mdash;explore the connections between anthropology, consciousness, and the UFO phenomenon, challenging readers to reconsider humanity's place in the cosmos.</p>
             </div>
         </section>
 
@@ -1058,11 +1071,11 @@
             <div class="stories-grid">
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Betty and Barney Hill Abduction</h3>
-                        <p class="story-summary">The first widely publicized alien abduction case in the United States, occurring in 1961. Betty and Barney Hill, an interracial couple, reported being abducted by extraterrestrial beings while driving home. They experienced lost time and vivid dreams of their encounter&mdash;elements that Masters draws parallels to across various religious narratives and texts.</p>
+                        <h3>The Betty and Barney Hill Abduction</h3>
+                        <p class="story-summary">Masters recounts the first widely publicized alien abduction case in American history. In 1961, Betty and Barney Hill, an interracial couple, reported being abducted by extraterrestrial beings while driving home. They experienced lost time and vivid dreams of their encounter, which included elements that resonate with various religious narratives. The case highlights the societal stigma surrounding discussions of traumatic experiences involving UFOs.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Abduction</span>
-                            <span class="meta-tag">Historical case</span>
+                            <span class="meta-tag">Alien abduction</span>
+                            <span class="meta-tag">Historical UFO cases</span>
                             <span class="meta-tag">Stigma</span>
                         </div>
                     </div>
@@ -1070,23 +1083,23 @@
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Personal UFO Sighting in Montana</h3>
-                        <p class="story-summary">While living in Montana, Masters witnessed five bright lights in the sky exhibiting movements that suggested intelligent control&mdash;defying conventional explanations. The experience reinforced his belief that acknowledging and exploring personal encounters, even those that challenge understanding, is crucial to expanding knowledge.</p>
+                        <h3>Five Lights Over Montana</h3>
+                        <p class="story-summary">Masters shares a personal experience of witnessing five bright lights in the sky while living in Montana. The lights exhibited movements suggesting intelligent control, defying conventional explanations for natural or man-made phenomena. This encounter reinforced his belief that such experiences, while difficult to prove, form part of a larger pattern worthy of scientific investigation.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Personal experience</span>
-                            <span class="meta-tag">Intelligent control</span>
-                            <span class="meta-tag">Open-mindedness</span>
+                            <span class="meta-tag">Personal encounter</span>
+                            <span class="meta-tag">UFO sighting</span>
+                            <span class="meta-tag">Intelligent movement</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Time Travel and Future Humans Theory</h3>
-                        <p class="story-summary">Masters presents his theory that UFOs and their occupants may be time-traveling future humans. As humanity evolves, it may develop advanced technologies enabling time travel&mdash;and the need to revisit the past for genetic material. This framework encourages a re-evaluation of what it means to be human and the consequences of technological advancement.</p>
+                        <h3>Time-Traveling Future Humans</h3>
+                        <p class="story-summary">The central theory Masters proposes: UFOs and their occupants may be time-traveling future humans returning to the past for genetic material. As humanity evolves and potentially faces issues with genetic diversity and reproduction, our descendants might develop technologies allowing temporal travel. This framework connects evolutionary biology with UFO phenomena in a scientifically grounded hypothesis.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Time travel</span>
-                            <span class="meta-tag">Evolution</span>
+                            <span class="meta-tag">Human evolution</span>
                             <span class="meta-tag">Genetics</span>
                         </div>
                     </div>
@@ -1095,23 +1108,23 @@
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>The Baltic Sea Anomaly</h3>
-                        <p class="story-summary">Discovered in 2011 by a treasure-hunting team, this sonar-detected seafloor formation has sparked speculation about its origins. Some suggest it could be an ancient structure rather than natural formation&mdash;raising questions about undiscovered ancient civilizations and how much remains unknown about our planet's history.</p>
+                        <p class="story-summary">Masters discusses a sonar-detected seafloor formation discovered in 2011 by a treasure-hunting team in the Baltic Sea. The formation has sparked speculation about its origins, with some suggesting it could be an ancient structure rather than a natural geological feature. The anomaly serves as a reminder of how much remains unknown about our planet's history and the possibility of undiscovered ancient civilizations.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Ancient structures</span>
+                            <span class="meta-tag">Underwater anomaly</span>
+                            <span class="meta-tag">Ancient civilizations</span>
                             <span class="meta-tag">Mystery</span>
-                            <span class="meta-tag">Exploration</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Zulu Lore and the Sky Goddess</h3>
-                        <p class="story-summary">A Zulu legend about a sky goddess who chooses a man to mate with, communicating telepathically and taking him away on a rainbow of light. Masters notes how this ancient narrative parallels modern accounts of alien abduction&mdash;suggesting that cultural stories across time and geography may reflect deeper truths about human experiences with the unknown.</p>
+                        <h3>The Zulu Sky Goddess</h3>
+                        <p class="story-summary">Masters recounts a Zulu legend about a sky goddess who chooses a man to mate with, communicating telepathically and taking him away on a rainbow of light. This ancient narrative parallels modern accounts of alien abduction, suggesting that similar experiences have been reported throughout human history, long before our modern conception of UFOs emerged.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Cultural narrative</span>
+                            <span class="meta-tag">Ancient lore</span>
+                            <span class="meta-tag">Cultural parallels</span>
                             <span class="meta-tag">Telepathy</span>
-                            <span class="meta-tag">Parallels</span>
                         </div>
                     </div>
                 </article>
@@ -1129,91 +1142,91 @@
                 <div class="resource-category">
                     <h3>Books</h3>
                     <div class="books-list">
-                        <a href="https://www.goodreads.com/search?q=Identified%20Flying%20Objects" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                        <a href="https://www.goodreads.com/search?q=Identified%20Flying%20Objects" target="_blank" rel="noopener" class="book-item animate-on-scroll" id="book-identified-flying-objects">
                             <div class="book-info">
                                 <span class="book-title">Identified Flying Objects</span>
                                 <span class="book-context">Masters' first book discussing UFOs and related theories</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.goodreads.com/search?q=The%20Extratempestrial%20Model" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                        <a href="https://www.goodreads.com/search?q=The%20Extratempestrial%20Model" target="_blank" rel="noopener" class="book-item animate-on-scroll" id="book-the-extratempestrial-model">
                             <div class="book-info">
                                 <span class="book-title">The Extratempestrial Model</span>
-                                <span class="book-context">Masters' second book exploring case studies related to UFOs</span>
+                                <span class="book-context">Masters' second book exploring various UFO case studies</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.goodreads.com/search?q=Revelation%3A%20The%20Future%20Human%20Past" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                        <a href="https://www.goodreads.com/search?q=Revelation%3A%20The%20Future%20Human%20Past" target="_blank" rel="noopener" class="book-item animate-on-scroll" id="book-revelation-the-future-human-past">
                             <div class="book-info">
                                 <span class="book-title">Revelation: The Future Human Past</span>
-                                <span class="book-context">Masters' third book on time travel and human evolution</span>
+                                <span class="book-context">Masters' third book incorporating time travel and human evolution themes</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.goodreads.com/search?q=Marshmallow%20in%20the%20UFO" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                        <a href="https://www.goodreads.com/search?q=Marshmallow%20in%20the%20UFO" target="_blank" rel="noopener" class="book-item animate-on-scroll" id="book-marshmallow-in-the-ufo">
                             <div class="book-info">
                                 <span class="book-title">Marshmallow in the UFO: A Time Travel Adventure</span>
-                                <span class="book-context">Masters' recently published children's book</span>
+                                <span class="book-context">Recently published children's book about UFOs</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.goodreads.com/search?q=Communion%20Whitley%20Strieber" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                        <a href="https://www.goodreads.com/search?q=Communion%20Whitley%20Strieber" target="_blank" rel="noopener" class="book-item animate-on-scroll" id="book-communion">
                             <div class="book-info">
                                 <span class="book-title">Communion</span>
-                                <span class="book-context">Whitley Strieber's influential book on alien abduction experiences</span>
+                                <span class="book-context">Whitley Strieber's account of alien abduction experiences</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.goodreads.com/search?q=Passport%20to%20the%20Cosmos%20John%20Mack" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                        <a href="https://www.goodreads.com/search?q=Passport%20to%20the%20Cosmos%20John%20Mack" target="_blank" rel="noopener" class="book-item animate-on-scroll" id="book-passport-to-the-cosmos">
                             <div class="book-info">
                                 <span class="book-title">Passport to the Cosmos</span>
                                 <span class="book-context">John Mack's research on alien abduction experiences</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.goodreads.com/search?q=Best%20Evidence%20David%20Lifton" target="_blank" rel="noopener" class="book-item animate-on-scroll">
+                        <a href="https://www.goodreads.com/search?q=Best%20Evidence%20David%20Lifton" target="_blank" rel="noopener" class="book-item animate-on-scroll" id="book-best-evidence">
                             <div class="book-info">
                                 <span class="book-title">Best Evidence</span>
-                                <span class="book-context">Book critiquing the Warren Commission's findings on JFK</span>
+                                <span class="book-context">Critiques the Warren Commission's findings on JFK's assassination</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Films/Documentaries -->
+                <!-- Films & Documentaries -->
                 <div class="resource-category">
-                    <h3>Films &amp; Documentaries</h3>
+                    <h3>Films & Documentaries</h3>
                     <div class="films-list">
-                        <a href="https://www.imdb.com/find/?q=Song%20Sung%20Blue" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=Song%20Sung%20Blue" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-song-sung-blue">
                             <div class="film-info">
                                 <span class="film-title">Song Sung Blue</span>
-                                <span class="film-context">A movie about never giving up on your dreams</span>
+                                <span class="film-context">True story about never giving up on your dreams</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.imdb.com/find/?q=Chimp%20Nation" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=Chimp%20Nation" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-chimp-nation">
                             <div class="film-info">
                                 <span class="film-title">Chimp Nation</span>
                                 <span class="film-context">Docuseries exploring chimpanzee behavior and social structures</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.imdb.com/find/?q=Ancient%20Aliens" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=Ancient%20Aliens" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-ancient-aliens">
                             <div class="film-info">
                                 <span class="film-title">Ancient Aliens</span>
                                 <span class="film-context">Show that helped normalize discussions around UFOs</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.imdb.com/find/?q=The%20Age%20of%20Disclosure" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=The%20Age%20of%20Disclosure" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-the-age-of-disclosure">
                             <div class="film-info">
                                 <span class="film-title">The Age of Disclosure</span>
-                                <span class="film-context">Documentary on UFOs and government secrecy</span>
+                                <span class="film-context">Documentary discussing UFOs and government secrecy</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.imdb.com/find/?q=Moment%20of%20Contact" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=Moment%20of%20Contact" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-moment-of-contact">
                             <div class="film-info">
                                 <span class="film-title">Moment of Contact</span>
                                 <span class="film-context">Documentary about a specific UFO encounter in Brazil</span>
@@ -1227,59 +1240,59 @@
                 <div class="resource-category">
                     <h3>People</h3>
                     <div class="people-list">
-                        <a href="https://en.wikipedia.org/wiki/Tim_Burchett" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Tim_Burchett" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-tim-burchett">
                             <div class="person-info">
                                 <span class="person-name">Tim Burchett <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Politician known for discussing UFOs and government knowledge</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Jacques_Vall%C3%A9e" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Jacques_Vall%C3%A9e" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-jacques-vallee">
                             <div class="person-info">
                                 <span class="person-name">Jacques Vallée <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Researcher known for work on UFOs and related phenomena</span>
+                                <span class="person-context">Researcher known for his work on UFOs and related phenomena</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Harold_E._Puthoff" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Harold_E._Puthoff" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-hal-puthoff">
                             <div class="person-info">
                                 <span class="person-name">Hal Puthoff <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Physicist involved in UFO research and technology</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/David_Fravor" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/David_Fravor" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-david-fravor">
                             <div class="person-info">
                                 <span class="person-name">David Fravor <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Former Navy pilot who reported UFO encounters</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Whitley_Strieber" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Whitley_Strieber" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-whitley-strieber">
                             <div class="person-info">
                                 <span class="person-name">Whitley Strieber <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Author known for accounts of alien encounters</span>
+                                <span class="person-context">Author known for his accounts of alien encounters</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Jackie_Gleason" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Jackie_Gleason" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-jackie-gleason">
                             <div class="person-info">
                                 <span class="person-name">Jackie Gleason <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Celebrity who allegedly saw alien bodies while visiting Nixon</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Barry_Goldwater" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Barry_Goldwater" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-barry-goldwater">
                             <div class="person-info">
                                 <span class="person-name">Barry Goldwater <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Politician who inquired about UFOs and faced backlash</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Gary_Webb" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Gary_Webb" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-gary-webb">
                             <div class="person-info">
                                 <span class="person-name">Gary Webb <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Journalist known for controversial investigations</span>
+                                <span class="person-context">Journalist known for his controversial investigations</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
@@ -1395,8 +1408,7 @@
     <div id="cookieConsent" class="cookie-consent">
         <div class="cookie-consent-content">
             <p class="cookie-consent-text">
-                We use cookies to analyze site traffic and improve your experience. 
-                By clicking "Accept", you consent to our use of cookies.
+                We use cookies to analyze site traffic and improve your experience. By clicking "Accept", you consent to our use of analytics cookies.
             </p>
             <div class="cookie-consent-buttons">
                 <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
@@ -1406,14 +1418,7 @@
     </div>
 
     <script>
-        // Cookie Consent Management
-        function checkCookieConsent() {
-            const consent = localStorage.getItem('cookieConsent');
-            if (!consent) {
-                document.getElementById('cookieConsent').classList.add('show');
-            }
-        }
-
+        // Cookie consent handling
         function acceptCookies() {
             localStorage.setItem('cookieConsent', 'accepted');
             document.getElementById('cookieConsent').classList.remove('show');
@@ -1427,8 +1432,13 @@
             document.getElementById('cookieConsent').classList.remove('show');
         }
 
-        // Check consent on page load
-        checkCookieConsent();
+        // Check if user has already made a choice
+        document.addEventListener('DOMContentLoaded', function() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookieConsent').classList.add('show');
+            }
+        });
 
         // Scroll animations
         const observerOptions = {
@@ -1449,8 +1459,8 @@
             observer.observe(el);
         });
 
-        // Smooth scroll for nav links
-        document.querySelectorAll('nav a').forEach(link => {
+        // Smooth scroll for all internal links (nav and cross-refs)
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
