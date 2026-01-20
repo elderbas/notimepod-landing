@@ -13,7 +13,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         
-        // Check for consent
+        // Check for consent before initializing GA
         if (localStorage.getItem('cookieConsent') === 'accepted') {
             gtag('js', new Date());
             gtag('config', 'G-9DVDFHLSG0');
@@ -75,6 +75,241 @@
             font-family: 'Cormorant Garamond', Georgia, serif;
         }
 
+        /* Site Header */
+        .site-header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .site-logo svg {
+            width: 24px;
+            height: 24px;
+            color: var(--accent);
+        }
+
+        .site-logo-text {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .breadcrumbs a {
+            color: var(--ink-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumbs-sep {
+            color: var(--border);
+        }
+
+        .breadcrumbs-current {
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        /* Episode Selector Dropdown */
+        .episode-selector {
+            position: relative;
+        }
+
+        .episode-selector-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-family: 'Libre Franklin', sans-serif;
+            color: var(--ink);
+            transition: all 0.2s ease;
+        }
+
+        .episode-selector-btn:hover {
+            background: var(--cream-dark);
+            border-color: var(--ink-muted);
+        }
+
+        .episode-selector-btn svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .episode-selector.active .episode-selector-btn svg {
+            transform: rotate(180deg);
+        }
+
+        .episode-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 8px 30px var(--shadow-deep);
+            min-width: 280px;
+            max-height: 400px;
+            overflow-y: auto;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 200;
+        }
+
+        .episode-selector.active .episode-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .episode-dropdown-header {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            font-weight: 500;
+        }
+
+        .episode-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: var(--ink);
+            transition: background 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .episode-dropdown-item:hover {
+            background: var(--cream);
+        }
+
+        .episode-dropdown-item.current {
+            background: var(--highlight);
+            border-left-color: var(--accent);
+        }
+
+        .episode-dropdown-number {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            min-width: 45px;
+        }
+
+        .episode-dropdown-guest {
+            font-weight: 500;
+        }
+
+        /* Episode Meta Bar */
+        .episode-meta-bar {
+            background: var(--cream-dark);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--ink-light);
+        }
+
+        .meta-item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--ink-muted);
+        }
+
+        .meta-label {
+            color: var(--ink-muted);
+        }
+
+        .meta-value {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        .meta-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border);
+        }
+
+        /* Episode Nav Links */
+        .episode-nav-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .ep-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--ink-light);
+            font-size: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .ep-nav-link:hover {
+            background: var(--ink);
+            color: white;
+            border-color: var(--ink);
+        }
+
+        .ep-nav-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Header */
         header {
             position: relative;
             padding: 80px 24px 60px;
@@ -133,6 +368,7 @@
             padding-top: 0;
         }
 
+        /* Navigation */
         nav {
             position: sticky;
             top: 0;
@@ -170,6 +406,7 @@
             background: var(--highlight);
         }
 
+        /* Main content */
         main {
             max-width: 900px;
             margin: 0 auto;
@@ -213,6 +450,7 @@
             color: var(--ink);
         }
 
+        /* Origin Story */
         .origin-content {
             font-size: 1.05rem;
             line-height: 1.85;
@@ -242,6 +480,7 @@
             color: var(--ink-light);
         }
 
+        /* Cross-reference links */
         .cross-ref {
             color: var(--accent);
             text-decoration: none;
@@ -254,6 +493,7 @@
             border-bottom-color: var(--ink);
         }
 
+        /* Stories with images */
         .stories-grid {
             display: flex;
             flex-direction: column;
@@ -310,6 +550,7 @@
             color: var(--ink-muted);
         }
 
+        /* Resources - List format */
         .resources-container {
             display: flex;
             flex-direction: column;
@@ -326,6 +567,7 @@
             color: var(--ink);
         }
 
+        /* Books - Simple list */
         .books-list {
             display: flex;
             flex-direction: column;
@@ -386,6 +628,7 @@
             transform: translateX(0);
         }
 
+        /* Films - List with posters */
         .films-list {
             display: flex;
             flex-direction: column;
@@ -445,6 +688,7 @@
             color: var(--ink-muted);
         }
 
+        /* People - List with portraits */
         .people-list {
             display: flex;
             flex-direction: column;
@@ -503,6 +747,7 @@
             color: var(--ink-muted);
         }
 
+        /* Quotes */
         .quotes-container {
             display: flex;
             flex-direction: column;
@@ -597,6 +842,7 @@
             font-size: 1.4rem;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             padding: 60px 24px;
@@ -611,53 +857,7 @@
             color: var(--ink-muted);
         }
 
-        @media (max-width: 640px) {
-            header {
-                padding: 60px 20px 48px;
-            }
-
-            section {
-                padding: 56px 0;
-            }
-
-            .quote-card {
-                padding: 24px 24px 24px 40px;
-            }
-
-            .quote-card::before {
-                font-size: 2.5rem;
-                left: 12px;
-            }
-
-            nav ul {
-                gap: 4px;
-            }
-
-            nav a {
-                padding: 6px 12px;
-                font-size: 11px;
-            }
-
-            .film-item:hover,
-            .book-item:hover,
-            .person-item:hover {
-                margin: 0 -12px;
-                padding-left: 12px;
-                padding-right: 12px;
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        /* Inline CTA */
         .cta-inline {
             background: var(--cream-dark);
             border-top: 1px solid var(--border);
@@ -742,22 +942,11 @@
         }
 
         .cta-inline-form button:hover {
-            background: var(--mauve-dark);
+            background: var(--accent-dark);
             transform: translateY(-1px);
         }
 
-        @media (max-width: 640px) {
-            .cta-inline-form {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .cta-inline-form input[type="text"],
-            .cta-inline-form input[type="email"] {
-                min-width: 100%;
-            }
-        }
-
+        /* CTA Section */
         .cta-section {
             position: relative;
             padding: 80px 0 100px;
@@ -837,53 +1026,37 @@
             color: var(--mauve);
         }
 
-        @media (max-width: 640px) {
-            .cta-section {
-                padding: 60px 0 80px;
-            }
-        }
-
         /* Cookie Consent Banner */
         .cookie-consent {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: var(--dark-bg);
-            color: var(--dark-text);
+            background: var(--ink);
+            color: white;
             padding: 16px 24px;
-            z-index: 9999;
-            display: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .cookie-consent.show {
-            display: block;
-        }
-
-        .cookie-consent-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             gap: 24px;
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
             flex-wrap: wrap;
         }
 
+        .cookie-consent.visible {
+            transform: translateY(0);
+        }
+
         .cookie-consent-text {
-            flex: 1;
-            font-size: 0.9rem;
+            font-size: 14px;
             line-height: 1.5;
-            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
         }
 
         .cookie-consent-text a {
             color: var(--accent-light);
-            text-decoration: none;
-        }
-
-        .cookie-consent-text a:hover {
             text-decoration: underline;
         }
 
@@ -910,24 +1083,24 @@
         }
 
         .cookie-consent-btn.accept:hover {
-            background: #6B3410;
+            background: var(--accent-light);
         }
 
         .cookie-consent-btn.decline {
             background: transparent;
-            color: rgba(255, 255, 255, 0.7);
+            color: white;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .cookie-consent-btn.decline:hover {
             background: rgba(255, 255, 255, 0.1);
-            color: white;
         }
 
         @media (max-width: 640px) {
-            .cookie-consent-content {
+            .cookie-consent {
                 flex-direction: column;
                 text-align: center;
+                padding: 20px;
             }
 
             .cookie-consent-buttons {
@@ -935,9 +1108,191 @@
                 justify-content: center;
             }
         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .breadcrumbs {
+                order: 3;
+                width: 100%;
+                justify-content: flex-start;
+                font-size: 12px;
+            }
+
+            .episode-meta-bar {
+                gap: 16px;
+            }
+
+            .meta-divider {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 60px 20px 48px;
+            }
+
+            section {
+                padding: 56px 0;
+            }
+
+            .quote-card {
+                padding: 24px 24px 24px 40px;
+            }
+
+            .quote-card::before {
+                font-size: 2.5rem;
+                left: 12px;
+            }
+
+            nav ul {
+                gap: 4px;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .film-item:hover,
+            .book-item:hover,
+            .person-item:hover {
+                margin: 0 -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .cta-inline-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-inline-form input[type="text"],
+            .cta-inline-form input[type="email"] {
+                min-width: 100%;
+            }
+
+            .cta-section {
+                padding: 60px 0 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .breadcrumbs {
+                display: none;
+            }
+
+            .episode-meta-bar {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
+    <div class="site-header">
+        <a href="https://notimepod.com" class="site-logo">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+            </svg>
+            <span class="site-logo-text">no time</span>
+        </a>
+
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="https://notimepod.com">Home</a>
+            <span class="breadcrumbs-sep">/</span>
+            <a href="../">JRE Summaries</a>
+            <span class="breadcrumbs-sep">/</span>
+            <span class="breadcrumbs-current">John Mellencamp</span>
+        </nav>
+
+        <div class="episode-selector" id="episodeSelector">
+            <button class="episode-selector-btn" id="selectorBtn">
+                Jump to Episode
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+            <div class="episode-dropdown">
+                <div class="episode-dropdown-header">JRE Episodes</div>
+                <a href="../johnny-knoxville-2439/" class="episode-dropdown-item">
+                    <span class="episode-dropdown-number">#2439</span>
+                    <span class="episode-dropdown-guest">Johnny Knoxville</span>
+                </a>
+                <a href="../john-mellencamp-2438/" class="episode-dropdown-item current">
+                    <span class="episode-dropdown-number">#2438</span>
+                    <span class="episode-dropdown-guest">John Mellencamp</span>
+                </a>
+                <a href="../michael-p-masters-2428/" class="episode-dropdown-item">
+                    <span class="episode-dropdown-number">#2428</span>
+                    <span class="episode-dropdown-guest">Michael P. Masters</span>
+                </a>
+                <a href="../bret-weinstein-2427/" class="episode-dropdown-item">
+                    <span class="episode-dropdown-number">#2427</span>
+                    <span class="episode-dropdown-guest">Bret Weinstein</span>
+                </a>
+                <a href="../ethan-hawke-2425/" class="episode-dropdown-item">
+                    <span class="episode-dropdown-number">#2425</span>
+                    <span class="episode-dropdown-guest">Ethan Hawke</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="episode-meta-bar">
+        <div class="meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span class="meta-label">Released</span>
+            <span class="meta-value">January 2025</span>
+        </div>
+        <span class="meta-divider"></span>
+        <div class="meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span class="meta-label">Episode</span>
+            <span class="meta-value">#2438</span>
+        </div>
+        <span class="meta-divider"></span>
+        <div class="episode-nav-links">
+            <a href="../michael-p-masters-2428/" class="ep-nav-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+                Previous
+            </a>
+            <a href="../johnny-knoxville-2439/" class="ep-nav-link">
+                Next
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
     <header>
         <p class="episode-label">Podcast Summary</p>
         <h1>Joe Rogan Experience</h1>
@@ -960,23 +1315,25 @@
                 <h2>Origin Story</h2>
             </div>
             <div class="origin-content">
-                <p>John Mellencamp's love for music ignited at a young age. He formed his first band at just 11 years old and continued to hone his craft by playing in a garage band and later in a bar band called The Crepe Soul at the age of 14. These formative experiences laid the groundwork for his future in music, though he initially envisioned a future as a professional football player, boxer, or singer.</p>
+                <p>John Mellencamp's love for music ignited at a young age. He formed his first band at just 11 years old and continued to hone his craft by playing in a garage band and later in a bar band called The Crepe Soul at the age of 14. These formative experiences laid the groundwork for his future in music, even as he initially envisioned a future as a professional football player or boxer.</p>
 
                 <div class="key-point">
-                    Born with spina bifida and undergoing significant surgery as a child, Mellencamp's early health challenges contributed to his resilience and determination—experiences that would shape his character and outlook on life.
+                    Born with spina bifida and undergoing significant surgery as a child, Mellencamp's early health challenges contributed to his resilience and determination&mdash;shaping his character and outlook on life.
                 </div>
 
-                <p>After attending college, where he studied broadcasting technology, Mellencamp joined a band called The Mason Brothers. His early career as a "barroom singer" was marked by performing without writing his own songs, a phase that was crucial for developing his performance skills. A significant turning point occurred when he secured a record deal despite not having written any songs prior.</p>
+                <p>After attending college, where he studied broadcasting technology, Mellencamp joined a band called The Mason Brothers. His early career as a "barroom singer" was marked by performing without writing his own songs, a phase that was crucial for developing his performance skills before he ever stepped into a recording studio.</p>
 
-                <p>The pressure from his label to produce music quickly led to the creation of iconic songs. The emergence of MTV in the early 1980s was pivotal for Mellencamp's career, as he was among the few artists actively creating music videos, significantly boosting his visibility. He worked with various musicians and producers, including <a href="#person-mick-ronson" class="cross-ref">Mick Ronson</a>, who significantly influenced his music.</p>
+                <p>A significant turning point occurred when he secured a record deal despite not having written any songs prior. The pressure from his label to produce music quickly led to the creation of hits like "Jack and Diane" and "Hurts So Good," which initially faced rejection but later became iconic. He famously wrote "Hurts So Good" spontaneously while in the shower.</p>
 
                 <div class="key-point">
-                    His songwriting is characterized by a desire to create relatable music, encapsulated in his phrase "keep it simple, stupid." His spontaneous creative process is illustrated by how he quickly wrote one of his biggest hits while in the shower.
+                    The emergence of MTV in the early 1980s was pivotal for Mellencamp's career, as he was among the few artists actively creating music videos, significantly boosting his visibility. However, he later expressed that the fame left him feeling unfulfilled.
                 </div>
 
-                <p>However, the fame brought by MTV left him feeling unfulfilled, prompting a period of introspection about what truly mattered in life. His personal challenges, including panic attacks and a heart attack, profoundly influenced his outlook on life and music. Growing up during the turbulent 1960s and 70s shaped his worldview and artistic expression.</p>
+                <p>Throughout his career, Mellencamp acknowledged the vital role of collaboration and support from others in the industry. He worked with various musicians and producers, including <a href="#person-mick-ronson" class="cross-ref">Mick Ronson</a>, who significantly influenced his music and gave him memorable advice about using drum machines.</p>
 
-                <p>Mellencamp's reflections reveal gratitude for the opportunities he received, despite facing health issues and personal struggles. He shares a sense of disbelief about his success with fellow artists like <a href="#person-bruce-springsteen" class="cross-ref">Bruce Springsteen</a>. He emphasizes the importance of humility and recognizing life's transient nature, values he attributes to his father's grounded perspective on life and success.</p>
+                <p>Reflecting on the challenges of fame, Mellencamp emphasizes the importance of humility and recognizing life's transient nature. His conversations with <a href="#person-bruce-springsteen" class="cross-ref">Bruce Springsteen</a> revealed a shared sense of disbelief about their success&mdash;a grounding perspective that has shaped both artists' approaches to their careers.</p>
+
+                <p>Growing up during the turbulent 1960s and 70s, a period of significant social and political upheaval, shaped Mellencamp's worldview and artistic expression. He reflects on the disillusionment of his generation with political leaders and the impact of events like the Vietnam War on his perspective, influences that continue to resonate in his music today.</p>
             </div>
         </section>
 
@@ -1004,24 +1361,36 @@
             <div class="stories-grid">
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Richard Pryor's Live on the Sunset Strip</h3>
-                        <p class="story-summary">Mellencamp describes attending Richard Pryor's iconic stand-up special, detailing the electrifying atmosphere and the profound emotional impact it had on him. The experience highlighted the irreplaceable connection that live comedy fosters with its audience, contrasting it with the experience of watching recorded media.</p>
+                        <h3>Richard Pryor's "Live on the Sunset Strip"</h3>
+                        <p class="story-summary">Mellencamp describes attending Richard Pryor's iconic stand-up special, detailing the electrifying atmosphere and the profound emotional impact it had on him. The experience underscored the irreplaceable connection that live comedy fosters with its audience&mdash;something he found transformative.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Live performance</span>
                             <span class="meta-tag">Comedy</span>
-                            <span class="meta-tag">Transformative moments</span>
+                            <span class="meta-tag">Emotional impact</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>The Johnny Cougar Identity Crisis</h3>
-                        <p class="story-summary">Mellencamp narrates his evolution from a barroom singer to a successful musician, discussing his struggles with his identity as "Johnny Cougar" and the pressures of the music industry. He reflects on pivotal moments with his manager Tony DeFries that shaped his career, emphasizing how artists face significant challenges in maintaining their authenticity.</p>
+                        <h3>The Journey from "Johnny Cougar"</h3>
+                        <p class="story-summary">Mellencamp narrates his evolution from a barroom singer to a successful musician, discussing his struggles with his identity as "Johnny Cougar" and the pressures of the music industry. He reflects on how authenticity became crucial to his artistry despite external pressures to conform.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Identity</span>
-                            <span class="meta-tag">Music industry</span>
                             <span class="meta-tag">Authenticity</span>
+                            <span class="meta-tag">Music industry</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Personal Transformation</h3>
+                        <p class="story-summary">Mellencamp shares a personal narrative about his struggles with alcohol and fighting, culminating in a pivotal moment that prompted him to change his life after a particularly troubling experience. Hitting "rock bottom" served as a catalyst for positive transformation and personal growth.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Recovery</span>
+                            <span class="meta-tag">Self-awareness</span>
+                            <span class="meta-tag">Personal growth</span>
                         </div>
                     </div>
                 </article>
@@ -1029,7 +1398,7 @@
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>Soundcheck with Johnny Cash</h3>
-                        <p class="story-summary">Mellencamp shares a humorous story about a soundcheck experience with <a href="#person-johnny-cash" class="cross-ref">Johnny Cash</a> and <a href="#person-june-carter-cash" class="cross-ref">June Carter Cash</a>. The anecdote reveals the casual camaraderie between musicians and the unexpected moments that occur behind the scenes of major performances.</p>
+                        <p class="story-summary">A humorous story about a soundcheck experience with <a href="#person-johnny-cash" class="cross-ref">Johnny Cash</a> and <a href="#person-june-carter-cash" class="cross-ref">June Carter Cash</a>. Mellencamp recalls the unexpected moments and the camaraderie between musicians, offering a glimpse into the personal side of legendary performers.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Collaboration</span>
                             <span class="meta-tag">Country music</span>
@@ -1040,36 +1409,24 @@
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Personal Transformation and Overcoming Addiction</h3>
-                        <p class="story-summary">The guest shares a personal narrative about his struggles with alcohol and fighting, culminating in a pivotal moment that prompted him to change his life after a particularly troubling experience. Recognizing the consequences of one's actions can lead to significant life changes, and hitting "rock bottom" can serve as a catalyst for positive transformation.</p>
+                        <h3>Heart Attack on Stage</h3>
+                        <p class="story-summary">Mellencamp shares his experience of having a heart attack at a young age and the importance of lifestyle choices in maintaining health. He reflects on his family's health history and the need for proactive health management, emphasizing gratitude for life and the importance of humility.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Personal growth</span>
-                            <span class="meta-tag">Self-awareness</span>
+                            <span class="meta-tag">Health</span>
                             <span class="meta-tag">Resilience</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="story-card animate-on-scroll">
-                    <div class="story-content">
-                        <h3>The Heart Attack on Stage</h3>
-                        <p class="story-summary">Mellencamp shares his experiences with health issues, including having a real heart attack at a young age while performing. He discusses the importance of lifestyle choices in maintaining health and reflects on his family's health history. The story underscores the need for proactive health management and listening to medical advice.</p>
-                        <div class="story-tags">
-                            <span class="meta-tag">Health crisis</span>
                             <span class="meta-tag">Mortality</span>
-                            <span class="meta-tag">Lifestyle choices</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Early Days with The Mason Brothers</h3>
-                        <p class="story-summary">Mellencamp recounts humorous anecdotes from his early days in music, including his first band at age 11 and performances in bars as a teenager. He shares a memorable incident involving a band member falling overboard during a performance, highlighting the joy and chaos of early artistic endeavors.</p>
+                        <h3>Early Band Days</h3>
+                        <p class="story-summary">Mellencamp recounts humorous anecdotes from his early days in music, including his first band at age 11 and performances in bars as a teenager. He shares a memorable incident involving a band member falling overboard during a performance&mdash;illustrating the chaos and joy of early artistic endeavors.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Early career</span>
-                            <span class="meta-tag">Band life</span>
+                            <span class="meta-tag">Youth</span>
                             <span class="meta-tag">Humor</span>
+                            <span class="meta-tag">Formative years</span>
                         </div>
                     </div>
                 </article>
@@ -1083,6 +1440,7 @@
             </div>
             <div class="resources-container">
 
+                <!-- Films -->
                 <div class="resource-category">
                     <h3>Films</h3>
                     <div class="films-list">
@@ -1093,10 +1451,17 @@
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.imdb.com/find/?q=The%20Hustler" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-hustler">
+                        <a href="https://www.imdb.com/find/?q=Hustler" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-hustler">
                             <div class="film-info">
-                                <span class="film-title">The Hustler</span>
+                                <span class="film-title">Hustler</span>
                                 <span class="film-context">Recalling a favorite movie after discussing Paul Newman's passing</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.imdb.com/find/?q=Ring%20of%20Fire" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-ring-of-fire">
+                            <div class="film-info">
+                                <span class="film-title">Ring of Fire</span>
+                                <span class="film-context">Mentioning a song performed during a soundcheck with Johnny Cash</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
@@ -1110,6 +1475,7 @@
                     </div>
                 </div>
 
+                <!-- People -->
                 <div class="resource-category">
                     <h3>People</h3>
                     <div class="people-list">
@@ -1247,7 +1613,7 @@
                         </blockquote>
 
                         <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">I had a real heart attack on stage.</p>
+                            <p class="quote-text">I had a fucking real heart attack on stage.</p>
                             <div class="quote-meta">
                                 <span class="quote-context">Health crisis</span>
                             </div>
@@ -1313,39 +1679,39 @@
     </footer>
 
     <!-- Cookie Consent Banner -->
-    <div id="cookieConsent" class="cookie-consent">
-        <div class="cookie-consent-content">
-            <p class="cookie-consent-text">
-                We use cookies to analyze site traffic and improve your experience. By clicking "Accept", you consent to our use of analytics cookies.
-            </p>
-            <div class="cookie-consent-buttons">
-                <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
-                <button class="cookie-consent-btn accept" onclick="acceptCookies()">Accept</button>
-            </div>
+    <div class="cookie-consent" id="cookieConsent">
+        <p class="cookie-consent-text">We use cookies to analyze site traffic and improve your experience. By clicking "Accept", you consent to our use of cookies.</p>
+        <div class="cookie-consent-buttons">
+            <button class="cookie-consent-btn decline" id="cookieDecline">Decline</button>
+            <button class="cookie-consent-btn accept" id="cookieAccept">Accept</button>
         </div>
     </div>
 
     <script>
         // Cookie consent handling
-        function acceptCookies() {
+        const cookieConsent = document.getElementById('cookieConsent');
+        const cookieAccept = document.getElementById('cookieAccept');
+        const cookieDecline = document.getElementById('cookieDecline');
+
+        // Check if user has already made a choice
+        if (!localStorage.getItem('cookieConsent')) {
+            // Show banner after a short delay
+            setTimeout(() => {
+                cookieConsent.classList.add('visible');
+            }, 1000);
+        }
+
+        cookieAccept.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'accepted');
-            document.getElementById('cookieConsent').classList.remove('show');
+            cookieConsent.classList.remove('visible');
             // Initialize GA after consent
             gtag('js', new Date());
             gtag('config', 'G-9DVDFHLSG0');
-        }
+        });
 
-        function declineCookies() {
+        cookieDecline.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'declined');
-            document.getElementById('cookieConsent').classList.remove('show');
-        }
-
-        // Check if user has already made a choice
-        document.addEventListener('DOMContentLoaded', function() {
-            const consent = localStorage.getItem('cookieConsent');
-            if (!consent) {
-                document.getElementById('cookieConsent').classList.add('show');
-            }
+            cookieConsent.classList.remove('visible');
         });
 
         // Scroll animations
@@ -1367,7 +1733,7 @@
             observer.observe(el);
         });
 
-        // Smooth scroll for all internal links (nav and cross-references)
+        // Smooth scroll for all internal links
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1377,6 +1743,28 @@
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             });
+        });
+
+        // Episode dropdown toggle
+        const selector = document.getElementById('episodeSelector');
+        const selectorBtn = document.getElementById('selectorBtn');
+
+        selectorBtn.addEventListener('click', () => {
+            selector.classList.toggle('active');
+        });
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+            if (!selector.contains(e.target)) {
+                selector.classList.remove('active');
+            }
+        });
+
+        // Close on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                selector.classList.remove('active');
+            }
         });
     </script>
 </body>
