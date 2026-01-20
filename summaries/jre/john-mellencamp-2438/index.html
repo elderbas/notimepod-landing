@@ -13,7 +13,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         
-        // Check for consent before initializing GA
+        // Check for consent
         if (localStorage.getItem('cookieConsent') === 'accepted') {
             gtag('js', new Date());
             gtag('config', 'G-9DVDFHLSG0');
@@ -46,6 +46,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
@@ -57,7 +58,6 @@
             font-weight: 400;
         }
 
-        /* Noise texture overlay */
         body::before {
             content: '';
             position: fixed;
@@ -75,7 +75,6 @@
             font-family: 'Cormorant Garamond', Georgia, serif;
         }
 
-        /* Header */
         header {
             position: relative;
             padding: 80px 24px 60px;
@@ -134,7 +133,6 @@
             padding-top: 0;
         }
 
-        /* Navigation */
         nav {
             position: sticky;
             top: 0;
@@ -172,7 +170,6 @@
             background: var(--highlight);
         }
 
-        /* Main content */
         main {
             max-width: 900px;
             margin: 0 auto;
@@ -216,7 +213,6 @@
             color: var(--ink);
         }
 
-        /* Origin Story */
         .origin-content {
             font-size: 1.05rem;
             line-height: 1.85;
@@ -246,7 +242,18 @@
             color: var(--ink-light);
         }
 
-        /* Stories with images */
+        .cross-ref {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent-light);
+            transition: all 0.2s ease;
+        }
+
+        .cross-ref:hover {
+            color: var(--ink);
+            border-bottom-color: var(--ink);
+        }
+
         .stories-grid {
             display: flex;
             flex-direction: column;
@@ -303,7 +310,6 @@
             color: var(--ink-muted);
         }
 
-        /* Resources - List format */
         .resources-container {
             display: flex;
             flex-direction: column;
@@ -320,7 +326,6 @@
             color: var(--ink);
         }
 
-        /* Books - Simple list */
         .books-list {
             display: flex;
             flex-direction: column;
@@ -381,7 +386,6 @@
             transform: translateX(0);
         }
 
-        /* Films - List with posters */
         .films-list {
             display: flex;
             flex-direction: column;
@@ -441,7 +445,6 @@
             color: var(--ink-muted);
         }
 
-        /* People - List with portraits */
         .people-list {
             display: flex;
             flex-direction: column;
@@ -500,7 +503,6 @@
             color: var(--ink-muted);
         }
 
-        /* Quotes */
         .quotes-container {
             display: flex;
             flex-direction: column;
@@ -595,7 +597,6 @@
             font-size: 1.4rem;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 60px 24px;
@@ -610,7 +611,6 @@
             color: var(--ink-muted);
         }
 
-        /* Responsive */
         @media (max-width: 640px) {
             header {
                 padding: 60px 20px 48px;
@@ -647,7 +647,6 @@
             }
         }
 
-        /* Scroll animations */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(20px);
@@ -659,7 +658,6 @@
             transform: translateY(0);
         }
 
-        /* Inline CTA - Compact signup between sections */
         .cta-inline {
             background: var(--cream-dark);
             border-top: 1px solid var(--border);
@@ -695,7 +693,7 @@
         }
 
         .cta-inline-powered a {
-            color: var(--sienna);
+            color: var(--accent);
             text-decoration: none;
         }
 
@@ -744,7 +742,7 @@
         }
 
         .cta-inline-form button:hover {
-            background: var(--accent-dark);
+            background: var(--mauve-dark);
             transform: translateY(-1px);
         }
 
@@ -760,7 +758,6 @@
             }
         }
 
-        /* CTA Section - Bridge between editorial and landing page */
         .cta-section {
             position: relative;
             padding: 80px 0 100px;
@@ -823,48 +820,6 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        .cta-value-props {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-bottom: 36px;
-            flex-wrap: wrap;
-        }
-
-        .cta-value-prop {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .cta-value-prop::before {
-            content: '•';
-            color: var(--mauve);
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 16px 40px;
-            background: linear-gradient(135deg, var(--mauve) 0%, var(--mauve-dark) 100%);
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(139, 58, 98, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(139, 58, 98, 0.4);
-            background: linear-gradient(135deg, #9a4570 0%, var(--mauve) 100%);
-        }
-
         .cta-footnote {
             margin-top: 28px;
             font-size: 0.85rem;
@@ -885,15 +840,6 @@
         @media (max-width: 640px) {
             .cta-section {
                 padding: 60px 0 80px;
-            }
-
-            .cta-value-props {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .cta-button {
-                padding: 14px 32px;
             }
         }
 
@@ -933,7 +879,7 @@
         }
 
         .cookie-consent-text a {
-            color: var(--mauve);
+            color: var(--accent-light);
             text-decoration: none;
         }
 
@@ -949,22 +895,22 @@
 
         .cookie-consent-btn {
             padding: 10px 20px;
+            border: none;
             border-radius: 4px;
-            font-size: 0.85rem;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
             font-family: 'Libre Franklin', sans-serif;
-            border: none;
         }
 
         .cookie-consent-btn.accept {
-            background: var(--mauve);
+            background: var(--accent);
             color: white;
         }
 
         .cookie-consent-btn.accept:hover {
-            background: var(--mauve-dark);
+            background: #6B3410;
         }
 
         .cookie-consent-btn.decline {
@@ -1014,25 +960,23 @@
                 <h2>Origin Story</h2>
             </div>
             <div class="origin-content">
-                <p>John Mellencamp's love for music ignited at a young age. He formed his first band at just 11 years old and continued to hone his craft by playing in a garage band and later in a bar band called <strong>The Crepe Soul</strong> at the age of 14. These formative experiences laid the groundwork for his future in music, though he initially envisioned a career as a professional football player, boxer, or singer.</p>
+                <p>John Mellencamp's love for music ignited at a young age. He formed his first band at just 11 years old and continued to hone his craft by playing in a garage band and later in a bar band called The Crepe Soul at the age of 14. These formative experiences laid the groundwork for his future in music, though he initially envisioned a future as a professional football player, boxer, or singer.</p>
 
                 <div class="key-point">
-                    Born with spina bifida and undergoing significant surgery as a child, Mellencamp's early health challenges contributed to his resilience and determination&mdash;shaping his character and outlook on life.
+                    Born with spina bifida and undergoing significant surgery as a child, Mellencamp's early health challenges contributed to his resilience and determination—experiences that would shape his character and outlook on life.
                 </div>
 
-                <p>After attending college, where he studied broadcasting technology, Mellencamp joined a band called <strong>The Mason Brothers</strong>. His early career as a "barroom singer" was marked by performing without writing his own songs, a phase that was crucial for developing his performance skills before he secured a record deal.</p>
+                <p>After attending college, where he studied broadcasting technology, Mellencamp joined a band called The Mason Brothers. His early career as a "barroom singer" was marked by performing without writing his own songs, a phase that was crucial for developing his performance skills. A significant turning point occurred when he secured a record deal despite not having written any songs prior.</p>
 
-                <p>A significant turning point occurred when he got that record deal despite not having written any songs prior. The pressure from his label to produce music quickly led to the creation of hits like "Jack and Diane" and "Hurts So Good," which initially faced rejection but later became iconic.</p>
+                <p>The pressure from his label to produce music quickly led to the creation of iconic songs. The emergence of MTV in the early 1980s was pivotal for Mellencamp's career, as he was among the few artists actively creating music videos, significantly boosting his visibility. He worked with various musicians and producers, including <a href="#person-mick-ronson" class="cross-ref">Mick Ronson</a>, who significantly influenced his music.</p>
 
                 <div class="key-point">
-                    The emergence of MTV in the early 1980s was pivotal for Mellencamp's career&mdash;he was among the few artists actively creating music videos, significantly boosting his visibility. However, he later expressed that the fame left him feeling unfulfilled.
+                    His songwriting is characterized by a desire to create relatable music, encapsulated in his phrase "keep it simple, stupid." His spontaneous creative process is illustrated by how he quickly wrote one of his biggest hits while in the shower.
                 </div>
 
-                <p>Throughout his career, Mellencamp acknowledged the vital role of collaboration and support from others in the industry. He worked with various musicians and producers, including <strong>Mick Ronson</strong>, who significantly influenced his music. His partnership with <strong>Bruce Springsteen</strong> also reflected a shared sense of disbelief about their mutual success.</p>
+                <p>However, the fame brought by MTV left him feeling unfulfilled, prompting a period of introspection about what truly mattered in life. His personal challenges, including panic attacks and a heart attack, profoundly influenced his outlook on life and music. Growing up during the turbulent 1960s and 70s shaped his worldview and artistic expression.</p>
 
-                <p>Growing up during the turbulent 1960s and 70s, a period of significant social and political upheaval, shaped Mellencamp's worldview and artistic expression. He reflects on the disillusionment of his generation with political leaders and the impact of events like the Vietnam War on his perspective.</p>
-
-                <p>Family life, including an early marriage and becoming a father at a young age, influenced his priorities and values. He stresses the importance of maintaining connections with his children and the joy they bring him, even during tough times&mdash;emphasizing the importance of humility and recognizing life's transient nature.</p>
+                <p>Mellencamp's reflections reveal gratitude for the opportunities he received, despite facing health issues and personal struggles. He shares a sense of disbelief about his success with fellow artists like <a href="#person-bruce-springsteen" class="cross-ref">Bruce Springsteen</a>. He emphasizes the importance of humility and recognizing life's transient nature, values he attributes to his father's grounded perspective on life and success.</p>
             </div>
         </section>
 
@@ -1060,12 +1004,12 @@
             <div class="stories-grid">
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Richard Pryor's "Live on the Sunset Strip"</h3>
-                        <p class="story-summary">Mellencamp describes attending Richard Pryor's iconic stand-up special, detailing the electrifying atmosphere and the profound emotional impact it had on him. He reflects on the humor and the unique experience of live comedy, including a memorable incident where a band member named Ferd disrupted the show.</p>
+                        <h3>Richard Pryor's Live on the Sunset Strip</h3>
+                        <p class="story-summary">Mellencamp describes attending Richard Pryor's iconic stand-up special, detailing the electrifying atmosphere and the profound emotional impact it had on him. The experience highlighted the irreplaceable connection that live comedy fosters with its audience, contrasting it with the experience of watching recorded media.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Live performance</span>
                             <span class="meta-tag">Comedy</span>
-                            <span class="meta-tag">Connection</span>
+                            <span class="meta-tag">Transformative moments</span>
                         </div>
                     </div>
                 </article>
@@ -1073,23 +1017,35 @@
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>The Johnny Cougar Identity Crisis</h3>
-                        <p class="story-summary">Mellencamp narrates his evolution from a barroom singer to a successful musician, discussing his struggles with his identity as "Johnny Cougar" and the pressures of the music industry. He reflects on pivotal moments that shaped his career and how working with manager Tony DeFries influenced his path.</p>
+                        <p class="story-summary">Mellencamp narrates his evolution from a barroom singer to a successful musician, discussing his struggles with his identity as "Johnny Cougar" and the pressures of the music industry. He reflects on pivotal moments with his manager Tony DeFries that shaped his career, emphasizing how artists face significant challenges in maintaining their authenticity.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Identity</span>
-                            <span class="meta-tag">Authenticity</span>
                             <span class="meta-tag">Music industry</span>
+                            <span class="meta-tag">Authenticity</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Rock Bottom and Transformation</h3>
-                        <p class="story-summary">Mellencamp shares a personal narrative about his struggles with alcohol and fighting, culminating in a pivotal moment that prompted him to change his life after a particularly troubling experience with his roommate and bar patrons. Hitting rock bottom became a catalyst for positive transformation.</p>
+                        <h3>Soundcheck with Johnny Cash</h3>
+                        <p class="story-summary">Mellencamp shares a humorous story about a soundcheck experience with <a href="#person-johnny-cash" class="cross-ref">Johnny Cash</a> and <a href="#person-june-carter-cash" class="cross-ref">June Carter Cash</a>. The anecdote reveals the casual camaraderie between musicians and the unexpected moments that occur behind the scenes of major performances.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Addiction</span>
-                            <span class="meta-tag">Self-awareness</span>
+                            <span class="meta-tag">Collaboration</span>
+                            <span class="meta-tag">Country music</span>
+                            <span class="meta-tag">Behind the scenes</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Personal Transformation and Overcoming Addiction</h3>
+                        <p class="story-summary">The guest shares a personal narrative about his struggles with alcohol and fighting, culminating in a pivotal moment that prompted him to change his life after a particularly troubling experience. Recognizing the consequences of one's actions can lead to significant life changes, and hitting "rock bottom" can serve as a catalyst for positive transformation.</p>
+                        <div class="story-tags">
                             <span class="meta-tag">Personal growth</span>
+                            <span class="meta-tag">Self-awareness</span>
+                            <span class="meta-tag">Resilience</span>
                         </div>
                     </div>
                 </article>
@@ -1097,35 +1053,23 @@
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>The Heart Attack on Stage</h3>
-                        <p class="story-summary">Mellencamp discusses his experiences with health issues, including a real heart attack at a young age, and the importance of lifestyle choices in maintaining health. He reflects on his family's health history and how neglecting medical advice led to serious consequences.</p>
+                        <p class="story-summary">Mellencamp shares his experiences with health issues, including having a real heart attack at a young age while performing. He discusses the importance of lifestyle choices in maintaining health and reflects on his family's health history. The story underscores the need for proactive health management and listening to medical advice.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Health</span>
+                            <span class="meta-tag">Health crisis</span>
                             <span class="meta-tag">Mortality</span>
-                            <span class="meta-tag">Lifestyle</span>
+                            <span class="meta-tag">Lifestyle choices</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Early Band Days and Fraternity Chaos</h3>
-                        <p class="story-summary">Mellencamp recounts humorous anecdotes from his early days in music, including his first band at age 11 and performances in bars as a teenager. He shares a memorable incident involving band leader Dave and a band member falling overboard during a performance at a fraternity.</p>
+                        <h3>Early Days with The Mason Brothers</h3>
+                        <p class="story-summary">Mellencamp recounts humorous anecdotes from his early days in music, including his first band at age 11 and performances in bars as a teenager. He shares a memorable incident involving a band member falling overboard during a performance, highlighting the joy and chaos of early artistic endeavors.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Youth</span>
+                            <span class="meta-tag">Early career</span>
+                            <span class="meta-tag">Band life</span>
                             <span class="meta-tag">Humor</span>
-                            <span class="meta-tag">Teamwork</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="story-card animate-on-scroll">
-                    <div class="story-content">
-                        <h3>Fame and Its Discontents</h3>
-                        <p class="story-summary">Mellencamp discusses the complexities of fame, including feelings of isolation and the pressure to conform to public expectations. He reflects on how fame has evolved with social media and the struggle for authenticity in the face of critics and public perception.</p>
-                        <div class="story-tags">
-                            <span class="meta-tag">Fame</span>
-                            <span class="meta-tag">Social media</span>
-                            <span class="meta-tag">Authenticity</span>
                         </div>
                     </div>
                 </article>
@@ -1139,25 +1083,24 @@
             </div>
             <div class="resources-container">
 
-                <!-- Films -->
                 <div class="resource-category">
                     <h3>Films</h3>
                     <div class="films-list">
-                        <a href="https://www.imdb.com/find/?q=The%20Fugitive%20Kind" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=The%20Fugitive%20Kind" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-the-fugitive-kind">
                             <div class="film-info">
                                 <span class="film-title">The Fugitive Kind</span>
                                 <span class="film-context">Recommending a classic film starring Marlon Brando and Joanne Woodward</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.imdb.com/find/?q=Hustler" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=The%20Hustler" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-hustler">
                             <div class="film-info">
                                 <span class="film-title">The Hustler</span>
                                 <span class="film-context">Recalling a favorite movie after discussing Paul Newman's passing</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.imdb.com/find/?q=The%20Miracle%20Man" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=The%20Miracle%20Man" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-the-miracle-man">
                             <div class="film-info">
                                 <span class="film-title">The Miracle Man</span>
                                 <span class="film-context">Recalling the first movie seen on HBO that changed perceptions of television</span>
@@ -1167,98 +1110,83 @@
                     </div>
                 </div>
 
-                <!-- People -->
                 <div class="resource-category">
                     <h3>People</h3>
                     <div class="people-list">
-                        <a href="https://en.wikipedia.org/wiki/Johnny_Cash" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Johnny_Cash" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-johnny-cash">
                             <div class="person-info">
                                 <span class="person-name">Johnny Cash <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Sharing a humorous story about a soundcheck experience</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/June_Carter_Cash" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/June_Carter_Cash" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-june-carter-cash">
                             <div class="person-info">
                                 <span class="person-name">June Carter Cash <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Mentioning Johnny Cash's wife during a soundcheck story</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Paul_Newman" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Paul_Newman" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-paul-newman">
                             <div class="person-info">
                                 <span class="person-name">Paul Newman <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Recalling a friendship and his passing</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Joanne_Woodward" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Joanne_Woodward" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-joanne-woodward">
                             <div class="person-info">
                                 <span class="person-name">Joanne Woodward <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Discussing a friendship with Paul Newman's wife</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Bruce_Springsteen" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Mick_Ronson" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-mick-ronson">
+                            <div class="person-info">
+                                <span class="person-name">Mick Ronson <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Mentioning the guitarist's advice on using a drum machine</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Bruce_Springsteen" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-bruce-springsteen">
                             <div class="person-info">
                                 <span class="person-name">Bruce Springsteen <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Discussing a shared sense of disbelief about their success</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Ron_White" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Ron_White" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-ron-white">
                             <div class="person-info">
                                 <span class="person-name">Ron White <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Mentioning a friend who quit smoking through hypnosis</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Sean_Penn" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Sean_Penn" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-sean-penn">
                             <div class="person-info">
                                 <span class="person-name">Sean Penn <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Encouraging John to do a greatest hits tour</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Don_Henley" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Don_Henley" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-don-henley">
                             <div class="person-info">
                                 <span class="person-name">Don Henley <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Mentioning the Eagles' drummer during a soundcheck story</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Al_Franken" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Al_Franken" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-al-franken">
                             <div class="person-info">
                                 <span class="person-name">Al Franken <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Discussing political correctness and its effects on comedy</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Sam_Kinison" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Sam_Kinison" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-sam-kinison">
                             <div class="person-info">
                                 <span class="person-name">Sam Kinison <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Discussing the impact of his comedy on television</span>
-                            </div>
-                            <span class="link-arrow">&rarr;</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Products -->
-                <div class="resource-category">
-                    <h3>Products</h3>
-                    <div class="books-list">
-                        <a href="https://www.google.com/search?q=Metformin" target="_blank" rel="noopener" class="book-item animate-on-scroll">
-                            <div class="book-info">
-                                <span class="book-title">Metformin</span>
-                                <span class="book-context">Discussing a diabetes drug recommended for longevity</span>
-                            </div>
-                            <span class="link-arrow">&rarr;</span>
-                        </a>
-                        <a href="https://www.google.com/search?q=Statins" target="_blank" rel="noopener" class="book-item animate-on-scroll">
-                            <div class="book-info">
-                                <span class="book-title">Statins</span>
-                                <span class="book-context">Mentioning cholesterol-lowering drugs recommended by a doctor</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
@@ -1319,7 +1247,7 @@
                         </blockquote>
 
                         <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">I had a fucking real heart attack on stage.</p>
+                            <p class="quote-text">I had a real heart attack on stage.</p>
                             <div class="quote-meta">
                                 <span class="quote-context">Health crisis</span>
                             </div>
@@ -1388,8 +1316,7 @@
     <div id="cookieConsent" class="cookie-consent">
         <div class="cookie-consent-content">
             <p class="cookie-consent-text">
-                We use cookies to analyze site traffic and improve your experience. 
-                By clicking "Accept", you consent to our use of cookies.
+                We use cookies to analyze site traffic and improve your experience. By clicking "Accept", you consent to our use of analytics cookies.
             </p>
             <div class="cookie-consent-buttons">
                 <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
@@ -1399,14 +1326,7 @@
     </div>
 
     <script>
-        // Cookie Consent Management
-        function checkCookieConsent() {
-            const consent = localStorage.getItem('cookieConsent');
-            if (!consent) {
-                document.getElementById('cookieConsent').classList.add('show');
-            }
-        }
-
+        // Cookie consent handling
         function acceptCookies() {
             localStorage.setItem('cookieConsent', 'accepted');
             document.getElementById('cookieConsent').classList.remove('show');
@@ -1420,8 +1340,13 @@
             document.getElementById('cookieConsent').classList.remove('show');
         }
 
-        // Check consent on page load
-        checkCookieConsent();
+        // Check if user has already made a choice
+        document.addEventListener('DOMContentLoaded', function() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookieConsent').classList.add('show');
+            }
+        });
 
         // Scroll animations
         const observerOptions = {
@@ -1442,8 +1367,8 @@
             observer.observe(el);
         });
 
-        // Smooth scroll for nav links
-        document.querySelectorAll('nav a').forEach(link => {
+        // Smooth scroll for all internal links (nav and cross-references)
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
