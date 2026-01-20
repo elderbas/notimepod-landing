@@ -13,7 +13,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         
-        // Check for consent before initializing GA
+        // Check for consent
         if (localStorage.getItem('cookieConsent') === 'accepted') {
             gtag('js', new Date());
             gtag('config', 'G-9DVDFHLSG0');
@@ -46,6 +46,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
@@ -57,7 +58,6 @@
             font-weight: 400;
         }
 
-        /* Noise texture overlay */
         body::before {
             content: '';
             position: fixed;
@@ -75,7 +75,6 @@
             font-family: 'Cormorant Garamond', Georgia, serif;
         }
 
-        /* Header */
         header {
             position: relative;
             padding: 80px 24px 60px;
@@ -134,7 +133,6 @@
             padding-top: 0;
         }
 
-        /* Navigation */
         nav {
             position: sticky;
             top: 0;
@@ -172,7 +170,6 @@
             background: var(--highlight);
         }
 
-        /* Main content */
         main {
             max-width: 900px;
             margin: 0 auto;
@@ -216,7 +213,6 @@
             color: var(--ink);
         }
 
-        /* Origin Story */
         .origin-content {
             font-size: 1.05rem;
             line-height: 1.85;
@@ -246,7 +242,6 @@
             color: var(--ink-light);
         }
 
-        /* Stories with images */
         .stories-grid {
             display: flex;
             flex-direction: column;
@@ -303,7 +298,6 @@
             color: var(--ink-muted);
         }
 
-        /* Resources - List format */
         .resources-container {
             display: flex;
             flex-direction: column;
@@ -320,7 +314,6 @@
             color: var(--ink);
         }
 
-        /* Books - Simple list */
         .books-list {
             display: flex;
             flex-direction: column;
@@ -381,7 +374,6 @@
             transform: translateX(0);
         }
 
-        /* Films - List with posters */
         .films-list {
             display: flex;
             flex-direction: column;
@@ -441,7 +433,6 @@
             color: var(--ink-muted);
         }
 
-        /* People - List with portraits */
         .people-list {
             display: flex;
             flex-direction: column;
@@ -500,7 +491,6 @@
             color: var(--ink-muted);
         }
 
-        /* Quotes */
         .quotes-container {
             display: flex;
             flex-direction: column;
@@ -595,7 +585,6 @@
             font-size: 1.4rem;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 60px 24px;
@@ -610,7 +599,6 @@
             color: var(--ink-muted);
         }
 
-        /* Responsive */
         @media (max-width: 640px) {
             header {
                 padding: 60px 20px 48px;
@@ -647,7 +635,6 @@
             }
         }
 
-        /* Scroll animations */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(20px);
@@ -659,7 +646,6 @@
             transform: translateY(0);
         }
 
-        /* Inline CTA - Compact signup between sections */
         .cta-inline {
             background: var(--cream-dark);
             border-top: 1px solid var(--border);
@@ -695,7 +681,7 @@
         }
 
         .cta-inline-powered a {
-            color: var(--sienna);
+            color: var(--accent);
             text-decoration: none;
         }
 
@@ -744,7 +730,7 @@
         }
 
         .cta-inline-form button:hover {
-            background: var(--accent-dark);
+            background: var(--mauve-dark);
             transform: translateY(-1px);
         }
 
@@ -760,7 +746,6 @@
             }
         }
 
-        /* CTA Section - Bridge between editorial and landing page */
         .cta-section {
             position: relative;
             padding: 80px 0 100px;
@@ -897,6 +882,18 @@
             }
         }
 
+        .cross-ref {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent-light);
+            transition: all 0.2s ease;
+        }
+
+        .cross-ref:hover {
+            color: var(--ink);
+            border-bottom-color: var(--ink);
+        }
+
         /* Cookie Consent Banner */
         .cookie-consent {
             position: fixed;
@@ -933,7 +930,7 @@
         }
 
         .cookie-consent-text a {
-            color: var(--mauve);
+            color: var(--accent-light);
             text-decoration: none;
         }
 
@@ -949,22 +946,22 @@
 
         .cookie-consent-btn {
             padding: 10px 20px;
+            border: none;
             border-radius: 4px;
-            font-size: 0.85rem;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
             font-family: 'Libre Franklin', sans-serif;
-            border: none;
         }
 
         .cookie-consent-btn.accept {
-            background: var(--mauve);
+            background: var(--accent);
             color: white;
         }
 
         .cookie-consent-btn.accept:hover {
-            background: var(--mauve-dark);
+            background: #6B3410;
         }
 
         .cookie-consent-btn.decline {
@@ -1014,23 +1011,23 @@
                 <h2>Origin Story</h2>
             </div>
             <div class="origin-content">
-                <p>Johnny Knoxville's path to becoming a stunt legend began with failure and desperation. He moved to Los Angeles with dreams of acting but found himself unable to land work. Then came the news that changed everything: he was going to be a father. That sense of urgency&mdash;the need to provide for his growing family&mdash;lit a fire under him that would never go out.</p>
+                <p>Johnny Knoxville's journey into entertainment began with frustration and desperation in Los Angeles. He moved to the city with aspirations of becoming an actor but struggled to find work. The defining moment came when he learned he was going to be a father—a revelation that ignited an urgent need to change his circumstances and provide for his growing family.</p>
 
                 <div class="key-point">
-                    Living next door to director Antoine Fuqua proved to be the serendipitous connection that opened doors. A casting director introduction led to a commercial agent, while a friend named John Lenson encouraged him to write articles for a magazine&mdash;setting in motion the chain of events that would create Jackass.
+                    Living next door to director <a href="#person-antoine-fuqua" class="cross-ref">Antoine Fuqua</a> proved serendipitous—he introduced Knoxville to a casting director who helped him secure a commercial agent, opening the first door in his career.
                 </div>
 
-                <p>One of his articles involved testing self-defense equipment on himself, catching the attention of <strong>Jeff Tremaine</strong>, editor of <em>Big Brother</em> magazine. Tremaine proposed filming the article for a skateboard video&mdash;a simple suggestion that would ultimately birth one of the most influential entertainment franchises of its generation.</p>
+                <p>A friend named John Lenson encouraged him to write articles for a magazine, leading to an unexpected opportunity. One of his articles involved testing self-defense equipment on himself—shooting himself while wearing a bulletproof vest purchased with Christmas money from his mother. This willingness to inflict pain upon himself for entertainment caught the attention of <a href="#person-jeff-tremaine" class="cross-ref">Jeff Tremaine</a>, the editor of <em>Big Brother</em> magazine.</p>
 
-                <p>The first stunt was born from limited resources and unlimited nerve. Knoxville used money his mother gave him for Christmas to purchase a bulletproof vest, then proceeded to test it in the most direct way possible. This willingness to take risks and push boundaries became the defining characteristic of his entire career.</p>
+                <p>Tremaine proposed filming the article for inclusion in a skateboard video, which ultimately laid the groundwork for the <a href="#film-jackass-number-two" class="cross-ref">Jackass</a> series. What started as desperation transformed into a career built on pushing boundaries and confronting fears—both his own and those of others.</p>
 
                 <div class="key-point">
-                    His upbringing had prepared him for this life of controlled chaos. His father, a tire company owner known for wild pranks and outrageous behavior&mdash;including staging gunfights at Christmas parties&mdash;instilled in him a sense of fearlessness and creativity.
+                    His father, who owned a tire company and was known for wild pranks—including staging gunfights at Christmas parties—instilled in him a sense of fearlessness and creative chaos that would define his career.
                 </div>
 
-                <p>Over time, Knoxville developed a complex relationship with danger and injury. Initially concerned about risks, he gradually shifted to a mindset that prioritized capturing footage and entertaining audiences over personal safety. He acknowledges this may stem from deeper self-worth issues, suggesting his motivations are intertwined with his personal history.</p>
+                <p>Throughout his journey, Knoxville developed a mindset that prioritized capturing footage and entertaining audiences over personal safety. He acknowledges this shift may stem from deeper self-worth issues, suggesting his motivations are complex and intertwined with his personal history.</p>
 
-                <p>The physical toll has been significant: a blown-out lower back, concerns about concussions, and various treatments including transcranial magnetic stimulation for mental health challenges. His candid discussions about periods of depression and anxiety reflect the often-overlooked emotional challenges faced by those in high-risk entertainment careers&mdash;revealing both resilience and vulnerability in equal measure.</p>
+                <p>The physical toll has been significant—a blown-out lower back, concerns about concussions, and numerous injuries requiring extensive treatment including transcranial magnetic stimulation for mental health issues. His candid discussions about depression and anxiety reveal the often-overlooked emotional challenges faced by those in high-risk entertainment careers, adding depth to his story of resilience and vulnerability.</p>
             </div>
         </section>
 
@@ -1059,35 +1056,11 @@
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>The Wild and Wonderful Whites of West Virginia</h3>
-                        <p class="story-summary">A documentary chronicling the chaotic lives of the White family, known for their outlaw lifestyle. The film explores themes of generational neglect, addiction, and socio-economic decline exacerbated by the coal industry's collapse and the opioid crisis&mdash;a stark portrait of despair and limited opportunities.</p>
+                        <p class="story-summary">Knoxville discusses the documentary chronicling the chaotic lives of the White family, known for their outlaw lifestyle in West Virginia. The film delves into generational neglect, addiction, and socio-economic decline exacerbated by the coal industry's collapse and the opioid crisis—a stark portrayal of how systemic issues leave communities without viable paths to recovery.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Addiction</span>
-                            <span class="meta-tag">Poverty</span>
                             <span class="meta-tag">Documentary</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="story-card animate-on-scroll">
-                    <div class="story-content">
-                        <h3>Knoxville's Father and His Wild Pranks</h3>
-                        <p class="story-summary">Knoxville shares anecdotes from his upbringing, focusing on his father's eccentric personality and love for pranks at his tire company. From outrageous behavior to staging gunfights at Christmas parties, these experiences shaped Knoxville's humor and fearless approach to entertainment.</p>
-                        <div class="story-tags">
-                            <span class="meta-tag">Family</span>
-                            <span class="meta-tag">Humor</span>
-                            <span class="meta-tag">Origins</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="story-card animate-on-scroll">
-                    <div class="story-content">
-                        <h3>Fear Factor and the Psychology of Fear</h3>
-                        <p class="story-summary">Knoxville discusses his role encouraging contestants to confront their deepest fears through various challenges. The show revealed the primal nature of fear and demonstrated how facing it head-on can lead to empowerment and personal growth.</p>
-                        <div class="story-tags">
-                            <span class="meta-tag">Psychology</span>
-                            <span class="meta-tag">Motivation</span>
-                            <span class="meta-tag">Television</span>
+                            <span class="meta-tag">Poverty</span>
+                            <span class="meta-tag">Addiction</span>
                         </div>
                     </div>
                 </article>
@@ -1095,11 +1068,11 @@
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>The Genesis of Jackass</h3>
-                        <p class="story-summary">The story of how desperation to support his family led to the creation of an iconic franchise. A bulletproof vest purchased with Christmas money, a magazine article filmed for a skateboard video, and connections with Jeff Tremaine and Antoine Fuqua all converged into something no one could have predicted.</p>
+                        <p class="story-summary">Knoxville narrates how desperation to support his growing family led to the creation of the iconic series. Using Christmas money from his mother to buy a bulletproof vest for a self-inflicted shooting stunt, he caught the attention of <a href="#person-jeff-tremaine" class="cross-ref">Jeff Tremaine</a>. What began as a magazine article became a cultural phenomenon—proving that personal circumstances can drive extraordinary creativity.</p>
                         <div class="story-tags">
-                            <span class="meta-tag">Innovation</span>
-                            <span class="meta-tag">Desperation</span>
-                            <span class="meta-tag">Collaboration</span>
+                            <span class="meta-tag">Origin</span>
+                            <span class="meta-tag">Creativity</span>
+                            <span class="meta-tag">Risk-taking</span>
                         </div>
                     </div>
                 </article>
@@ -1107,23 +1080,47 @@
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
                         <h3>Dangerous Stunts and Close Calls</h3>
-                        <p class="story-summary">Knoxville recounts various dangerous stunts including bull riding and interactions with wild animals. His candid reflections on injuries serve as cautionary tales about the fine line between entertainment and genuine harm&mdash;highlighting the need for mental preparedness in extreme activities.</p>
+                        <p class="story-summary">Knoxville recounts various dangerous stunts including bull riding and interactions with wild animals. He reflects on the unpredictability of these performances and the fine line between entertainment and genuine harm. His candid observations about injuries serve as cautionary tales about the psychological toll of constant physical risk.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Risk</span>
-                            <span class="meta-tag">Stunts</span>
-                            <span class="meta-tag">Safety</span>
+                            <span class="meta-tag">Injury</span>
+                            <span class="meta-tag">Entertainment</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="story-card animate-on-scroll">
                     <div class="story-content">
-                        <h3>Fighters and Mental Health</h3>
-                        <p class="story-summary">A discussion about mental health challenges faced by fighters with repeated head injuries. The conversation emphasizes the importance of recognizing when to retire and the need for better support systems in combat sports&mdash;from coaches, loved ones, and the fighters themselves.</p>
+                        <h3>Fear Factor and Confronting Phobias</h3>
+                        <p class="story-summary">Knoxville discusses his hosting role where he encouraged contestants to confront their deepest fears—snakes, heights, and more. The show emphasized the primal nature of fear and the importance of facing it for personal growth. He reflects on the psychological complexities revealed through people's responses to terror.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Fear</span>
+                            <span class="meta-tag">Psychology</span>
+                            <span class="meta-tag">Growth</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>Reflections on Fighters and Mental Health</h3>
+                        <p class="story-summary">Knoxville discusses the mental health challenges faced by fighters, particularly those with repeated head injuries. He emphasizes recognizing when to retire and the importance of planting that seed early in a fighter's career. The conversation touches on <a href="#person-wanderlei-silva" class="cross-ref">Wanderlei Silva</a>, <a href="#person-mirko-cro-cop" class="cross-ref">Mirko Cro Cop</a>, and the need for better support systems in combat sports.</p>
                         <div class="story-tags">
                             <span class="meta-tag">Mental health</span>
-                            <span class="meta-tag">Combat sports</span>
+                            <span class="meta-tag">Fighting</span>
                             <span class="meta-tag">Retirement</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-card animate-on-scroll">
+                    <div class="story-content">
+                        <h3>His Father's Wild Influence</h3>
+                        <p class="story-summary">Knoxville shares anecdotes about his father, a tire company owner known for outrageous pranks including staging gunfights at Christmas parties. This environment of humor and calculated chaos undoubtedly shaped Knoxville's own approach to entertainment—finding joy in the unexpected and turning risk into spectacle.</p>
+                        <div class="story-tags">
+                            <span class="meta-tag">Family</span>
+                            <span class="meta-tag">Influence</span>
+                            <span class="meta-tag">Humor</span>
                         </div>
                     </div>
                 </article>
@@ -1137,152 +1134,191 @@
             </div>
             <div class="resources-container">
 
-                <!-- Documentaries -->
                 <div class="resource-category">
                     <h3>Documentaries</h3>
                     <div class="films-list">
-                        <a href="https://www.imdb.com/find/?q=The%20Wild%20and%20Wonderful%20Whites%20of%20West%20Virginia" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=The%20Wild%20and%20Wonderful%20Whites%20of%20West%20Virginia" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-the-wild-and-wonderful-whites-of-west-virginia">
                             <div class="film-info">
                                 <span class="film-title">The Wild and Wonderful Whites of West Virginia</span>
-                                <span class="film-context">Documentary about a family living in extreme conditions</span>
+                                <span class="film-context">A family living in extreme conditions and their struggles</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.imdb.com/find/?q=Dancing%20Outlaw" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=Dancing%20Outlaw" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-dancing-outlaw">
                             <div class="film-info">
                                 <span class="film-title">Dancing Outlaw</span>
                                 <span class="film-context">Previous documentary featuring Jesco White</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.imdb.com/find/?q=Icarus" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=Icarus" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-icarus">
                             <div class="film-info">
                                 <span class="film-title">Icarus</span>
-                                <span class="film-context">Documentary about the Russian doping scandal</span>
+                                <span class="film-context">The Russian doping scandal during the Olympics</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Films -->
                 <div class="resource-category">
                     <h3>Films</h3>
                     <div class="films-list">
-                        <a href="https://www.imdb.com/find/?q=Jackass%20Number%20Two" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=Jackass%20Number%20Two" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-jackass-number-two">
                             <div class="film-info">
                                 <span class="film-title">Jackass Number Two</span>
-                                <span class="film-context">Featured an infamous stunt discussed in conversation</span>
+                                <span class="film-context">Featured the infamous horse stunt</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.imdb.com/find/?q=Jackass%20Forever" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=Jackass%20Forever" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-jackass-forever">
                             <div class="film-info">
                                 <span class="film-title">Jackass Forever</span>
                                 <span class="film-context">Latest installment with potential for new cast members</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://www.imdb.com/find/?q=Men%20in%20Black%20II" target="_blank" rel="noopener" class="film-item animate-on-scroll">
+                        <a href="https://www.imdb.com/find/?q=Men%20in%20Black%20II" target="_blank" rel="noopener" class="film-item animate-on-scroll" id="film-men-in-black-ii">
                             <div class="film-info">
                                 <span class="film-title">Men in Black II</span>
-                                <span class="film-context">Where Knoxville met judo legend Gene LeBell</span>
+                                <span class="film-context">Where he met judo legend Gene LeBell</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- People -->
                 <div class="resource-category">
                     <h3>People</h3>
                     <div class="people-list">
-                        <a href="https://en.wikipedia.org/wiki/Jesco_White" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Jesco_White" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-jesco-white">
                             <div class="person-info">
                                 <span class="person-name">Jesco White <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Charismatic central figure of the White family documentary</span>
+                                <span class="person-context">Central character from the documentary</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/David_Allan_Coe" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/David_Allan_Coe" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-david-allan-coe">
                             <div class="person-info">
                                 <span class="person-name">David Allan Coe <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Country singer-songwriter with a complicated life story</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Shel_Silverstein" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Shel_Silverstein" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-shel-silverstein">
                             <div class="person-info">
                                 <span class="person-name">Shel Silverstein <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Children's book author who also wrote songs</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Mike_Judge" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Mike_Judge" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-mike-judge">
                             <div class="person-info">
                                 <span class="person-name">Mike Judge <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Friend interested in meeting Jesco and Mamie</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Johnny_Weir" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Johnny_Weir" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-johnny-weir">
                             <div class="person-info">
                                 <span class="person-name">Johnny Weir <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Olympic skater known for entertaining personality</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Andre_Ward" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Andre_Ward" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-andre-ward">
                             <div class="person-info">
                                 <span class="person-name">Andre Ward <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Boxer who retired undefeated, now doing commentary</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Wanderlei_Silva" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Wanderlei_Silva" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-wanderlei-silva">
                             <div class="person-info">
                                 <span class="person-name">Wanderlei Silva <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Fighter known for aggressive style</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Mirko_Cro_Cop" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Mirko_Cro_Cop" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-mirko-cro-cop">
                             <div class="person-info">
                                 <span class="person-name">Mirko Cro Cop <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Fighter known for striking ability and intimidating presence</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Fedor_Emelianenko" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Fedor_Emelianenko" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-fedor-emelianenko">
                             <div class="person-info">
                                 <span class="person-name">Fedor Emelianenko <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">One of the all-time great MMA fighters</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Cain_Velasquez" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Cain_Velasquez" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-cain-velasquez">
                             <div class="person-info">
                                 <span class="person-name">Cain Velasquez <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Great heavyweight fighter known for cardio</span>
+                                <span class="person-context">Great heavyweight known for cardio and fighting style</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Brock_Lesnar" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Brock_Lesnar" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-brock-lesnar">
                             <div class="person-info">
                                 <span class="person-name">Brock Lesnar <span class="wiki-badge">WIKI</span></span>
                                 <span class="person-context">Former WWE star and MMA fighter</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
-                        <a href="https://en.wikipedia.org/wiki/Chris_Weidman" target="_blank" rel="noopener" class="person-item animate-on-scroll">
+                        <a href="https://en.wikipedia.org/wiki/Chris_Weidman" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-chris-weidman">
                             <div class="person-info">
                                 <span class="person-name">Chris Weidman <span class="wiki-badge">WIKI</span></span>
-                                <span class="person-context">Fighter who suffered severe leg injury during a match</span>
+                                <span class="person-context">Fighter who suffered a severe leg injury during a match</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.google.com/search?q=person:Jeff%20Tremaine" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-jeff-tremaine">
+                            <div class="person-info">
+                                <span class="person-name">Jeff Tremaine <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Editor of Big Brother magazine, instrumental in Jackass creation</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.google.com/search?q=person:Antoine%20Fuqua" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-antoine-fuqua">
+                            <div class="person-info">
+                                <span class="person-name">Antoine Fuqua <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Director who connected Knoxville with casting opportunities</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.google.com/search?q=person:Colonel%20John%20Paul%20Stapp" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-colonel-john-paul-stapp">
+                            <div class="person-info">
+                                <span class="person-name">Colonel John Paul Stapp <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Biophysicist known for deceleration experiments and survivor's euphoria</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.google.com/search?q=person:Louie%20Simmons" target="_blank" rel="noopener" class="person-item animate-on-scroll" id="person-louie-simmons">
+                            <div class="person-info">
+                                <span class="person-name">Louie Simmons <span class="wiki-badge">WIKI</span></span>
+                                <span class="person-context">Creator of spinal decompression and strengthening machine</span>
                             </div>
                             <span class="link-arrow">&rarr;</span>
                         </a>
                     </div>
                 </div>
+
+                <div class="resource-category">
+                    <h3>Podcasts</h3>
+                    <div class="books-list">
+                        <a href="https://www.google.com/search?q=Cocaine%20and%20Rhinestones%20podcast" target="_blank" rel="noopener" class="book-item animate-on-scroll" id="podcast-cocaine-and-rhinestones">
+                            <div class="book-info">
+                                <span class="book-title">Cocaine and Rhinestones</span>
+                                <span class="book-context">Podcast hosted by Tyler Coe about country music history</span>
+                            </div>
+                            <span class="link-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -1324,16 +1360,16 @@
                         </blockquote>
 
                         <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">I wouldn't let my kids see that, you know?</p>
+                            <p class="quote-text">I didn't know how to top the first one, which now looks very tame compared to the others.</p>
                             <div class="quote-meta">
-                                <span class="quote-context">Parenting and Jackass</span>
+                                <span class="quote-context">Pressure to perform</span>
                             </div>
                         </blockquote>
 
                         <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">I didn't know how to top the first one, which now looks very tame compared to the others.</p>
+                            <p class="quote-text">I wouldn't let my kids see that, you know?</p>
                             <div class="quote-meta">
-                                <span class="quote-context">Pressure to perform</span>
+                                <span class="quote-context">Parenting and Jackass</span>
                             </div>
                         </blockquote>
 
@@ -1371,6 +1407,20 @@
                         </blockquote>
 
                         <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">It's dangerous. It's very dangerous.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Weight cutting in sports</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
+                            <p class="quote-text">Just be how you're gonna be, man.</p>
+                            <div class="quote-meta">
+                                <span class="quote-context">Acceptance of identity</span>
+                            </div>
+                        </blockquote>
+
+                        <blockquote class="quote-card animate-on-scroll">
                             <p class="quote-text">It's a testament to our society today that it is, like, not just accepted but celebrated that people are gay.</p>
                             <div class="quote-meta">
                                 <span class="quote-context">Societal acceptance</span>
@@ -1378,23 +1428,9 @@
                         </blockquote>
 
                         <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">I think you have to tell them, 'There's gonna be a time when we realize we have to stop this.'</p>
+                            <p class="quote-text">I hope it runs another 148 episodes, just like when we did it back in the day, and I hope nobody gets hurt.</p>
                             <div class="quote-meta">
-                                <span class="quote-context">Fighter's career longevity</span>
-                            </div>
-                        </blockquote>
-
-                        <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">He was a maniacal genius.</p>
-                            <div class="quote-meta">
-                                <span class="quote-context">Otto and George</span>
-                            </div>
-                        </blockquote>
-
-                        <blockquote class="quote-card animate-on-scroll">
-                            <p class="quote-text">When you have bulls on the set, I don't want anyone, any kind of negativity going around the set.</p>
-                            <div class="quote-meta">
-                                <span class="quote-context">Safety in stunts</span>
+                                <span class="quote-context">Fear Factor</span>
                             </div>
                         </blockquote>
                     </div>
@@ -1428,8 +1464,7 @@
     <div id="cookieConsent" class="cookie-consent">
         <div class="cookie-consent-content">
             <p class="cookie-consent-text">
-                We use cookies to analyze site traffic and improve your experience. 
-                By clicking "Accept", you consent to our use of cookies.
+                We use cookies to analyze site traffic and improve your experience. By clicking "Accept", you consent to our use of analytics cookies.
             </p>
             <div class="cookie-consent-buttons">
                 <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
@@ -1439,14 +1474,7 @@
     </div>
 
     <script>
-        // Cookie Consent Management
-        function checkCookieConsent() {
-            const consent = localStorage.getItem('cookieConsent');
-            if (!consent) {
-                document.getElementById('cookieConsent').classList.add('show');
-            }
-        }
-
+        // Cookie consent handling
         function acceptCookies() {
             localStorage.setItem('cookieConsent', 'accepted');
             document.getElementById('cookieConsent').classList.remove('show');
@@ -1460,8 +1488,13 @@
             document.getElementById('cookieConsent').classList.remove('show');
         }
 
-        // Check consent on page load
-        checkCookieConsent();
+        // Check if user has already made a choice
+        document.addEventListener('DOMContentLoaded', function() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookieConsent').classList.add('show');
+            }
+        });
 
         // Scroll animations
         const observerOptions = {
@@ -1482,8 +1515,8 @@
             observer.observe(el);
         });
 
-        // Smooth scroll for nav links
-        document.querySelectorAll('nav a').forEach(link => {
+        // Smooth scroll for all internal links (nav and cross-references)
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
